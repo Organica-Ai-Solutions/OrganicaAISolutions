@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Our Services - Organica AI Solutions</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    {% include 'chatbot.html' %}
+
+    <header>
+        <h1>Our Services</h1>
+    </header>
+    <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo">
+    <div class="main-content">
+        <ul>
+            <li>
+                <h2>AI Consulting</h2>
+                <p>We offer comprehensive AI consulting services to help businesses identify AI opportunities, develop AI strategies, and implement AI solutions. Our consulting services include assessing existing systems, designing AI architectures, and providing guidance on data collection and model deployment.</p>
+            </li>
+            <li>
+                <h2>Custom AI Development</h2>
+                <p>We specialize in developing customized AI solutions tailored to our clients' specific needs. This involves building AI models, utilizing machine learning algorithms, and leveraging big data analytics to deliver accurate and actionable insights that drive operational efficiency and enhance decision-making processes.</p>
+            </li>
+            <li>
+                <h2>AI Integration</h2>
+                <p>We assist businesses in integrating AI technologies into their existing systems and processes. This may involve API development, software integration, and infrastructure optimization to ensure seamless adoption and utilization of AI capabilities.</p>
+            </li>
+            <li>
+                <h2>AI Support and Maintenance</h2>
+                <p>We provide ongoing support and maintenance services to ensure the smooth operation of AI solutions. This includes monitoring performance, updating models, and addressing any technical issues or concerns, allowing our clients to maximize the value of their AI investments.</p>
+            </li>
+        </ul>
+        <div class="button-container">
+            <a href="{{ url_for('home') }}" class="button">Home</a>
+            <a href="{{ url_for('about') }}" class="button">About</a>
+            <a href="{{ url_for('contact') }}" class="button">Contact</a>
+            <a href="{{ url_for('login') }}" class="button">Login</a>
+            <a href="{{ url_for('signup') }}" class="button">Sign Up</a>
+            
+            
+        </div>
+    </div>
+    <script src="path/to/script.js"></script>
+</body>
+</html>

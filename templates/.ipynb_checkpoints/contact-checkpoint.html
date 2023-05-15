@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <h1>Contact Us</h1>
+    <p>For inquiries or to get in touch, please use the contact details below:</p>
+    <ul>
+        <li>Email: info@aisolutionscompany.com</li>
+        <li>Phone: +1-123-456-7890</li>
+        <li>Address: 123 AI Street, City, Country</li>
+    <div class="button-container">
+                <a href="{{ url_for('about') }}" class="button">About</a>
+                <a href="{{ url_for('services') }}" class="button">Services</a>
+                <a href="{{ url_for('home') }}" class="button">Home</a>
+                <a href="{{ url_for('login') }}" class="button">Login</a>
+    </ul>
+    <script src="path/to/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    {% include 'chatbot.html' %}
+
+    <h1>Contact Us</h1>
+    <p>For inquiries or to get in touch, please use the contact details below:</p>
+    <ul>
+        <li>Email: diego.torres.developer@gmail.com</li>
+        <li>Phone: +1-215-888-8748</li>
+        <li>Address: 1438 N7th st., Philadelphia PA0,19122, USA</li>
+    <div class="button-container">
+                <a href="{{ url_for('about') }}" class="button">About</a>
+                <a href="{{ url_for('services') }}" class="button">Services</a>
+                <a href="{{ url_for('home') }}" class="button">Home</a>
+                <a href="{{ url_for('login') }}" class="button">Login</a>
+                <a href="{{ url_for('signup') }}" class="button">Sign Up</a>
+               
+    </ul>
+    <script src="path/to/script.js"></script>
+</body>
+</html>

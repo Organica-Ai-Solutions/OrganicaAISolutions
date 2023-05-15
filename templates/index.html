@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Organica AI Solutions</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    {% include 'chatbot.html' %}
+
+    <header>
+        <img src="{{ url_for('static', filename='images/banner.gif') }}" alt="Banner">
+
+        <h1>Welcome to Organica AI Solutions</h1>
+    </header>
+    <div class="main-content">
+        <h2>Transforming Businesses with AI Solutions</h2>
+        <p>Organica AI Solutions is a cutting-edge technology firm specializing in providing customized AI solutions in data analytics, blockchain, fintech, and machine learning. We cater to the needs of small and medium-sized companies across various industries, enabling them to leverage the power of artificial intelligence to streamline operations, enhance decision-making processes, and unlock new opportunities for growth.</p>
+
+        <h2>Why Choose Organica AI Solutions?</h2>
+        <ul>
+            <li>Expertise: Our team of AI experts brings extensive knowledge and experience in data analytics, blockchain, fintech, and machine learning, ensuring that we deliver innovative and effective solutions.</li>
+            <li>Customization: We understand that every business is unique. That's why we offer tailored AI solutions that address your specific needs and challenges.</li>
+            <li>Quality: We are committed to delivering high-quality AI solutions that meet the highest standards of performance, reliability, and security.</li>
+            <li>Collaboration: We work closely with our clients, fostering a collaborative approach to ensure that our solutions align with their business objectives and drive measurable results.</li>
+            <li>Innovation: By staying at the forefront of AI advancements and leveraging strategic partnerships, we provide our clients with the most advanced and cutting-edge AI technologies.</li>
+        </ul>
+
+        <div class="button-container">
+            <a href="{{ url_for('services') }}" class="button">Our Services</a>
+            <a href="{{ url_for('about') }}" class="button">About Us</a>
+            <a href="{{ url_for('contact') }}" class="button">Contact Us</a><a href="{{ url_for('login') }}" class="button">Login</a>
+            <a href="{{ url_for('login') }}" class="button">Login</a>
+            <a href="{{ url_for('signup') }}" class="button">Sign Up</a>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+
+</body>
+</html>
