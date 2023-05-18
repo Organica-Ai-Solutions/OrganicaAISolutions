@@ -118,7 +118,7 @@ def dashboard():
 
 
 
-openai.api_key = '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'
+openai.api_key = 'yourkey'
 
 
 @app.route('/chat', methods=['POST'])
