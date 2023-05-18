@@ -1,5 +1,4 @@
 flask
 openai
-sqlite3
 flask_babel
 python-3.9.7
