@@ -4,16 +4,18 @@ from flask_babel import Babel, gettext
 from flask import Flask, render_template, request
 import openai
 
+
 app = Flask(__name__)
+app.config["SECRET_KEY"] = '123456987'
 babel = Babel(app)
 app.config['BABEL_LANGUAGES'] = ['en', 'es']
 # Configure SQLite database
 DATABASE = 'users.db'
 
 
-#@babel.localeselector
-#def get_locale():
-#d    return request.accept_languages.best_match(app.config['BABEL_LANGUAGES'])
+    #@babel.localeselector
+    #def get_locale():
+    #d    return request.accept_languages.best_match(app.config['BABEL_LANGUAGES'])
 
 def get_db():
     conn = sqlite3.connect(DATABASE)
@@ -63,23 +65,30 @@ def signup():
     return render_template('signup.html')
 
 def is_username_available(username):
-    # Implement your logic to check if the username is available
-    # This can involve querying a database or any other mechanism
-    # Return True if the username is available, False otherwise
-    # Example implementation:
-    return username != 'admin'
+    conn = get_db()
+    cursor = conn.cursor()
+    cursor.execute('SELECT username FROM users WHERE username = ?', (username,))
+    result = cursor.fetchone()
+    conn.close()
+    return result is None
 
 def create_user(username, password):
-    # Implement your logic to create a new user
-    # This can involve creating a user record in the database
-    # Example implementation:
-    # user = User(username=username, password=password)
-    # db.session.add(user)
-    # db.session.commit()
-    pass
+    conn = get_db()
+    cursor = conn.cursor()
+    cursor.execute('INSERT INTO users (username, password) VALUES (?, ?)', (username, password))
+    conn.commit()
+    conn.close()
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
+    def is_valid_credentials(username, password):
+        conn = get_db()
+        cursor = conn.cursor()
+        cursor.execute('SELECT username FROM users WHERE username = ? AND password = ?', (username, password))
+        result = cursor.fetchone()
+        conn.close()
+        return result is not None
+
     if request.method == 'POST':
         # Get the username and password from the form
         username = request.form.get('username')
@@ -96,19 +105,22 @@ def login():
     # Render the login template for GET requests
     return render_template('login.html')
 
-def is_valid_credentials(username, password):
-    # Implement your logic to check if the username and password are valid
-    # This can involve querying a database or any other authentication mechanism
-    # Return True if the credentials are valid, False otherwise
-    # Example implementation:
-    return username == 'admin' and password == 'password'
+
 
 
 @app.route('/dashboard')
 def dashboard():
     return render_template('dashboard.html')
 
-openai.api_key = 'your openai key'
+
+
+
+
+
+
+
+openai.api_key = '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'
+
 
 @app.route('/chat', methods=['POST'])
 def chat():
@@ -124,6 +136,49 @@ def chat():
     reply = response.choices[0].text.strip()
     return reply
 
+
+@app.route('/inquiry', methods=['POST'])
+def handle_inquiry():
+    user_message = request.form['message']
+
+    # Create a connection to the SQLite database
+    conn = sqlite3.connect('inquiries.db')
+    cursor = conn.cursor()
+    
+    # Store the inquiry in the SQLite database
+    cursor.execute("INSERT INTO inquiries (message) VALUES (?)", (user_message,))
+    conn.commit()
+
+    # Generate a response for the inquiry
+    response = generate_inquiry_response(user_message)
+
+    # Store the inquiry and answer in the SQLite database
+    inquiry = user_message
+    answer = response
+    cursor.execute("INSERT INTO inquiries (message, answer) VALUES (?, ?)", (inquiry, answer))
+    conn.commit()
+
+    # Close the database connection
+    cursor.close()
+    conn.close()
+
+    return response
+
+
+def generate_inquiry_response(conversation):
+    prompt = f"You are a chatbot for a tech company named Organica AI Solutions, a cutting-edge technology firm specializing in providing customized AI solutions in data analytics, blockchain, fintech, and machine learning. We cater to the needs of small and medium-sized companies across various industries, enabling them to leverage the power of artificial intelligence to streamline operations, enhance decision-making processes, and unlock new opportunities for growth. These are messages from customers asking questions. Please respond professionally. {conversation}"
+    response = openai.Completion.create(
+        engine='davinci',
+        prompt=prompt,
+        max_tokens=100,
+        n=1,
+        stop=None,
+        temperature=0.7
+    )
+
+    reply = response.choices[0].text.strip()
+    return reply
 if __name__ == '__main__':
     create_table()
-    app.run(debug=True)
+app.run(debug=True)
+

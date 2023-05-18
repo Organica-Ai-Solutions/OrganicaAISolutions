@@ -1,18 +1,21 @@
 <!-- dashboard.html -->
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Dashboard</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
-</head>
-<body>
-    <h1>Welcome to the Dashboard</h1>
-    <h2>Hello, {{ username }}</h2>
-    <p>This is your dashboard page.</p>
-    <a href="/">Home</a>
-    <a href="/about">About</a>
-    <a href="/services">Services</a>
-    <a href="/contact">Contact</a>
-    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
-</body>
-</html>
+{% extends "base.html"%}
+{% block content %}
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>Dashboard</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    </head>
+    <body>
+        <h1>Welcome to the Dashboard</h1>
+        <h2>Hello, {{ username }}</h2>
+        <p>This is your dashboard page.</p>
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/services">Services</a>
+        <a href="/contact">Contact</a>
+        <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    </body>
+    </html>
+{% endblock%}

@@ -6,21 +6,24 @@
 <body>
     <div id="chat-container">
         <button id="chatbot-button" onclick="toggleChatbot()">Chat</button>
-    <div id="chatbot-widget">
-        <!-- Chatbot content goes here -->
+        <div id="chatbot-widget">
+            <!-- Chatbot content goes here -->
+        </div>
     </div>
-</div>
-<script src="{{ url_for('static', filename='js/chatbot.js') }}"></script>
+
+    <div id="inquiry-container">
         <div id="chat-log"></div>
         <input type="text" id="user-input" placeholder="Type your message">
-        <button id="send-button" onclick="sendMessage()">Send</button>
+        <button id="send-button" onclick="sendInquiry()">Send</button>
     </div>
+
+    <script src="{{ url_for('static', filename='js/chatbot.js') }}"></script>
     <script>
-        function sendMessage() {
+        function sendInquiry() {
             var userInput = document.getElementById('user-input').value;
             var chatLog = document.getElementById('chat-log');
             var request = new XMLHttpRequest();
-            request.open('POST', '/chat');
+            request.open('POST', '/inquiry');
             request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
             request.onload = function() {
                 if (request.status === 200) {
@@ -29,6 +32,14 @@
                     var botMessage = '<div class="bot-message">' + reply + '</div>';
                     chatLog.innerHTML += userMessage + botMessage;
                     document.getElementById('user-input').value = '';
+
+                    // Store inquiry and reply in the database
+                    var inquiry = userInput;
+                    var answer = reply;
+                    var dbRequest = new XMLHttpRequest();
+                    dbRequest.open('POST', '/store_inquiry');
+                    dbRequest.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+                    dbRequest.send('inquiry=' + encodeURIComponent(inquiry) + '&answer=' + encodeURIComponent(answer));
                 }
             };
             request.send('message=' + userInput);
