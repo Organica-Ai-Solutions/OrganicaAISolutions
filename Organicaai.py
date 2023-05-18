@@ -1,7 +1,6 @@
 from flask import Flask, render_template, request, redirect
 import sqlite3
 from flask_babel import Babel, gettext
-from flask import Flask, render_template, request
 import openai
 
 
@@ -180,5 +179,5 @@ def generate_inquiry_response(conversation):
     return reply
 if __name__ == '__main__':
     create_table()
-app.run(debug=True)
+    app.run(debug=True)
 

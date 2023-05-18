@@ -1,29 +1,18 @@
 {% extends "base.html"%}
 {% block content %}
-    <!DOCTYPE html>
-    <html>
+<html>
     <head>
-    
+        <link rel="stylesheet" href="/css/styles.css">
     </head>
     <body>
-
-  
-   
-    <section class="cta">
-        <div class="cta-content">
-            <div class="container px-7">
-                <h2 class="text-white display-1 lh-1 mb-7">
-                    <h1>Log In</h1>
-                    <br />
-                    <form action="/signup" method="post">
-                        <input type="text" name="username" placeholder="Username" required>
-                        <input type="password" name="password" placeholder="Password" required>
-                        <button type="submit">Sign Up</button>
-                    </form>
-                </h2>
-            </div>
-        </div>
-
+        <h1>Log In</h1>
+        <br>
+        <form action="/signup" method="post">
+            <input type="text" name="username" placeholder="Username" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <button type="submit">Sign Up</button>
+        </form>
+        <script src="/js/script.js"></script>
     </body>
     <html>
 {% endblock %}

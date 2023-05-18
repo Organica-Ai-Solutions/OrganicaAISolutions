@@ -348,6 +348,15 @@ button {
 button:focus:not(:focus-visible) {
   outline: 0;
 }
+.button {
+  background-color: rgb(255, 168, 168);
+}
+.button {
+  font-size: 25px;
+}
+.button-container {
+  margin-left: auto;
+}
 
 input,
 button,
@@ -356,7 +365,7 @@ optgroup,
 textarea {
   margin: 0;
   font-family: inherit;
-  font-size: inherit;
+  font-size: 25px;
   line-height: inherit;
 }
 
