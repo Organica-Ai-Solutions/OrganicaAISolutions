@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, redirect
 import sqlite3
 from flask_babel import Babel, gettext
 import openai
-
+import os
 
 app = Flask(__name__)
 app.config["SECRET_KEY"] = '123456987'
