@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, redirect
 import sqlite3
 from flask_babel import Babel, gettext
 import openai
-
+import os
 
 app = Flask(__name__)
 app.config["SECRET_KEY"] = '123456987'
@@ -177,7 +177,9 @@ def generate_inquiry_response(conversation):
 
     reply = response.choices[0].text.strip()
     return reply
-if __name__ == '__main__':
-    create_table()
-    app.run(debug=True)
 
+
+if __name__ == '__main__':
+    # Use the PORT environment variable provided by Heroku
+    port = int(os.environ.get('PORT', 5000))
+    app.run(host='0.0.0.0', port=port)
