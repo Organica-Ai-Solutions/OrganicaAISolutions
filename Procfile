@@ -1,1 +1,1 @@
-web: python Organicaai.py
+web: gunicorn --bind 0.0.0.0:$PORT Organicaai.py:app
