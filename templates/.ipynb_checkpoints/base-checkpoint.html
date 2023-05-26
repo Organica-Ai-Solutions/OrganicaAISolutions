@@ -2,7 +2,6 @@
 <html>
 <head>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
-    <script src="{{ url_for('static', filename='/js/script.js') }}"></script>
 
 </head>
 <body>
@@ -10,8 +9,8 @@
 
     <!-- Navigation-->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top shadow-sm" id="mainNav">
-        <div class="container ">
-            <a class="navbar-brand0 fw-bold" href="#page-top"><img src="/static/images/logo.png" alt="..." /></a>
+        <div class="container px-5">
+            <a class="navbar-brand fw-bold" href="#page-top"><img src="/static/images/logo.png" alt="..." /></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 Menu
                 <i class="bi-list"></i>
@@ -28,25 +27,13 @@
                         <a href="{{ url_for('signup') }}" class="button">Sign Up</a>
                     </div>
                 </ul>
-                <button class="btn btn-primary rounded-pill px-3 mb-2 mb-lg-0" onclick="toggleChatbot()">
-                    <span class="d-flex align-items-center">
-                        <i class="bi-chat-text-fill me-2"></i>
-                        <span class="small">Chat with us!</span>
-                    </span>
-                </button>
-                
-                
-                
-            </div>
-        </div>
             </div>
         </div>
     </nav>
-    
+    <script src="{{ url_for('static', filename='/js/script.js') }}"></script>
     {% block content %}
     {% endblock %}
-    <script src="{{ url_for('static', filename='/js/chatbot.js') }}"></script>
-    <script src="/static/chatbot.js"></script>
 
+    <!-- Your scripts here -->
 </body>
 </html>

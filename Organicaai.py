@@ -4,10 +4,12 @@ from flask_babel import Babel, gettext
 import openai
 import os
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='static')
+
 app.config["SECRET_KEY"] = '123456987'
 babel = Babel(app)
 app.config['BABEL_LANGUAGES'] = ['en', 'es']
+
 # Configure SQLite database
 DATABASE = 'users.db'
 
@@ -182,4 +184,5 @@ def generate_inquiry_response(conversation):
 if __name__ == '__main__':
     # Use the PORT environment variable provided by Heroku
     port = int(os.environ.get('PORT', 5000))
-    app.run(host='0.0.0.0', port=port)
+    #app.run(host='0.0.0.0', port=port)
+    app.run(debug=True)

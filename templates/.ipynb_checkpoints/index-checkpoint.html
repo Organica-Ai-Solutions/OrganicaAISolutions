@@ -1,35 +1,133 @@
+{% extends "base.html" %}
+
+{% block content %}
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Organica AI Solutions</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+
+    <title>Organica AI Solutions</title>
+    <style>
+        /* Apply margin to create space between pages */
+        body {
+            margin: 200px; /* Adjust the value as per your desired spacing */
+        }
+    </style>
+    <!-- Other head content here -->
 </head>
 <body>
-    <header>
-        <h1>Welcome to Organica AI Solutions</h1>
-    </header>
-    <div class="main-content">
-        <h2>Transforming Businesses with AI Solutions</h2>
-        <p>Organica AI Solutions is a cutting-edge technology firm specializing in providing customized AI solutions in data analytics, blockchain, fintech, and machine learning. We cater to the needs of small and medium-sized companies across various industries, enabling them to leverage the power of artificial intelligence to streamline operations, enhance decision-making processes, and unlock new opportunities for growth.</p>
+    <section id="section2" class="scroll-section">
+        <!-- company features section-->
+        <div class="text-center">
+            <h1 class="display-1 lh-1 mb-3">Why Choose Organica AI Solutions? </h1></div>
+               <div class="container px-5">
+                   <div class="row gx-5 align-items-center">
+                       <div class="col-lg-8 order-lg-1 mb-5 mb-lg-0">
+                           <div class="container-fluid px-5">
+                               <div class="row gx-5">
+                                   <div class="col-md-6 mb-5">
+                                       <!-- Feature item-->
+                                       <div class="text-center">
+                                           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cpu-fill" viewBox="0 0 16 16">
+                                               <path d="M6.5 6a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3z"/>
+                                               <path d="M5.5.5a.5.5 0 0 0-1 0V2A2.5 2.5 0 0 0 2 4.5H.5a.5.5 0 0 0 0 1H2v1H.5a.5.5 0 0 0 0 1H2v1H.5a.5.5 0 0 0 0 1H2v1H.5a.5.5 0 0 0 0 1H2A2.5 2.5 0 0 0 4.5 14v1.5a.5.5 0 0 0 1 0V14h1v1.5a.5.5 0 0 0 1 0V14h1v1.5a.5.5 0 0 0 1 0V14h1v1.5a.5.5 0 0 0 1 0V14a2.5 2.5 0 0 0 2.5-2.5h1.5a.5.5 0 0 0 0-1H14v-1h1.5a.5.5 0 0 0 0-1H14v-1h1.5a.5.5 0 0 0 0-1H14v-1h1.5a.5.5 0 0 0 0-1H14A2.5 2.5 0 0 0 11.5 2V.5a.5.5 0 0 0-1 0V2h-1V.5a.5.5 0 0 0-1 0V2h-1V.5a.5.5 0 0 0-1 0V2h-1V.5zm1 4.5h3A1.5 1.5 0 0 1 11 6.5v3A1.5 1.5 0 0 1 9.5 11h-3A1.5 1.5 0 0 1 5 9.5v-3A1.5 1.5 0 0 1 6.5 5z"/>
+                                             </svg>
+                                                <h3 class="font-alt">Expertise:</h3>
+                                                <p class="text-muted mb-0">Our team of AI experts brings extensive knowledge and experience in data analytics, blockchain, fintech, and machine learning, ensuring that we deliver innovative and effective solutions.</p>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 mb-5">
+                                            <!-- Feature item-->
+                                            <div class="text-center">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-bar-graph-fill" viewBox="0 0 16 16">
+                                                    <path d="M12 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm-2 11.5v-6a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm-2.5.5a.5.5 0 0 1-.5-.5v-4a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5h-1zm-3 0a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5h-1z"/>
+                                                </svg>
+                                                <h3 class="font-alt">Customization:</h3>
+                                                <p class="text-muted mb-0">We understand that every business is unique. That's why we offer tailored AI solutions that address your specific needs and challenges.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6 mb-5 mb-md-0">
+                                            <!-- Feature item-->
+                                            <div class="text-center">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-currency-bitcoin" viewBox="0 0 16 16">
+                                                    <path d="M5.5 13v1.25c0 .138.112.25.25.25h1a.25.25 0 0 0 .25-.25V13h.5v1.25c0 .138.112.25.25.25h1a.25.25 0 0 0 .25-.25V13h.084c1.992 0 3.416-1.033 3.416-2.82 0-1.502-1.007-2.323-2.186-2.44v-.088c.97-.242 1.683-.974 1.683-2.19C11.997 3.93 10.847 3 9.092 3H9V1.75a.25.25 0 0 0-.25-.25h-1a.25.25 0 0 0-.25.25V3h-.573V1.75a.25.25 0 0 0-.25-.25H5.75a.25.25 0 0 0-.25.25V3l-1.998.011a.25.25 0 0 0-.25.25v.989c0 .137.11.25.248.25l.755-.005a.75.75 0 0 1 .745.75v5.505a.75.75 0 0 1-.75.75l-.748.011a.25.25 0 0 0-.25.25v1c0 .138.112.25.25.25L5.5 13zm1.427-8.513h1.719c.906 0 1.438.498 1.438 1.312 0 .871-.575 1.362-1.877 1.362h-1.28V4.487zm0 4.051h1.84c1.137 0 1.756.58 1.756 1.524 0 .953-.626 1.45-2.158 1.45H6.927V8.539z"/>
+                                                </svg>
+                                                <h3 class="font-alt">Quality:</h3>
+                                                <p class="text-muted mb-0">We are committed to delivering high-quality AI solutions that meet the highest standards of performance, reliability, and security.</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <!-- Feature item-->
+                                            <div class="text-center">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+                                                    <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+                                                </svg>
+                                                <h3 class="font-alt">Collaboration:</h3>
+                                                <p class="text-muted mb-0">We work closely with our clients, fostering a collaborative approach to ensure that our solutions align with their business objectives and drive measurable results. </p>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <!-- Feature item-->
+                                                    <div class="text-center">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+                                                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+                                                        </svg>
+                                                        <h3 class="font-alt">Innovation:</h3>
+                                                        <p class="text-muted mb-0">By staying at the forefront of AI advancements and leveraging strategic partnerships, we provide our clients with the most advanced and cutting-edge AI technologies. </p>
+                                                        </div>
+                                                
+                                                <li> </li>
+                                            </ul>
+                                            <p>Organica AI Solutions is a cutting-edge technology firm specializing in providing customized AI solutions in data analytics, blockchain, fintech, and machine learning. We cater to the needs of small and medium-sized companies across various industries, enabling them to leverage the power of artificial intelligence to streamline operations, enhance decision-making processes, and unlock new opportunities for growth.</p>
 
-        <h2>Why Choose Organica AI Solutions?</h2>
-        <ul>
-            <li>Expertise: Our team of AI experts brings extensive knowledge and experience in data analytics, blockchain, fintech, and machine learning, ensuring that we deliver innovative and effective solutions.</li>
-            <li>Customization: We understand that every business is unique. That's why we offer tailored AI solutions that address your specific needs and challenges.</li>
-            <li>Quality: We are committed to delivering high-quality AI solutions that meet the highest standards of performance, reliability, and security.</li>
-            <li>Collaboration: We work closely with our clients, fostering a collaborative approach to ensure that our solutions align with their business objectives and drive measurable results.</li>
-            <li>Innovation: By staying at the forefront of AI advancements and leveraging strategic partnerships, we provide our clients with the most advanced and cutting-edge AI technologies.</li>
-        </ul>
-
-        <div class="button-container">
-            <a href="{{ url_for('services') }}" class="button">Our Services</a>
-            <a href="{{ url_for('about') }}" class="button">About Us</a>
-            <a href="{{ url_for('contact') }}" class="button">Contact Us</a>
+            <style>
+                /* Apply margin to create space between pages */
+                body {
+                    margin: 500px; /* Adjust the value as per your desired spacing */
+                }
+            </style>
         </div>
-    </div>
 
-    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+        <div class="text-center">
+            <a href="/static/images/banner.gif">
+                <img src="/static/images/banner.gif" alt="Banner">
+            </a>
+            <style>
+                /* Apply margin to create space between pages */
+                body {
+                    margin: 200px; /* Adjust the value as per your desired spacing */
+                }
+            </style>
+        </div>
 
+    </section>
+
+    <script>
+        // Smooth scrolling function
+        function smoothScroll(target) {
+            document.querySelector(target).scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+    
+        // Add click event listeners to the navigation links
+        var links = document.querySelectorAll('a.scroll-link');
+        links.forEach(function(link) {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                var target = this.getAttribute('href');
+                smoothScroll(target);
+            });
+        });
+    </script>
+    <script src="{{ url_for('static', filename='/js/script.js') }}"></script>
 
 </body>
 </html>
+
+{% include 'services.html' %}
+{% include 'about.html' %}
+{% include 'contact.html' %}
+{% endblock %}

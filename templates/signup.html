@@ -2,17 +2,25 @@
 {% block content %}
 <html>
     <head>
-        <link rel="stylesheet" href="/css/styles.css">
+        <link rel="stylesheet" href="{{ url_for('static', filename='/css/styles.css') }}">
+        <style>
+            body {
+                background-image: url("https://static.vecteezy.com/system/resources/previews/002/960/691/non_2x/modern-futuristic-gradient-geometric-background-free-vector.jpg");
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+        </style>
     </head>
     <body>
-        <h1>Log In</h1>
+        <h1>Sign Up</h1>
         <br>
         <form action="/signup" method="post">
             <input type="text" name="username" placeholder="Username" required>
             <input type="password" name="password" placeholder="Password" required>
             <button type="submit">Sign Up</button>
         </form>
-        <script src="/js/script.js"></script>
+        <script src="{{ url_for('static', filename='/js/script.js') }}"></script>
     </body>
     <html>
 {% endblock %}

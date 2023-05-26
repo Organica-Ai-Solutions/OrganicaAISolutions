@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
     <title>Chatbot</title>
 </head>
 <body>
@@ -18,7 +18,7 @@
         <button id="send-button" onclick="sendInquiry()">Send</button>
     </div>
 
-    <script src="{{ url_for('static', filename='js/chatbot.js') }}"></script>
+    <script src="{{ url_for('static', filename='chatbot.js') }}"></script>
     <script>
         function sendInquiry() {
             var userInput = document.getElementById('user-input').value;
@@ -46,7 +46,6 @@
             request.send('message=' + userInput);
         }
     </script>
-    <script src="/js/script.js"></script>
-
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
 </html>

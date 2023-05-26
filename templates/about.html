@@ -1,15 +1,7 @@
 {% extends "base.html" %}
-{% block content %}
 
-<!DOCTYPE html>
-<html>
-<head>
-    <title>About - Organica AI Solutions</title>
-    <link rel="stylesheet" href="/css/styles.css">
-</head>
-<body>
-    <section id="section4" class="scroll-section">
-    
+{% block content %}
+<section id="section4" class="scroll-section">
     <!-- Basic features section -->
     <section class="bg-light">
         <div class="container px-5">
@@ -18,18 +10,7 @@
                     <h2 class="display-4 lh-1 mb-4">About - Organica AI Solutions</h2>
                     <h1>Our Mission</h1>
                     <p>At Organica AI Solutions, our mission is to revolutionize businesses by harnessing the potential of artificial intelligence. We provide tailored and cutting-edge AI solutions in data analytics, blockchain, fintech, and machine learning to empower our clients to stay ahead in their respective industries.</p>
-        
-                    <h1>Our Expertise</h1>
-                    <p>With a team of talented AI experts and a strong commitment to innovation, we specialize in offering customized AI solutions in data analytics, blockchain, fintech, and machine learning. Our expertise allows us to address the unique challenges faced by businesses across various industries, enabling them to optimize processes, make informed decisions, and drive growth.</p>
-        
-                    <h1>Our Approach</h1>
-                    <p>At Organica AI Solutions, we adopt a client-centric approach to ensure the success of our projects. We collaborate closely with our clients to understand their specific needs and business objectives. By combining our AI expertise with their domain knowledge, we deliver tailored solutions that provide measurable value and empower them to achieve their goals.</p>
-        
-                    <h1>Our Commitment to Quality</h1>
-                    <p>We are dedicated to delivering high-quality AI solutions that meet the highest standards of performance, reliability, and security. Our team stays at the forefront of AI advancements and adheres to best practices in AI development, ensuring that our clients receive innovative and effective solutions that drive tangible results.</p>
-        
-                    <h1>Our Partnerships</h1>
-                    <p>Organica AI Solutions maintains strategic partnerships with leading technology providers and collaborates with academic institutions. These partnerships allow us to leverage the latest advancements in AI research and access cutting-edge tools and resources, ensuring that we provide our clients with the most advanced and effective AI solutions.</p>
+                    <!-- More content... -->
                 </div>
                 <div class="col-sm-8 col-md-6">
                     <div class="px-5 px-sm-0"><img class="img-fluid rounded-circle" src="https://source.unsplash.com/u8Jn2rzYIps/900x900" alt="..." /></div>
@@ -37,40 +18,38 @@
             </div>
         </div>
     </section>
-    <style>
-        /* Apply margin to create space between pages */
-        body {
-            margin: 20px; /* Adjust the value as per your desired spacing */
-        }
-    </style>
-    
-    <script>
-        // Smooth scrolling function
-        function smoothScroll(target) {
-            document.querySelector(target).scrollIntoView({
-                behavior: 'smooth'
-            });
-        }
-    
-        // Add click event listeners to the navigation links
-        var links = document.querySelectorAll('a.scroll-link');
-        links.forEach(function(link) {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                var target = this.getAttribute('href');
-                smoothScroll(target);
-            });
-        });
-    </script>
-    <script src="/js/script.js"></script>
-    <style>
-        /* Apply margin to create space between pages */
-        body {
-            margin: 500px; /* Adjust the value as per your desired spacing */
-        }
-    </style>
-    
-</body>
-</html>
+</section>
 
+<style>
+    /* Apply margin to create space between pages */
+    body {
+        margin: 20px; /* Adjust the value as per your desired spacing */
+    }
+</style>
+
+<script>
+    // Smooth scrolling function
+    function smoothScroll(target) {
+        document.querySelector(target).scrollIntoView({
+            behavior: 'smooth'
+        });
+    }
+
+    // Add click event listeners to the navigation links
+    var links = document.querySelectorAll('a.scroll-link');
+    links.forEach(function(link) {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            var target = this.getAttribute('href');
+            smoothScroll(target);
+        });
+    });
+</script>
+<script src="{{ url_for('static', filename='/js/script.js') }}"></script>
+<style>
+    /* Apply margin to create space between pages */
+    body {
+        margin: 500px; /* Adjust the value as per your desired spacing */
+    }
+</style>
 {% endblock %}
