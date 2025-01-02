@@ -2,7 +2,7 @@
   "name": "organica-ai-solutions",
   "private": true,
   "version": "0.1.0",
-  "homepage": "https://organica-ai-solutions.github.io/OrganicaAISolutions",
+  "homepage": "https://organicaai.com",
   "type": "module",
   "scripts": {
     "dev": "vite",
