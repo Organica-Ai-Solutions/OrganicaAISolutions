@@ -8,6 +8,7 @@ import {
   CpuChipIcon,
 } from '@heroicons/react/24/outline'
 import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa'
+import AboutTeam from '../components/AboutTeam'
 
 const stats = [
   { name: 'Years Experience', value: '10+' },
@@ -232,46 +233,7 @@ export default function About() {
       </div>
 
       {/* Team section */}
-      <div className="mx-auto mt-32 max-w-7xl px-6 sm:mt-40 lg:px-8">
-        <div className="mx-auto max-w-2xl lg:mx-0">
-          <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Our Team</h2>
-          <p className="mt-6 text-lg leading-8 text-gray-600">
-            A dedicated team of experts committed to delivering exceptional mobile solutions.
-          </p>
-        </div>
-        <ul
-          role="list"
-          className="mx-auto mt-20 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-14 sm:grid-cols-2 lg:mx-0 lg:max-w-none"
-        >
-          {team.map((person) => (
-            <li key={person.name} className="group relative">
-              <div className="aspect-[3/4] w-full overflow-hidden rounded-2xl bg-gray-100">
-                <img 
-                  className="h-full w-full object-cover object-center transition duration-300 group-hover:scale-105" 
-                  src={person.imageUrl} 
-                  alt={person.name} 
-                />
-              </div>
-              <div className="mt-6">
-                <h3 className="text-lg font-semibold leading-8 text-gray-900">{person.name}</h3>
-                <p className="text-base leading-7 text-primary-600">{person.role}</p>
-                <p className="mt-4 text-sm leading-6 text-gray-600">{person.bio}</p>
-                <div className="mt-4 flex space-x-4">
-                  <a href={person.social.linkedin} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-primary-500">
-                    <FaLinkedin className="h-5 w-5" />
-                  </a>
-                  <a href={person.social.github} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-primary-500">
-                    <FaGithub className="h-5 w-5" />
-                  </a>
-                  <a href={person.social.twitter} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-primary-500">
-                    <FaTwitter className="h-5 w-5" />
-                  </a>
-                </div>
-              </div>
-            </li>
-          ))}
-        </ul>
-      </div>
+      <AboutTeam />
 
       {/* CTA section */}
       <div className="relative isolate mt-32 px-6 py-32 sm:mt-56 sm:py-40 lg:px-8">
