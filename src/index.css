@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 40% 98%;
+    --color-primary: 214 100% 50%;
+    --color-secondary: 301 100% 50%;
+    --color-accent: 348 100% 55%;
+  }
+
+  body {
+    @apply bg-background text-gray-900 antialiased;
+  }
+
+  ::selection {
+    @apply bg-primary-200 text-primary-900;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply rounded-md bg-gradient-to-r from-primary-600 to-accent 
+           px-3.5 py-2 text-sm font-semibold text-white shadow-md 
+           hover:shadow-lg hover:scale-105 transition-all;
+  }
+
+  .btn-secondary {
+    @apply rounded-md bg-white px-3.5 py-2 text-sm font-semibold 
+           text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 
+           hover:bg-gray-50 transition-all;
+  }
+
+  .nav-link {
+    @apply text-sm font-semibold leading-6 text-gray-900 
+           hover:text-primary-600 relative after:absolute 
+           after:bottom-0 after:left-0 after:h-0.5 after:w-0 
+           hover:after:w-full after:bg-primary-600 after:transition-all;
+  }
+} 
