@@ -1,9 +1,16 @@
 import { useState } from 'react'
+import { motion } from 'framer-motion'
 import {
   BuildingOffice2Icon,
   EnvelopeIcon,
   PhoneIcon
 } from '@heroicons/react/24/outline'
+
+const fadeIn = {
+  initial: { opacity: 0, y: 20 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 0.5 }
+}
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -40,13 +47,19 @@ export default function Contact() {
 
   return (
     <div className="relative isolate bg-white">
+      <div className="absolute inset-0 -z-10 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0B84F3] to-[#FF3D90] opacity-10" />
+      </div>
       <div className="mx-auto grid max-w-7xl grid-cols-1 lg:grid-cols-2">
-        <div className="relative px-6 pb-20 pt-24 sm:pt-32 lg:static lg:px-8 lg:py-48">
+        <motion.div 
+          {...fadeIn}
+          className="relative px-6 pb-20 pt-24 sm:pt-32 lg:static lg:px-8 lg:py-48"
+        >
           <div className="mx-auto max-w-xl lg:mx-0 lg:max-w-lg">
-            <div className="absolute inset-y-0 left-0 -z-10 w-full overflow-hidden bg-gray-100 ring-1 ring-gray-900/10 lg:w-1/2">
-              <div className="absolute inset-0 bg-gradient-to-br from-primary-50 to-primary-100" />
+            <div className="absolute inset-y-0 left-0 -z-10 w-full overflow-hidden lg:w-1/2">
+              <div className="absolute inset-0 bg-gradient-to-r from-[#0B84F3] to-[#FF3D90] opacity-20" />
             </div>
-            <h2 className="text-3xl font-bold tracking-tight text-gray-900">Contact Us</h2>
+            <h2 className="text-4xl font-bold tracking-tight bg-gradient-to-r from-[#0B84F3] to-[#FF3D90] bg-clip-text text-transparent sm:text-5xl">Contact Us</h2>
             <p className="mt-6 text-lg leading-8 text-gray-600">
               We're here to help you transform your business with innovative technology solutions.
               Contact us and discover how we can drive your digital success.
@@ -55,7 +68,7 @@ export default function Contact() {
               <div className="flex gap-x-4">
                 <dt className="flex-none">
                   <span className="sr-only">Address</span>
-                  <BuildingOffice2Icon className="h-7 w-6 text-gray-400" aria-hidden="true" />
+                  <BuildingOffice2Icon className="h-7 w-6 text-[#0B84F3]" aria-hidden="true" />
                 </dt>
                 <dd>
                   1438 N7th st.
@@ -68,10 +81,10 @@ export default function Contact() {
               <div className="flex gap-x-4">
                 <dt className="flex-none">
                   <span className="sr-only">Phone</span>
-                  <PhoneIcon className="h-7 w-6 text-gray-400" aria-hidden="true" />
+                  <PhoneIcon className="h-7 w-6 text-[#0B84F3]" aria-hidden="true" />
                 </dt>
                 <dd>
-                  <a className="hover:text-gray-900" href="tel:+1-215-888-8748">
+                  <a className="hover:text-[#FF3D90] transition-colors" href="tel:+1-215-888-8748">
                     +1-215-888-8748
                   </a>
                 </dd>
@@ -79,18 +92,22 @@ export default function Contact() {
               <div className="flex gap-x-4">
                 <dt className="flex-none">
                   <span className="sr-only">Email</span>
-                  <EnvelopeIcon className="h-7 w-6 text-gray-400" aria-hidden="true" />
+                  <EnvelopeIcon className="h-7 w-6 text-[#0B84F3]" aria-hidden="true" />
                 </dt>
                 <dd>
-                  <a className="hover:text-gray-900" href="mailto:contact@organicaai.com">
+                  <a className="hover:text-[#FF3D90] transition-colors" href="mailto:contact@organicaai.com">
                     contact@organicaai.com
                   </a>
                 </dd>
               </div>
             </dl>
           </div>
-        </div>
-        <form onSubmit={handleSubmit} className="px-6 pb-24 pt-20 sm:pb-32 lg:px-8 lg:py-48">
+        </motion.div>
+        <motion.form 
+          {...fadeIn}
+          onSubmit={handleSubmit} 
+          className="px-6 pb-24 pt-20 sm:pb-32 lg:px-8 lg:py-48"
+        >
           <div className="mx-auto max-w-xl lg:mr-0 lg:max-w-lg">
             <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
               <div>
@@ -103,7 +120,7 @@ export default function Contact() {
                     id="firstName"
                     value={formData.firstName}
                     onChange={handleChange}
-                    className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary-600 sm:text-sm sm:leading-6"
+                    className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 bg-white/50 backdrop-blur-sm placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#0B84F3] hover:ring-gray-400 transition-all duration-200 sm:text-sm sm:leading-6"
                   />
                 </div>
               </div>
@@ -117,7 +134,7 @@ export default function Contact() {
                     id="lastName"
                     value={formData.lastName}
                     onChange={handleChange}
-                    className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary-600 sm:text-sm sm:leading-6"
+                    className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 bg-white/50 backdrop-blur-sm placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#0B84F3] hover:ring-gray-400 transition-all duration-200 sm:text-sm sm:leading-6"
                   />
                 </div>
               </div>
@@ -131,7 +148,7 @@ export default function Contact() {
                     id="email"
                     value={formData.email}
                     onChange={handleChange}
-                    className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary-600 sm:text-sm sm:leading-6"
+                    className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 bg-white/50 backdrop-blur-sm placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#0B84F3] hover:ring-gray-400 transition-all duration-200 sm:text-sm sm:leading-6"
                   />
                 </div>
               </div>
@@ -145,7 +162,7 @@ export default function Contact() {
                     id="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary-600 sm:text-sm sm:leading-6"
+                    className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 bg-white/50 backdrop-blur-sm placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#0B84F3] hover:ring-gray-400 transition-all duration-200 sm:text-sm sm:leading-6"
                   />
                 </div>
               </div>
@@ -159,7 +176,7 @@ export default function Contact() {
                     id="company"
                     value={formData.company}
                     onChange={handleChange}
-                    className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary-600 sm:text-sm sm:leading-6"
+                    className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 bg-white/50 backdrop-blur-sm placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#0B84F3] hover:ring-gray-400 transition-all duration-200 sm:text-sm sm:leading-6"
                   />
                 </div>
               </div>
@@ -172,7 +189,7 @@ export default function Contact() {
                     id="service"
                     value={formData.service}
                     onChange={handleChange}
-                    className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-primary-600 sm:text-sm sm:leading-6"
+                    className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 bg-white/50 backdrop-blur-sm focus:ring-2 focus:ring-inset focus:ring-[#0B84F3] hover:ring-gray-400 transition-all duration-200 sm:text-sm sm:leading-6"
                   >
                     {services.map((service) => (
                       <option key={service} value={service}>
@@ -192,7 +209,7 @@ export default function Contact() {
                     rows={4}
                     value={formData.message}
                     onChange={handleChange}
-                    className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary-600 sm:text-sm sm:leading-6"
+                    className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 bg-white/50 backdrop-blur-sm placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#0B84F3] hover:ring-gray-400 transition-all duration-200 sm:text-sm sm:leading-6"
                   />
                 </div>
               </div>
@@ -200,13 +217,13 @@ export default function Contact() {
             <div className="mt-8 flex justify-end">
               <button
                 type="submit"
-                className="rounded-md bg-primary-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-primary-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600"
+                className="rounded-md bg-gradient-to-r from-[#0B84F3] to-[#FF3D90] px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0B84F3] transition-all duration-200"
               >
                 Send Message
               </button>
             </div>
           </div>
-        </form>
+        </motion.form>
       </div>
     </div>
   )
