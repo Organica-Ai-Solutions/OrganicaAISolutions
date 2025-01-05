@@ -25,8 +25,8 @@ const projects = [
     tech: ['Flutter', 'Firebase', 'Cloud Functions']
   },
   {
-    name: 'KAT App',
-    description: 'An innovative application designed to enhance and streamline specific business processes.',
+    name: 'KatApp',
+    description: 'A social media platform for cat owners with AI-powered health tracking. Features include video feeds, digital pet passports, feeding schedules, marketplace, adoption services, and fundraising capabilities.',
     status: 'In Development',
     tech: ['Flutter', 'Firebase', 'Cloud Firestore']
   }

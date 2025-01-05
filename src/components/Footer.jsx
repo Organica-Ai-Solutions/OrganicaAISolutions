@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FaLinkedin, FaGithub, FaTwitter } from 'react-icons/fa';
+import { FaLinkedin, FaGithub, FaXTwitter } from 'react-icons/fa6';
 import { motion } from 'framer-motion';
 
 const fadeIn = {
@@ -85,7 +85,7 @@ function Footer() {
             </h3>
             <div className="flex space-x-4">
               <a
-                href="https://linkedin.com/company/organica-ai-solutions"
+                href="https://www.linkedin.com/company/organica-ai-solution"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-600 hover:text-[#0B84F3] transition-colors"
@@ -93,7 +93,7 @@ function Footer() {
                 <FaLinkedin size={24} />
               </a>
               <a
-                href="https://github.com/organicaai"
+                href="https://github.com/orgs/Organica-Ai-Solutions"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-600 hover:text-[#0B84F3] transition-colors"
@@ -101,12 +101,12 @@ function Footer() {
                 <FaGithub size={24} />
               </a>
               <a
-                href="https://twitter.com/organicaai"
+                href="https://x.com/organicaai"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-600 hover:text-[#0B84F3] transition-colors"
               >
-                <FaTwitter size={24} />
+                <FaXTwitter size={24} />
               </a>
             </div>
           </motion.div>

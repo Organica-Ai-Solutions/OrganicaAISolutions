@@ -118,6 +118,7 @@ export default function Contact() {
                   <input
                     type="text"
                     id="firstName"
+                    required
                     value={formData.firstName}
                     onChange={handleChange}
                     className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 bg-white/50 backdrop-blur-sm placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#0B84F3] hover:ring-gray-400 transition-all duration-200 sm:text-sm sm:leading-6"
@@ -132,6 +133,7 @@ export default function Contact() {
                   <input
                     type="text"
                     id="lastName"
+                    required
                     value={formData.lastName}
                     onChange={handleChange}
                     className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 bg-white/50 backdrop-blur-sm placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#0B84F3] hover:ring-gray-400 transition-all duration-200 sm:text-sm sm:leading-6"
@@ -146,6 +148,7 @@ export default function Contact() {
                   <input
                     type="email"
                     id="email"
+                    required
                     value={formData.email}
                     onChange={handleChange}
                     className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 bg-white/50 backdrop-blur-sm placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#0B84F3] hover:ring-gray-400 transition-all duration-200 sm:text-sm sm:leading-6"
@@ -160,6 +163,7 @@ export default function Contact() {
                   <input
                     type="tel"
                     id="phone"
+                    required
                     value={formData.phone}
                     onChange={handleChange}
                     className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 bg-white/50 backdrop-blur-sm placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#0B84F3] hover:ring-gray-400 transition-all duration-200 sm:text-sm sm:leading-6"
@@ -174,6 +178,7 @@ export default function Contact() {
                   <input
                     type="text"
                     id="company"
+                    required
                     value={formData.company}
                     onChange={handleChange}
                     className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 bg-white/50 backdrop-blur-sm placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#0B84F3] hover:ring-gray-400 transition-all duration-200 sm:text-sm sm:leading-6"
@@ -207,6 +212,7 @@ export default function Contact() {
                   <textarea
                     id="message"
                     rows={4}
+                    required
                     value={formData.message}
                     onChange={handleChange}
                     className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 bg-white/50 backdrop-blur-sm placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#0B84F3] hover:ring-gray-400 transition-all duration-200 sm:text-sm sm:leading-6"
@@ -217,9 +223,10 @@ export default function Contact() {
             <div className="mt-8 flex justify-end">
               <button
                 type="submit"
-                className="rounded-md bg-gradient-to-r from-[#0B84F3] to-[#FF3D90] px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0B84F3] transition-all duration-200"
+                disabled={isSubmitting}
+                className="rounded-md bg-gradient-to-r from-[#0B84F3] to-[#FF3D90] px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0B84F3] transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                Send Message
+                {isSubmitting ? 'Sending...' : 'Send Message'}
               </button>
             </div>
           </div>
