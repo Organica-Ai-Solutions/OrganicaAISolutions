@@ -1,4 +1,5 @@
 import Chat from '../models/Chat.js';
+import { generateAIResponse } from '../utils/vertexAI.js';
 
 // Send a message and get response
 export const sendMessage = async (req, res) => {
@@ -10,8 +11,16 @@ export const sendMessage = async (req, res) => {
       return res.status(400).json({ message: 'Message is required' });
     }
     
-    // TODO: Integrate with AI service for response
-    const response = "This is a response from the backend server. AI integration is pending.";
+    // Generate response using Vertex AI
+    let response;
+    try {
+      response = await generateAIResponse(message);
+      console.log("AI Response generated successfully");
+    } catch (aiError) {
+      console.error("Error with AI response generation:", aiError);
+      // Fallback response if AI fails
+      response = "I'm currently experiencing technical difficulties. Our team has been notified of this issue. Please try again later or contact us directly at contact@organicaai.com.";
+    }
     
     const responseTime = Date.now() - startTime;
     
