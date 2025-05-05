@@ -6,21 +6,41 @@ export const sendMessage = async (req, res) => {
     const startTime = Date.now();
     const { message } = req.body;
     
+    if (!message) {
+      return res.status(400).json({ message: 'Message is required' });
+    }
+    
     // TODO: Integrate with AI service for response
-    const response = "This is a placeholder response. AI integration pending.";
+    const response = "This is a response from the backend server. AI integration is pending.";
     
     const responseTime = Date.now() - startTime;
     
-    const chat = await Chat.create({
-      user: req.user._id,
-      message,
-      response,
-      responseTime,
-      success: true
-    });
+    // Handle case when not authenticated (public endpoint)
+    let chat;
+    if (req.user) {
+      // Authenticated user
+      chat = await Chat.create({
+        user: req.user._id,
+        message,
+        response,
+        responseTime,
+        success: true
+      });
+    } else {
+      // Non-authenticated user (public endpoint)
+      chat = {
+        message,
+        response,
+        responseTime,
+        success: true,
+        createdAt: new Date()
+      };
+      // We don't save to database for unauthenticated users
+    }
 
     res.status(201).json(chat);
   } catch (error) {
+    console.error('Error in sendMessage:', error);
     res.status(500).json({ message: error.message });
   }
 };

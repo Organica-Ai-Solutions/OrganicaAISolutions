@@ -14,6 +14,11 @@ const router = express.Router();
 // @access  Private
 router.post('/message', protect, sendMessage);
 
+// @route   POST /api/chat/public-message
+// @desc    Send a message without authentication (for testing)
+// @access  Public
+router.post('/public-message', sendMessage);
+
 // @route   GET /api/chat/history
 // @desc    Get chat history
 // @access  Private

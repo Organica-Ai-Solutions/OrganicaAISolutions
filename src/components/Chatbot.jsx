@@ -86,18 +86,14 @@ export default function Chatbot() {
 
     try {
       // Add debugging message to help diagnose connection issues
-      console.log('Attempting to connect to backend at:', 'https://organicaai-backend.onrender.com/api/chat/message');
+      console.log('Attempting to connect to backend at:', 'https://organicaai-backend.onrender.com/api/chat/public-message');
       
-      // Try to use the real API with the hardcoded Render URL
-      const response = await fetch('https://organicaai-backend.onrender.com/api/chat/message', {
+      // Try to use the real API with the hardcoded Render URL and public endpoint
+      const response = await fetch('https://organicaai-backend.onrender.com/api/chat/public-message', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          // Include any auth token if available
-          ...((localStorage.getItem('token')) ? 
-            { 'Authorization': `Bearer ${localStorage.getItem('token')}` } : {})
-        },
-        body: JSON.stringify({ message: inputMessage })
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message: inputMessage }),
+        mode: 'cors', // Explicitly set CORS mode
       });
 
       // Check if the response is valid
@@ -112,10 +108,23 @@ export default function Chatbot() {
         };
         setMessages((prev) => [...prev, botMessage]);
       } else {
+        console.error(`Backend returned error status: ${response.status}`, await response.text());
         throw new Error(`Backend returned status: ${response.status}`);
       }
     } catch (error) {
-      console.log('Chat API error:', error)
+      console.error('Chat API error details:', error.message, error.stack);
+      
+      // First try the public health endpoint to confirm basic connectivity
+      try {
+        console.log("Testing basic backend connectivity with health endpoint");
+        const healthCheck = await fetch('https://organicaai-backend.onrender.com/health');
+        if (healthCheck.ok) {
+          console.log("Health endpoint connected successfully, but chat API failed");
+          console.log("Health response:", await healthCheck.json());
+        }
+      } catch (healthError) {
+        console.error("Health endpoint also failed:", healthError);
+      }
       
       // Generate a more informative response if the API fails
       let mockResponse = "I'm sorry, I can't connect to our backend service at the moment. Our team has been notified and is working to restore service.";
