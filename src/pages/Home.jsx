@@ -211,6 +211,40 @@ export default function Home() {
         </div>
       </div>
 
+      {/* NIS Protocol Featured Research Section */}
+      <section className="bg-green-50 py-16">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-green-800 mb-8 text-center">
+            Featured Research Project
+          </h2>
+          
+          <div className="flex flex-col md:flex-row items-center bg-white rounded-xl shadow-lg overflow-hidden">
+            <div className="md:w-1/2">
+              <img 
+                src="/images/nis-protocol/nis-protocol-logo.png" 
+                alt="NIS Protocol" 
+                className="w-full h-auto"
+              />
+            </div>
+            <div className="md:w-1/2 p-8">
+              <h3 className="text-2xl font-bold text-green-700 mb-4">
+                Introducing the NIS Protocol
+              </h3>
+              <p className="text-gray-700 mb-6">
+                Our latest innovation in AI research - a biologically inspired framework 
+                for designing intelligent multi-agent systems that mimic human cognitive processes.
+              </p>
+              <Link 
+                to="/projects/nis-protocol" 
+                className="inline-block bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300"
+              >
+                Explore the Protocol
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA section */}
       <div className="relative isolate mt-32 sm:mt-56">
         <div className="absolute inset-0 -z-10 overflow-hidden bg-gradient-to-r from-[#0B84F3] to-[#FF3D90]">

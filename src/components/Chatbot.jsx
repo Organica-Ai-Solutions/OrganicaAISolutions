@@ -58,7 +58,7 @@ export default function Chatbot() {
   const [isOpen, setIsOpen] = useState(false)
   const [messages, setMessages] = useState([
     {
-      content: "¡Hola! Soy tu asistente de Organica AI. ¿Cómo puedo ayudarte con nuestras soluciones tecnológicas?",
+      content: "Hello! I'm your Organica AI assistant. How can I help you with our technology solutions?",
       isUser: false,
     },
   ])
@@ -85,6 +85,7 @@ export default function Chatbot() {
     setIsLoading(true)
 
     try {
+      // Try to use the real API
       const response = await chatService.sendMessage(inputMessage)
       const botMessage = {
         content: response.message,
@@ -93,8 +94,30 @@ export default function Chatbot() {
       }
       setMessages((prev) => [...prev, botMessage])
     } catch (error) {
+      console.log('Chat API error:', error)
+      
+      // Generate a mock response if the API fails
+      let mockResponse = "I'm sorry, I can't connect to the server at the moment.";
+      
+      // Simple keyword-based responses when backend is unavailable
+      const lowercaseInput = inputMessage.toLowerCase();
+      
+      if (lowercaseInput.includes('hello') || lowercaseInput.includes('hi')) {
+        mockResponse = "Hello! How can I assist you today?";
+      } else if (lowercaseInput.includes('ai solutions') || lowercaseInput.includes('solutions')) {
+        mockResponse = "Organica AI offers solutions in mobile app development, AI integration, and blockchain technology. Would you like to know more about a specific area?";
+      } else if (lowercaseInput.includes('mobile') || lowercaseInput.includes('app')) {
+        mockResponse = "Our mobile development team creates intuitive applications with optimized user experiences. We specialize in community-focused and business solutions.";
+      } else if (lowercaseInput.includes('blockchain') || lowercaseInput.includes('crypto')) {
+        mockResponse = "Our blockchain services include secure payment processing, financial management solutions, and implementing blockchain security for various applications.";
+      } else if (lowercaseInput.includes('security') || lowercaseInput.includes('cyber')) {
+        mockResponse = "We provide comprehensive cybersecurity solutions to protect your digital assets and ensure data privacy.";
+      } else if (lowercaseInput.includes('contact') || lowercaseInput.includes('help')) {
+        mockResponse = "You can contact our team at contact@organicaai.com or visit our Contact page for more information.";
+      }
+      
       const errorMessage = {
-        content: 'Lo siento, encontré un error. Por favor, intenta de nuevo.',
+        content: mockResponse,
         isUser: false,
       }
       setMessages((prev) => [...prev, errorMessage])
@@ -104,16 +127,16 @@ export default function Chatbot() {
   }
 
   const suggestions = [
-    'Cuéntame sobre sus soluciones de IA',
-    '¿Cómo pueden ayudar con desarrollo móvil?',
-    '¿Qué servicios de blockchain ofrecen?',
-    'Explica sus soluciones de ciberseguridad',
+    'Tell me about your AI solutions',
+    'How can you help with mobile development?',
+    'What blockchain services do you offer?',
+    'Explain your cybersecurity solutions',
   ]
 
   const clearChat = () => {
     setMessages([
       {
-        content: "¡Hola! Soy tu asistente de Organica AI. ¿Cómo puedo ayudarte con nuestras soluciones tecnológicas?",
+        content: "Hello! I'm your Organica AI assistant. How can I help you with our technology solutions?",
         isUser: false,
       },
     ])
@@ -134,7 +157,7 @@ export default function Chatbot() {
         <div className="fixed bottom-20 right-4 w-96 bg-white rounded-xl shadow-2xl border border-gray-200 transform transition-all duration-300 animate-slide-up">
           {/* Header */}
           <div className="flex items-center justify-between p-4 border-b border-gray-200 bg-gradient-to-r from-primary-600 to-accent rounded-t-xl">
-            <h3 className="text-lg font-semibold text-white">Asistente AI</h3>
+            <h3 className="text-lg font-semibold text-white">AI Assistant</h3>
             <div className="flex items-center space-x-2">
               <button
                 onClick={clearChat}
@@ -195,7 +218,7 @@ export default function Chatbot() {
                 type="text"
                 value={inputMessage}
                 onChange={(e) => setInputMessage(e.target.value)}
-                placeholder="Escribe tu mensaje..."
+                placeholder="Type your message..."
                 className="flex-1 rounded-lg border border-gray-300 px-4 py-2 
                 focus:outline-none focus:ring-2 focus:ring-primary-500/20 focus:border-primary-500 
                 bg-gray-50 placeholder:text-gray-400"

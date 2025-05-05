@@ -16,6 +16,9 @@ import Dashboard from './pages/Dashboard'
 import Profile from './pages/Profile'
 import NotFound from './pages/NotFound'
 import Chat from './pages/Chat'
+import Projects from './pages/Projects'
+import NISProtocol from './pages/NISProtocol'
+import NISProtocolRedirect from './components/NISProtocolRedirect'
 
 function App() {
   return (
@@ -67,6 +70,9 @@ function App() {
                 </ProtectedRoute>
               } />
               <Route path="/chat" element={<Chat />} />
+              <Route path="/projects" element={<Projects />} />
+              <Route path="/projects/nis-protocol" element={<NISProtocol />} />
+              <Route path="/nisprotocol" element={<NISProtocolRedirect />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </main>
