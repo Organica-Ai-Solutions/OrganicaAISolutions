@@ -14,8 +14,8 @@ function Footer() {
     <footer className="relative bg-white border-t">
       <div className="absolute inset-0 bg-gradient-to-r from-[#0B84F3]/5 to-[#FF3D90]/5" />
       <div className="relative max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          <motion.div {...fadeIn}>
+        <div className="grid grid-cols-1 md:grid-cols-6 gap-8">
+          <motion.div {...fadeIn} className="md:col-span-1">
             <h3 className="text-lg font-semibold mb-4 bg-gradient-to-r from-[#0B84F3] to-[#FF3D90] bg-clip-text text-transparent">
               Organica AI Solutions
             </h3>
@@ -45,6 +45,11 @@ function Footer() {
                 </Link>
               </li>
               <li>
+                <Link to="/projects" className="text-gray-600 hover:text-[#0B84F3] transition-colors text-sm">
+                  Projects
+                </Link>
+              </li>
+              <li>
                 <Link to="/contact" className="text-gray-600 hover:text-[#0B84F3] transition-colors text-sm">
                   Contact
                 </Link>
@@ -53,6 +58,47 @@ function Footer() {
           </motion.div>
 
           <motion.div {...fadeIn} transition={{ delay: 0.2 }}>
+            <h3 className="text-lg font-semibold mb-4 bg-gradient-to-r from-[#0B84F3] to-[#FF3D90] bg-clip-text text-transparent">
+              Projects
+            </h3>
+            <ul className="space-y-2">
+              <li>
+                <Link to="/projects" className="text-gray-600 hover:text-[#0B84F3] transition-colors text-sm">
+                  All Projects
+                </Link>
+              </li>
+              <li>
+                <Link to="/projects/nis-protocol" className="text-gray-600 hover:text-[#0B84F3] transition-colors text-sm">
+                  NIS Protocol
+                </Link>
+              </li>
+            </ul>
+          </motion.div>
+
+          <motion.div {...fadeIn} transition={{ delay: 0.3 }}>
+            <h3 className="text-lg font-semibold mb-4 bg-gradient-to-r from-[#0B84F3] to-[#FF3D90] bg-clip-text text-transparent">
+              Legal
+            </h3>
+            <ul className="space-y-2">
+              <li>
+                <Link to="/privacy" className="text-gray-600 hover:text-[#0B84F3] transition-colors text-sm">
+                  Privacy Policy
+                </Link>
+              </li>
+              <li>
+                <Link to="/terms" className="text-gray-600 hover:text-[#0B84F3] transition-colors text-sm">
+                  Terms of Service
+                </Link>
+              </li>
+              <li>
+                <Link to="/legal" className="text-gray-600 hover:text-[#0B84F3] transition-colors text-sm">
+                  Legal Information
+                </Link>
+              </li>
+            </ul>
+          </motion.div>
+
+          <motion.div {...fadeIn} transition={{ delay: 0.4 }}>
             <h3 className="text-lg font-semibold mb-4 bg-gradient-to-r from-[#0B84F3] to-[#FF3D90] bg-clip-text text-transparent">
               Contact
             </h3>
@@ -79,7 +125,7 @@ function Footer() {
             </ul>
           </motion.div>
           
-          <motion.div {...fadeIn} transition={{ delay: 0.3 }}>
+          <motion.div {...fadeIn} transition={{ delay: 0.5 }}>
             <h3 className="text-lg font-semibold mb-4 bg-gradient-to-r from-[#0B84F3] to-[#FF3D90] bg-clip-text text-transparent">
               Follow Us
             </h3>
@@ -114,7 +160,7 @@ function Footer() {
         
         <motion.div 
           {...fadeIn} 
-          transition={{ delay: 0.4 }}
+          transition={{ delay: 0.6 }}
           className="mt-12 pt-8 border-t border-gray-200"
         >
           <p className="text-center text-gray-500 text-sm">
