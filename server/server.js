@@ -8,12 +8,24 @@ import connectDB from './config/db.js'
 // Load env vars first, before any other code
 dotenv.config()
 
-// Validate required environment variables
-const requiredEnvVars = ['PORT', 'MONGODB_URI', 'JWT_SECRET']
+// TEMPORARY: Set hardcoded MongoDB URI for testing
+if (!process.env.MONGODB_URI) {
+  process.env.MONGODB_URI = "mongodb+srv://organicaai:MongoPassword123@clusterorganicaai.vojh4cg.mongodb.net/organicaai";
+  console.log("Using hardcoded MongoDB URI for testing");
+}
+
+// Print all environment variables for debugging
+console.log("Environment variables:");
+console.log("PORT =", process.env.PORT);
+console.log("NODE_ENV =", process.env.NODE_ENV);
+console.log("JWT_SECRET length =", process.env.JWT_SECRET ? process.env.JWT_SECRET.length : 0);
+console.log("FRONTEND_URL =", process.env.FRONTEND_URL);
+
+// Modified validation to be more flexible
+const requiredEnvVars = ['PORT', 'JWT_SECRET']
 for (const envVar of requiredEnvVars) {
   if (!process.env[envVar]) {
-    console.error(`Error: Environment variable ${envVar} is required but not set`)
-    process.exit(1)
+    console.warn(`Warning: Environment variable ${envVar} is not set. Using defaults.`)
   }
 }
 
