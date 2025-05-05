@@ -85,14 +85,35 @@ export default function Chatbot() {
     setIsLoading(true)
 
     try {
-      // Try to use the real API
-      const response = await chatService.sendMessage(inputMessage)
-      const botMessage = {
-        content: response.message,
-        isUser: false,
-        links: response.links,
+      // Add debugging message to help diagnose connection issues
+      console.log('Attempting to connect to backend at:', 'https://organicaai-backend.onrender.com/api/chat/message');
+      
+      // Try to use the real API with the hardcoded Render URL
+      const response = await fetch('https://organicaai-backend.onrender.com/api/chat/message', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          // Include any auth token if available
+          ...((localStorage.getItem('token')) ? 
+            { 'Authorization': `Bearer ${localStorage.getItem('token')}` } : {})
+        },
+        body: JSON.stringify({ message: inputMessage })
+      });
+
+      // Check if the response is valid
+      if (response.ok) {
+        const data = await response.json();
+        console.log('Backend response:', data);
+        
+        const botMessage = {
+          content: data.response || "I received your message but couldn't generate a proper response.",
+          isUser: false,
+          links: data.links || [],
+        };
+        setMessages((prev) => [...prev, botMessage]);
+      } else {
+        throw new Error(`Backend returned status: ${response.status}`);
       }
-      setMessages((prev) => [...prev, botMessage])
     } catch (error) {
       console.log('Chat API error:', error)
       
