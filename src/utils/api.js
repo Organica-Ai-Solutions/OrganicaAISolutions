@@ -59,8 +59,27 @@ export const updateProfile = (data) => {
 export const chatService = {
   sendMessage: async (message) => {
     try {
-      const response = await api.post('/chat/message', { message });
-      return response.data;
+      // Check Render backend first
+      const renderUrl = import.meta.env.VITE_API_URL || 'https://organicaai-backend.onrender.com/api';
+      const customApi = axios.create({
+        baseURL: renderUrl,
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        timeout: 10000 // 10 second timeout
+      });
+      
+      // Try to use the custom API first with Render URL
+      try {
+        const response = await customApi.post('/chat/message', { message });
+        console.log('Successfully connected to Render backend');
+        return response.data;
+      } catch (renderError) {
+        console.error("Error connecting to Render backend:", renderError);
+        // Fall back to the regular API
+        const response = await api.post('/chat/message', { message });
+        return response.data;
+      }
     } catch (error) {
       console.error("Error sending chat message:", error);
       // Instead of throwing the error, return a mock response

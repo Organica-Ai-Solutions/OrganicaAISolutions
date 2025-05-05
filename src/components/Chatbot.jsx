@@ -96,24 +96,24 @@ export default function Chatbot() {
     } catch (error) {
       console.log('Chat API error:', error)
       
-      // Generate a mock response if the API fails
-      let mockResponse = "I'm sorry, I can't connect to the server at the moment.";
+      // Generate a more informative response if the API fails
+      let mockResponse = "I'm sorry, I can't connect to our backend service at the moment. Our team has been notified and is working to restore service.";
       
       // Simple keyword-based responses when backend is unavailable
       const lowercaseInput = inputMessage.toLowerCase();
       
       if (lowercaseInput.includes('hello') || lowercaseInput.includes('hi')) {
-        mockResponse = "Hello! How can I assist you today?";
+        mockResponse = "Hello! I'm currently running in offline mode as we're experiencing connection issues with our backend service. How can I assist you with basic information today?";
       } else if (lowercaseInput.includes('ai solutions') || lowercaseInput.includes('solutions')) {
-        mockResponse = "Organica AI offers solutions in mobile app development, AI integration, and blockchain technology. Would you like to know more about a specific area?";
+        mockResponse = "Organica AI offers solutions in mobile app development, AI integration, and blockchain technology. For more detailed information, please try again later when our backend services are fully operational.";
       } else if (lowercaseInput.includes('mobile') || lowercaseInput.includes('app')) {
-        mockResponse = "Our mobile development team creates intuitive applications with optimized user experiences. We specialize in community-focused and business solutions.";
+        mockResponse = "Our mobile development team creates intuitive applications with optimized user experiences. We specialize in community-focused and business solutions. Please contact us directly for a more detailed conversation about your specific needs.";
       } else if (lowercaseInput.includes('blockchain') || lowercaseInput.includes('crypto')) {
-        mockResponse = "Our blockchain services include secure payment processing, financial management solutions, and implementing blockchain security for various applications.";
-      } else if (lowercaseInput.includes('security') || lowercaseInput.includes('cyber')) {
-        mockResponse = "We provide comprehensive cybersecurity solutions to protect your digital assets and ensure data privacy.";
+        mockResponse = "Our blockchain services include secure payment processing, financial management solutions, and implementing blockchain security for various applications. For specific project inquiries, please email us at contact@organicaai.com.";
+      } else if (lowercaseInput.includes('backend') || lowercaseInput.includes('error') || lowercaseInput.includes('not working')) {
+        mockResponse = "Our backend service is temporarily unavailable. The connection issue has been automatically reported to our development team, and they are working to resolve it as quickly as possible. Please try again later.";
       } else if (lowercaseInput.includes('contact') || lowercaseInput.includes('help')) {
-        mockResponse = "You can contact our team at contact@organicaai.com or visit our Contact page for more information.";
+        mockResponse = "You can contact our team at contact@organicaai.com or visit our Contact page for more information. We apologize for the limited functionality right now and appreciate your patience.";
       }
       
       const errorMessage = {
