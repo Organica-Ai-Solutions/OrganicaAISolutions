@@ -59,11 +59,14 @@ import chatRoutes from './routes/chat.js'
 app.use('/api/auth', authRoutes)
 app.use('/api/chat', chatRoutes)
 
-// Health check endpoint
+// Health check endpoint - more explicit for Render hosting
 app.get('/health', (req, res) => {
   res.status(200).json({ 
     status: 'ok',
-    timestamp: new Date().toISOString()
+    timestamp: new Date().toISOString(),
+    port: PORT,
+    environment: process.env.NODE_ENV || 'development',
+    mongodb_connected: true
   })
 })
 
@@ -90,7 +93,18 @@ app.use('*', (req, res) => {
 })
 
 // Start server
-const PORT = process.env.PORT || 5000
+const PORT = (() => {
+  // Parse PORT environment variable to handle Render's format
+  if (process.env.PORT) {
+    // Handle case where PORT might be formatted as "PORT=10000"
+    if (process.env.PORT.includes('=')) {
+      return process.env.PORT.split('=')[1];
+    }
+    return process.env.PORT;
+  }
+  return 5000; // Default port
+})();
+
 const server = app.listen(PORT, () => {
   console.log(`
 Server is running:
