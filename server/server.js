@@ -78,13 +78,14 @@ app.use('*', (req, res) => {
 })
 
 // Start server
-const PORT = process.env.PORT
+const PORT = process.env.PORT || 5000
 const server = app.listen(PORT, () => {
   console.log(`
 Server is running:
 - Port: ${PORT}
 - Environment: ${process.env.NODE_ENV || 'development'}
-- MongoDB: ${process.env.MONGODB_URI}
+- MongoDB URI present: ${process.env.MONGODB_URI ? 'Yes' : 'No'}
+- MONGODB_URI length: ${process.env.MONGODB_URI ? process.env.MONGODB_URI.length : 0}
   `)
 })
 

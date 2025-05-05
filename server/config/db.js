@@ -2,9 +2,15 @@ import mongoose from 'mongoose'
 
 const connectDB = async () => {
   try {
-    const conn = await mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/organicaai', {
-      serverSelectionTimeoutMS: 5000, // Timeout after 5s instead of 30s
-      socketTimeoutMS: 45000, // Close sockets after 45s of inactivity
+    // Print the connection string with password masked
+    const connectionString = process.env.MONGODB_URI || 'mongodb://localhost:27017/organicaai';
+    const maskedString = connectionString.replace(/:([^@]+)@/, ':****@');
+    console.log(`Attempting to connect to MongoDB with: ${maskedString}`);
+    
+    // Connect with simplified options
+    const conn = await mongoose.connect(connectionString, {
+      serverSelectionTimeoutMS: 10000, // Increased timeout to 10s
+      socketTimeoutMS: 45000,
     })
 
     console.log(`MongoDB Connected: ${conn.connection.host}`)
@@ -24,6 +30,7 @@ const connectDB = async () => {
 
   } catch (error) {
     console.error(`Error connecting to MongoDB: ${error.message}`)
+    console.error(`Full error: ${JSON.stringify(error, null, 2)}`)
     // Exit with failure if this is the initial connection
     process.exit(1)
   }
