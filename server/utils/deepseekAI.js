@@ -5,10 +5,15 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 // Initialize OpenAI with DeepSeek configuration
-const deepseekClient = new OpenAI({
-  apiKey: process.env.DEEPSEEK_API_KEY,
-  baseURL: 'https://api.deepseek.com',
-});
+let deepseekClient;
+try {
+  deepseekClient = new OpenAI({
+    apiKey: process.env.DEEPSEEK_API_KEY || 'dummy-key-if-not-available',
+    baseURL: 'https://api.deepseek.com',
+  });
+} catch (error) {
+  console.error('Failed to initialize DeepSeek client:', error.message);
+}
 
 // System prompt with website context
 const SYSTEM_PROMPT = `
@@ -41,6 +46,11 @@ export async function generateAIResponse(message) {
   try {
     console.log(`Generating DeepSeek AI response for: ${message}`);
     
+    // Check if the client is available
+    if (!deepseekClient) {
+      throw new Error('DeepSeek client is not initialized');
+    }
+    
     const completion = await deepseekClient.chat.completions.create({
       model: "deepseek-chat", // Using the latest DeepSeek-V3 model
       messages: [
@@ -66,6 +76,11 @@ export async function generateAIResponse(message) {
 export async function generateReasoningResponse(message) {
   try {
     console.log(`Generating DeepSeek reasoning response for: ${message}`);
+    
+    // Check if the client is available
+    if (!deepseekClient) {
+      throw new Error('DeepSeek client is not initialized');
+    }
     
     const completion = await deepseekClient.chat.completions.create({
       model: "deepseek-reasoner", // Using the DeepSeek-R1 reasoning model
