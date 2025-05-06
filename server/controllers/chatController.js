@@ -1,5 +1,5 @@
 import Chat from '../models/Chat.js';
-import { generateAIResponse } from '../utils/vertexAI.js';
+import { generateAIResponse } from '../utils/deepseekAI.js';
 
 // Send a message and get response
 export const sendMessage = async (req, res) => {
