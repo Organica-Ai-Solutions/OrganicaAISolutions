@@ -2,28 +2,72 @@ import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import {
   CpuChipIcon,
-  EyeIcon,
-  ShieldCheckIcon,
+  CurrencyDollarIcon,
+  CommandLineIcon,
+  ChartBarIcon,
+  DevicePhoneMobileIcon,
+  BeakerIcon,
 } from '@heroicons/react/24/outline'
-import NISProtocolIntegration from '../components/NISProtocolIntegration'
 import SEOIntegration, { getPageSEO } from '../components/shared/SEOIntegration'
 
 const features = [
   {
+    name: 'FinTech AI Solutions',
+    description: 'Advanced AI trading systems like AlphaCortex with LLM-powered decision making, real-time market analysis, and autonomous execution.',
+    icon: CurrencyDollarIcon,
+  },
+  {
     name: 'Consciousness-Level AI',
-    description: 'Pioneering self-aware AI agents with meta-cognitive processing and autonomous goal formulation capabilities.',
+    description: 'Pioneering frameworks like NIS Protocol v2.0 for self-aware AI agents with meta-cognitive processing and biological inspiration.',
     icon: CpuChipIcon,
   },
   {
-    name: 'Cultural Intelligence',
-    description: 'Ethically-conscious AI systems with deep cultural sensitivity for indigenous rights and archaeological heritage preservation.',
-    icon: ShieldCheckIcon,
+    name: 'Developer AI Tools',
+    description: 'Intelligent coding assistants like Orion with MCP integration, automated code generation, and enhanced development workflows.',
+    icon: CommandLineIcon,
   },
   {
-    name: 'Multi-Provider Integration',
-    description: 'Seamless orchestration across OpenAI, Anthropic, DeepSeek, and BitNet 2 with automatic failover and cost optimization.',
-    icon: EyeIcon,
+    name: 'Business Intelligence',
+    description: 'Comprehensive analytics platforms and data science solutions for retail, finance, and enterprise decision-making.',
+    icon: ChartBarIcon,
   },
+  {
+    name: 'Mobile AI Applications',
+    description: 'Community-focused mobile applications and smart portfolio management systems with integrated AI capabilities.',
+    icon: DevicePhoneMobileIcon,
+  },
+  {
+    name: 'Research & Innovation',
+    description: 'Cutting-edge research in multi-agent systems, cultural intelligence AI, and next-generation cognitive architectures.',
+    icon: BeakerIcon,
+  },
+]
+
+const featuredProjects = [
+  {
+    title: 'AlphaCortex',
+    description: 'Autonomous AI Trading System',
+    category: 'FinTech AI',
+    color: 'emerald'
+  },
+  {
+    title: 'NIS Protocol v2.0',
+    description: 'Consciousness-Level Framework',
+    category: 'AI Research',
+    color: 'blue'
+  },
+  {
+    title: 'Orion',
+    description: 'Coding AI Agent',
+    category: 'Developer Tools',
+    color: 'purple'
+  },
+  {
+    title: 'Business Analytics',
+    description: 'Data Science Platform',
+    category: 'Business Intelligence',
+    color: 'orange'
+  }
 ]
 
 const fadeIn = {
@@ -52,18 +96,18 @@ export default function Home() {
             <div className="mx-auto max-w-2xl">
               <div className="max-w-lg">
                 <h1 className="mt-10 text-4xl font-bold tracking-tight text-white sm:text-6xl">
-                  Consciousness-Level AI Solutions
+                  AI Solutions for Every Industry
                 </h1>
                 <p className="mt-6 text-lg leading-8 text-gray-100">
-                  Pioneering the future of ethical artificial intelligence through biologically-inspired 
-                  multi-agent systems and advanced cognitive architectures.
+                  From AI trading systems and developer tools to consciousness-level frameworks and 
+                  business intelligence. Building intelligent software that transforms industries.
                 </p>
                 <div className="mt-10 flex items-center gap-x-6">
                   <Link
-                    to="/services"
+                    to="/projects"
                     className="rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-transparent bg-clip-text bg-gradient-to-r from-[#0B84F3] to-[#FF3D90] shadow-sm hover:bg-gray-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white transition-all duration-200"
                   >
-                    Explore NIS Protocol
+                    View Our Projects
                   </Link>
                   <Link to="/contact" className="text-sm font-semibold leading-6 text-white hover:text-gray-100">
                     Get in Touch <span aria-hidden="true">→</span>
@@ -79,99 +123,18 @@ export default function Home() {
             className="mt-20 sm:mt-24 md:mx-auto md:max-w-2xl lg:mx-0 lg:mt-0 lg:w-screen"
           >
             <div className="shadow-lg md:rounded-3xl bg-white/10 backdrop-blur-sm p-8">
-              <div className="grid grid-cols-1 gap-8 sm:grid-cols-2">
-                {/* Tanda Circles Phone */}
-                <div className="relative w-full max-w-[320px] mx-auto aspect-[1/2] drop-shadow-2xl">
-                  {/* iPhone frame */}
-                  <img
-                    src="/images/portrait_black.png"
-                    alt="iPhone frame"
-                    className="absolute inset-0 w-full h-full object-contain z-10 drop-shadow-xl"
-                  />
-                  {/* App content container */}
-                  <div className="absolute inset-[3%] rounded-[2.5rem] overflow-hidden">
-                    {/* Video background */}
-                    <video
-                      autoPlay
-                      loop
-                      muted
-                      playsInline
-                      className="absolute inset-0 w-full h-full object-cover"
-                    >
-                      <source src="/images/demo-screen.mp4" type="video/mp4" />
-                    </video>
-                    {/* Gradient overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-[#0B84F3] to-[#FF3D90] opacity-80"></div>
-                    {/* Content */}
-                    <div className="absolute inset-0 flex flex-col px-8 pt-20">
-                      <div className="space-y-2">
-                        <h3 className="text-[3.5rem] font-bold text-white leading-none">NIS</h3>
-                        <h3 className="text-[3.5rem] font-bold text-white leading-none">Protocol</h3>
+              <div className="grid grid-cols-2 gap-6">
+                {featuredProjects.map((project, index) => (
+                  <div key={project.title} className="relative bg-white/20 backdrop-blur-sm rounded-2xl p-6 hover:bg-white/30 transition-all duration-300">
+                    <div className="space-y-3">
+                      <div className={`inline-flex px-3 py-1 rounded-full text-xs font-semibold bg-${project.color}-100 text-${project.color}-800`}>
+                        {project.category}
                       </div>
-                      <div className="mt-8 space-y-3">
-                        <p className="text-2xl leading-tight text-white">
-                          Biologically-inspired framework
-                        </p>
-                        <p className="text-2xl leading-tight text-white">
-                          for consciousness-level AI
-                        </p>
-                        <p className="text-2xl leading-tight text-white">
-                          and multi-agent systems.
-                        </p>
-                      </div>
-                      <div className="mt-auto mb-12">
-                        <span className="text-xl font-medium text-white/80">
-                          v2.0 Active
-                        </span>
-                      </div>
+                      <h3 className="text-xl font-bold text-white">{project.title}</h3>
+                      <p className="text-white/80 text-sm">{project.description}</p>
                     </div>
                   </div>
-                </div>
-
-                {/* KAT App Phone */}
-                <div className="relative w-full max-w-[320px] mx-auto aspect-[1/2] drop-shadow-2xl">
-                  {/* iPhone frame */}
-                  <img
-                    src="/images/portrait_black.png"
-                    alt="iPhone frame"
-                    className="absolute inset-0 w-full h-full object-contain z-10 drop-shadow-xl"
-                  />
-                  {/* App content container */}
-                  <div className="absolute inset-[3%] rounded-[2.5rem] overflow-hidden">
-                    {/* Video background */}
-                    <video
-                      autoPlay
-                      loop
-                      muted
-                      playsInline
-                      className="absolute inset-0 w-full h-full object-cover"
-                    >
-                      <source src="/images/demo-screen.mp4" type="video/mp4" />
-                    </video>
-                    {/* Gradient overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-[#0B84F3] to-[#FF3D90] opacity-80"></div>
-                    {/* Content */}
-                    <div className="absolute inset-0 flex flex-col px-8 pt-20">
-                      <h3 className="text-[3.5rem] font-bold text-white leading-none">Cultural AI</h3>
-                      <div className="mt-8 space-y-3">
-                        <p className="text-2xl leading-tight text-white">
-                          Ethical AI systems with
-                        </p>
-                        <p className="text-2xl leading-tight text-white">
-                          indigenous rights protection
-                        </p>
-                        <p className="text-2xl leading-tight text-white">
-                          and heritage preservation.
-                        </p>
-                      </div>
-                      <div className="mt-auto mb-12">
-                        <span className="text-xl font-medium text-white/80">
-                          Research Active
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
           </motion.div>
@@ -186,16 +149,16 @@ export default function Home() {
             {...fadeIn}
             className="mx-auto max-w-2xl lg:text-center"
           >
-            <h2 className="text-base font-semibold leading-7 text-transparent bg-clip-text bg-gradient-to-r from-[#0B84F3] to-[#FF3D90]">What We Do</h2>
+            <h2 className="text-base font-semibold leading-7 text-transparent bg-clip-text bg-gradient-to-r from-[#0B84F3] to-[#FF3D90]">Our Expertise</h2>
             <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-              Advanced AI Architecture
+              Comprehensive AI Solutions
             </p>
             <p className="mt-6 text-lg leading-8 text-gray-600">
-              We pioneer consciousness-level artificial intelligence through biologically-inspired 
-              cognitive architectures, focusing on ethical AI with cultural sensitivity and multi-provider integration.
+              We deliver end-to-end AI solutions across financial technology, consciousness research, 
+              developer tools, business intelligence, mobile applications, and cutting-edge research.
             </p>
           </motion.div>
-          <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
+          <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-6xl">
             <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-3 lg:gap-y-16">
               {features.map((feature, index) => (
                 <motion.div
@@ -219,38 +182,75 @@ export default function Home() {
         </div>
       </div>
 
-      {/* NIS Protocol Integration Section */}
-      <NISProtocolIntegration />
+      {/* Stats section */}
+      <div className="relative isolate py-24 sm:py-32">
+        <div className="absolute inset-x-0 top-1/2 -z-10 -translate-y-1/2 transform-gpu overflow-hidden opacity-30 blur-3xl">
+          <div className="ml-[max(50%,38rem)] aspect-[1313/771] w-[82.0625rem] bg-gradient-to-tr from-[#0B84F3] to-[#FF3D90]" />
+        </div>
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="mx-auto max-w-2xl lg:max-w-none"
+          >
+            <div className="text-center">
+              <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+                Building the Future of AI
+              </h2>
+              <p className="mt-4 text-lg leading-8 text-gray-600">
+                Our diverse portfolio spans multiple industries and technologies
+              </p>
+            </div>
+            <dl className="mt-16 grid grid-cols-1 gap-0.5 overflow-hidden rounded-2xl text-center sm:grid-cols-2 lg:grid-cols-4">
+              <div className="flex flex-col bg-gray-400/5 p-8">
+                <dt className="text-sm font-semibold leading-6 text-gray-600">Active Projects</dt>
+                <dd className="order-first text-3xl font-semibold tracking-tight text-gray-900">22+</dd>
+              </div>
+              <div className="flex flex-col bg-gray-400/5 p-8">
+                <dt className="text-sm font-semibold leading-6 text-gray-600">Technology Stacks</dt>
+                <dd className="order-first text-3xl font-semibold tracking-tight text-gray-900">8+</dd>
+              </div>
+              <div className="flex flex-col bg-gray-400/5 p-8">
+                <dt className="text-sm font-semibold leading-6 text-gray-600">Industry Sectors</dt>
+                <dd className="order-first text-3xl font-semibold tracking-tight text-gray-900">5</dd>
+              </div>
+              <div className="flex flex-col bg-gray-400/5 p-8">
+                <dt className="text-sm font-semibold leading-6 text-gray-600">AI Solutions</dt>
+                <dd className="order-first text-3xl font-semibold tracking-tight text-gray-900">100%</dd>
+              </div>
+            </dl>
+          </motion.div>
+        </div>
+      </div>
 
       {/* CTA section */}
-      <div className="relative isolate mt-32 sm:mt-56">
-        <div className="absolute inset-0 -z-10 overflow-hidden bg-gradient-to-r from-[#0B84F3] to-[#FF3D90]">
-          <div className="absolute inset-0 bg-gradient-to-b from-white/5 to-transparent" />
-        </div>
-        <div className="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8">
+      <div className="bg-gradient-to-r from-[#0B84F3] to-[#FF3D90]">
+        <div className="px-6 py-24 sm:px-6 sm:py-32 lg:px-8">
           <motion.div 
-            {...fadeIn}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
             className="mx-auto max-w-2xl text-center"
           >
             <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-              Ready for Consciousness-Level AI?
+              Ready to Transform Your Business with AI?
             </h2>
             <p className="mx-auto mt-6 max-w-xl text-lg leading-8 text-gray-100">
-              Partner with us to implement advanced AI architectures, multi-provider integration,
-              or ethical AI systems with cultural intelligence capabilities.
+              From trading algorithms to consciousness frameworks, we build AI solutions 
+              that drive real business value. Let's discuss your next project.
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <Link
                 to="/contact"
-                className="rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-transparent bg-clip-text bg-gradient-to-r from-[#0B84F3] to-[#FF3D90] shadow-sm hover:bg-gray-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white transition-all duration-200"
+                className="rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-transparent bg-clip-text bg-gradient-to-r from-[#0B84F3] to-[#FF3D90] shadow-sm hover:bg-gray-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
               >
-                Contact Us
+                Start Your Project
               </Link>
-              <Link
-                to="/services"
-                className="text-sm font-semibold leading-6 text-white hover:text-gray-100 transition-colors"
-              >
-                Explore AI Solutions <span aria-hidden="true">→</span>
+              <Link to="/projects" className="text-sm font-semibold leading-6 text-white">
+                Explore Our Work <span aria-hidden="true">→</span>
               </Link>
             </div>
           </motion.div>
