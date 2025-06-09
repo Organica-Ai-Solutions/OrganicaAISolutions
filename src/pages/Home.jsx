@@ -1,26 +1,28 @@
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import {
-  DevicePhoneMobileIcon,
-  UserGroupIcon,
-  CurrencyDollarIcon,
+  CpuChipIcon,
+  EyeIcon,
+  ShieldCheckIcon,
 } from '@heroicons/react/24/outline'
+import NISProtocolIntegration from '../components/NISProtocolIntegration'
+import SEOIntegration, { getPageSEO } from '../components/shared/SEOIntegration'
 
 const features = [
   {
-    name: 'Mobile Development',
-    description: 'Creating intuitive and powerful mobile applications that solve real-world problems.',
-    icon: DevicePhoneMobileIcon,
+    name: 'Consciousness-Level AI',
+    description: 'Pioneering self-aware AI agents with meta-cognitive processing and autonomous goal formulation capabilities.',
+    icon: CpuChipIcon,
   },
   {
-    name: 'Social Finance',
-    description: 'Building solutions that help communities manage and grow their financial resources together.',
-    icon: CurrencyDollarIcon,
+    name: 'Cultural Intelligence',
+    description: 'Ethically-conscious AI systems with deep cultural sensitivity for indigenous rights and archaeological heritage preservation.',
+    icon: ShieldCheckIcon,
   },
   {
-    name: 'Community Focus',
-    description: 'Developing applications that strengthen community bonds and facilitate collaboration.',
-    icon: UserGroupIcon,
+    name: 'Multi-Provider Integration',
+    description: 'Seamless orchestration across OpenAI, Anthropic, DeepSeek, and BitNet 2 with automatic failover and cost optimization.',
+    icon: EyeIcon,
   },
 ]
 
@@ -31,8 +33,14 @@ const fadeIn = {
 }
 
 export default function Home() {
+  const seoConfig = getPageSEO('home')
+  
   return (
     <div className="bg-white">
+      <SEOIntegration 
+        {...seoConfig}
+        canonical="https://organicaai.com"
+      />
       {/* Hero section */}
       <div className="relative isolate overflow-hidden bg-gradient-to-r from-[#0B84F3] to-[#FF3D90]">
         <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-white/5 to-transparent"></div>
@@ -44,18 +52,18 @@ export default function Home() {
             <div className="mx-auto max-w-2xl">
               <div className="max-w-lg">
                 <h1 className="mt-10 text-4xl font-bold tracking-tight text-white sm:text-6xl">
-                  Mobile Apps for Community Growth
+                  Consciousness-Level AI Solutions
                 </h1>
                 <p className="mt-6 text-lg leading-8 text-gray-100">
-                  We develop mobile applications that bring communities together. From social finance 
-                  to business solutions, we're creating tools that make a difference.
+                  Pioneering the future of ethical artificial intelligence through biologically-inspired 
+                  multi-agent systems and advanced cognitive architectures.
                 </p>
                 <div className="mt-10 flex items-center gap-x-6">
                   <Link
                     to="/services"
                     className="rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-transparent bg-clip-text bg-gradient-to-r from-[#0B84F3] to-[#FF3D90] shadow-sm hover:bg-gray-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white transition-all duration-200"
                   >
-                    View Projects
+                    Explore NIS Protocol
                   </Link>
                   <Link to="/contact" className="text-sm font-semibold leading-6 text-white hover:text-gray-100">
                     Get in Touch <span aria-hidden="true">→</span>
@@ -97,23 +105,23 @@ export default function Home() {
                     {/* Content */}
                     <div className="absolute inset-0 flex flex-col px-8 pt-20">
                       <div className="space-y-2">
-                        <h3 className="text-[3.5rem] font-bold text-white leading-none">Tanda</h3>
-                        <h3 className="text-[3.5rem] font-bold text-white leading-none">Circles</h3>
+                        <h3 className="text-[3.5rem] font-bold text-white leading-none">NIS</h3>
+                        <h3 className="text-[3.5rem] font-bold text-white leading-none">Protocol</h3>
                       </div>
                       <div className="mt-8 space-y-3">
                         <p className="text-2xl leading-tight text-white">
-                          A social finance app that helps
+                          Biologically-inspired framework
                         </p>
                         <p className="text-2xl leading-tight text-white">
-                          communities manage group
+                          for consciousness-level AI
                         </p>
                         <p className="text-2xl leading-tight text-white">
-                          savings and financial circles.
+                          and multi-agent systems.
                         </p>
                       </div>
                       <div className="mt-auto mb-12">
                         <span className="text-xl font-medium text-white/80">
-                          In Development
+                          v2.0 Active
                         </span>
                       </div>
                     </div>
@@ -144,21 +152,21 @@ export default function Home() {
                     <div className="absolute inset-0 bg-gradient-to-br from-[#0B84F3] to-[#FF3D90] opacity-80"></div>
                     {/* Content */}
                     <div className="absolute inset-0 flex flex-col px-8 pt-20">
-                      <h3 className="text-[3.5rem] font-bold text-white leading-none">KAT App</h3>
+                      <h3 className="text-[3.5rem] font-bold text-white leading-none">Cultural AI</h3>
                       <div className="mt-8 space-y-3">
                         <p className="text-2xl leading-tight text-white">
-                          A social media platform
+                          Ethical AI systems with
                         </p>
                         <p className="text-2xl leading-tight text-white">
-                          connecting cat lovers and
+                          indigenous rights protection
                         </p>
                         <p className="text-2xl leading-tight text-white">
-                          their feline friends.
+                          and heritage preservation.
                         </p>
                       </div>
                       <div className="mt-auto mb-12">
                         <span className="text-xl font-medium text-white/80">
-                          In Development
+                          Research Active
                         </span>
                       </div>
                     </div>
@@ -180,11 +188,11 @@ export default function Home() {
           >
             <h2 className="text-base font-semibold leading-7 text-transparent bg-clip-text bg-gradient-to-r from-[#0B84F3] to-[#FF3D90]">What We Do</h2>
             <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-              Building Mobile Solutions
+              Advanced AI Architecture
             </p>
             <p className="mt-6 text-lg leading-8 text-gray-600">
-              We specialize in creating mobile applications that serve communities and businesses, 
-              focusing on practical solutions that make a real impact.
+              We pioneer consciousness-level artificial intelligence through biologically-inspired 
+              cognitive architectures, focusing on ethical AI with cultural sensitivity and multi-provider integration.
             </p>
           </motion.div>
           <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
@@ -211,39 +219,8 @@ export default function Home() {
         </div>
       </div>
 
-      {/* NIS Protocol Featured Research Section */}
-      <section className="bg-green-50 py-16">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-green-800 mb-8 text-center">
-            Featured Research Project
-          </h2>
-          
-          <div className="flex flex-col md:flex-row items-center bg-white rounded-xl shadow-lg overflow-hidden">
-            <div className="md:w-1/2">
-              <img 
-                src="/images/nis-protocol/nis-protocol-logo.png" 
-                alt="NIS Protocol" 
-                className="w-full h-auto"
-              />
-            </div>
-            <div className="md:w-1/2 p-8">
-              <h3 className="text-2xl font-bold text-green-700 mb-4">
-                Introducing the NIS Protocol
-              </h3>
-              <p className="text-gray-700 mb-6">
-                Our latest innovation in AI research - a biologically inspired framework 
-                for designing intelligent multi-agent systems that mimic human cognitive processes.
-              </p>
-              <Link 
-                to="/projects/nis-protocol" 
-                className="inline-block bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300"
-              >
-                Explore the Protocol
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* NIS Protocol Integration Section */}
+      <NISProtocolIntegration />
 
       {/* CTA section */}
       <div className="relative isolate mt-32 sm:mt-56">
@@ -256,11 +233,11 @@ export default function Home() {
             className="mx-auto max-w-2xl text-center"
           >
             <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-              Have a Project in Mind?
+              Ready for Consciousness-Level AI?
             </h2>
             <p className="mx-auto mt-6 max-w-xl text-lg leading-8 text-gray-100">
-              Whether you're interested in our current projects or have a new idea to discuss,
-              we're here to help bring it to life.
+              Partner with us to implement advanced AI architectures, multi-provider integration,
+              or ethical AI systems with cultural intelligence capabilities.
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <Link
@@ -273,7 +250,7 @@ export default function Home() {
                 to="/services"
                 className="text-sm font-semibold leading-6 text-white hover:text-gray-100 transition-colors"
               >
-                Our Services <span aria-hidden="true">→</span>
+                Explore AI Solutions <span aria-hidden="true">→</span>
               </Link>
             </div>
           </motion.div>

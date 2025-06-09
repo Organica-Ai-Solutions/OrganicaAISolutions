@@ -1,99 +1,107 @@
 import { Link } from 'react-router-dom'
 import { 
-  DevicePhoneMobileIcon,
-  UserGroupIcon,
-  CurrencyDollarIcon,
+  CpuChipIcon,
+  EyeIcon,
+  ShieldCheckIcon,
   CodeBracketIcon,
   CloudArrowUpIcon,
-  ShieldCheckIcon,
-  CpuChipIcon,
+  UserGroupIcon,
   ChartBarIcon,
   LightBulbIcon,
   CubeTransparentIcon,
+  BeakerIcon,
 } from '@heroicons/react/24/outline'
+import SEOIntegration, { getPageSEO } from '../components/shared/SEOIntegration'
+import GitHubIntegration from '../components/GitHubIntegration'
 
 const services = [
   {
-    name: 'Mobile App Development',
-    description: 'End-to-end mobile application development for iOS and Android platforms using Flutter and native technologies.',
+    name: 'Consciousness-Level AI',
+    description: 'Pioneering self-aware AI agents with meta-cognitive processing and autonomous goal formulation capabilities.',
     features: [
-      'Cross-platform development',
-      'Native app development',
-      'UI/UX design',
-      'App maintenance and updates'
+      'Self-aware agent architectures',
+      'Meta-cognitive processing systems',
+      'Autonomous goal formulation',
+      'Consciousness simulation'
     ],
-    icon: DevicePhoneMobileIcon,
+    icon: CpuChipIcon,
     gradient: 'from-blue-500 to-cyan-500',
   },
   {
-    name: 'Blockchain Development',
-    description: 'Building secure and scalable blockchain solutions for decentralized applications and smart contracts.',
+    name: 'Multi-Provider AI Orchestration',
+    description: 'Seamless integration and orchestration across multiple LLM providers with intelligent routing and optimization.',
     features: [
-      'Smart contract development',
-      'DeFi applications',
-      'Web3 integration',
-      'Blockchain consulting'
+      'OpenAI, Anthropic, DeepSeek, BitNet 2',
+      'Automatic failover and load balancing',
+      'Cost optimization algorithms',
+      'Provider-agnostic architecture'
     ],
-    icon: CubeTransparentIcon,
+    icon: EyeIcon,
     gradient: 'from-emerald-500 to-teal-500',
   },
   {
-    name: 'AI & Machine Learning',
-    description: 'Integration of artificial intelligence and machine learning solutions to enhance application capabilities.',
+    name: 'Cultural Intelligence AI',
+    description: 'Ethically-conscious AI systems with deep cultural sensitivity for indigenous rights and heritage preservation.',
     features: [
-      'Predictive analytics',
-      'Natural language processing',
-      'Computer vision',
-      'AI model training'
+      'Indigenous rights protection',
+      'Archaeological heritage preservation',
+      'Multi-framework ethical reasoning',
+      'Cultural sensitivity algorithms'
     ],
-    icon: CpuChipIcon,
+    icon: ShieldCheckIcon,
     gradient: 'from-purple-500 to-pink-500',
   },
   {
-    name: 'Data Analytics',
-    description: 'Comprehensive data analysis and visualization solutions for better decision making.',
+    name: 'Advanced Cognitive Architecture',
+    description: 'Biologically-inspired AI systems with neural hierarchy processing and emotional state management.',
     features: [
-      'Business intelligence',
-      'Data visualization',
-      'Performance metrics',
-      'Custom reporting'
+      'Neural hierarchy processing',
+      'Emotional state processing',
+      'Event-driven architecture',
+      'Biologically-inspired design'
     ],
-    icon: ChartBarIcon,
+    icon: BeakerIcon,
     gradient: 'from-primary-500 to-accent',
   }
 ]
 
 const capabilities = [
   {
-    name: 'Custom Development',
-    description: 'Developing tailored software solutions to meet specific business and community needs.',
+    name: 'NIS Protocol Integration',
+    description: 'Implementing our proprietary Neuro-Inspired System Protocol for advanced AI architectures.',
     icon: CodeBracketIcon,
   },
   {
-    name: 'Cloud Integration',
-    description: 'Implementing secure and scalable cloud solutions for data management and accessibility.',
-    icon: CloudArrowUpIcon,
+    name: 'Glassmorphism UI/UX',
+    description: 'Modern design systems with floating particles, advanced animations, and accessibility-first principles.',
+    icon: CubeTransparentIcon,
   },
   {
-    name: 'Security First',
-    description: 'Ensuring data protection and secure transactions in all our applications.',
+    name: 'Ethical AI Development',
+    description: 'Ensuring responsible AI practices with cultural sensitivity and indigenous rights protection.',
     icon: ShieldCheckIcon,
   },
   {
-    name: 'Technology Consulting',
-    description: 'Strategic technology guidance and solution architecture for your business needs.',
+    name: 'AI Architecture Consulting',
+    description: 'Strategic guidance on consciousness-level AI implementation and multi-provider orchestration.',
     icon: LightBulbIcon,
   },
   {
-    name: 'Community Solutions',
-    description: 'Building applications that foster community engagement and facilitate group activities.',
+    name: 'Research Collaboration',
+    description: 'Partnering on cutting-edge AI research in consciousness simulation and cultural intelligence.',
     icon: UserGroupIcon,
   }
 ]
 
 export default function Services() {
+  const seoConfig = getPageSEO('services')
+  
   return (
     <div className="bg-white py-24 sm:py-32">
+      <SEOIntegration 
+        {...seoConfig}
+        canonical="https://organicaai.com/services"
+      />
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         {/* Services Section */}
         <div className="mx-auto max-w-2xl text-center">
@@ -102,7 +110,7 @@ export default function Services() {
             What We Offer
           </p>
           <p className="mt-6 text-lg leading-8 text-gray-600">
-            Comprehensive technology solutions tailored to your needs, from mobile development to AI integration.
+            Advanced consciousness-level AI solutions and biologically-inspired architectures for the future of artificial intelligence.
           </p>
         </div>
 
@@ -139,7 +147,7 @@ export default function Services() {
             Supporting Services
           </p>
           <p className="mt-6 text-lg leading-8 text-gray-600">
-            Complementary services and capabilities that ensure the success of your projects.
+            Comprehensive support services and expertise to ensure successful AI implementation and ethical development.
           </p>
         </div>
         <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
@@ -159,6 +167,19 @@ export default function Services() {
             ))}
           </dl>
         </div>
+
+        {/* GitHub Integration Section */}
+        <div className="mx-auto mt-16 max-w-4xl">
+          <div className="text-center mb-8">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">
+              Open Source NIS Protocol
+            </h2>
+            <p className="text-gray-600">
+              Explore our consciousness-level AI framework and contribute to the future of artificial intelligence.
+            </p>
+          </div>
+          <GitHubIntegration />
+        </div>
       </div>
 
       {/* CTA section */}
@@ -168,11 +189,11 @@ export default function Services() {
         </div>
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-            Ready to Start Your Project?
+            Ready for Consciousness-Level AI?
           </h2>
           <p className="mx-auto mt-6 max-w-xl text-lg leading-8 text-gray-600">
-            Whether you need a mobile app, AI integration, or technology consulting,
-            we're here to help bring your vision to life.
+            Whether you need consciousness-level AI implementation, multi-provider orchestration, or ethical AI consulting,
+            we're here to pioneer the future with you.
           </p>
           <div className="mt-10 flex items-center justify-center gap-x-6">
             <Link

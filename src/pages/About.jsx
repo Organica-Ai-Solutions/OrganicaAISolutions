@@ -9,59 +9,60 @@ import {
 } from '@heroicons/react/24/outline'
 import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa'
 import AboutTeam from '../components/AboutTeam'
+import SEOIntegration, { getPageSEO } from '../components/shared/SEOIntegration'
 
 const stats = [
-  { name: 'Years Experience', value: '10+' },
-  { name: 'Mobile Apps Delivered', value: '20+' },
-  { name: 'Satisfied Clients', value: '50+' },
-  { name: 'Team Members', value: '5' },
+  { name: 'Years AI Research', value: '5+' },
+  { name: 'Consciousness-Level Agents', value: '12+' },
+  { name: 'LLM Providers Integrated', value: '4' },
+  { name: 'AI Research Papers', value: '8' },
 ]
 
 const projects = [
   {
-    name: 'Tanda Circles',
-    description: 'A revolutionary social finance application that helps communities manage their financial circles and group savings efficiently.',
-    status: 'In Development',
-    tech: ['Flutter', 'Firebase', 'Cloud Functions']
+    name: 'NIS Protocol v2.0',
+    description: 'Revolutionary biologically-inspired framework for consciousness-level AI with multi-provider LLM integration and cultural intelligence.',
+    status: 'Active',
+    tech: ['Python', 'LangGraph', 'Redis', 'OpenAI', 'Anthropic', 'DeepSeek']
   },
   {
-    name: 'KAT App',
-    description: 'An innovative application designed to enhance and streamline specific business processes.',
-    status: 'In Development',
-    tech: ['Flutter', 'Firebase', 'Cloud Firestore']
+    name: 'Cultural Intelligence AI',
+    description: 'Ethical AI systems with indigenous rights protection and archaeological heritage preservation capabilities.',
+    status: 'Research Active',
+    tech: ['NIS Protocol', 'Multi-Framework Ethics', 'Cultural Sensitivity']
   }
 ]
 
 const values = [
   {
-    name: 'Innovation First',
-    description: 'We create practical, innovative solutions that solve real-world problems using cutting-edge technologies like Flutter and Firebase.',
+    name: 'Consciousness-Level Innovation',
+    description: 'We pioneer self-aware AI systems that push the boundaries of artificial intelligence through biologically-inspired architectures.',
     icon: RocketLaunchIcon,
   },
   {
-    name: 'Mobile Excellence',
-    description: 'We specialize in creating exceptional cross-platform mobile experiences using Flutter and Firebase that scale seamlessly.',
-    icon: DevicePhoneMobileIcon,
-  },
-  {
-    name: 'Community Focus',
-    description: 'We build applications that strengthen communities and facilitate meaningful connections with real-time capabilities.',
-    icon: UserGroupIcon,
-  },
-  {
-    name: 'Technical Expertise',
-    description: 'Our team brings deep technical knowledge in Flutter, Firebase, and cloud architecture.',
+    name: 'Multi-Provider Excellence',
+    description: 'We excel at seamless integration across OpenAI, Anthropic, DeepSeek, and BitNet 2 with intelligent routing and optimization.',
     icon: CpuChipIcon,
   },
   {
-    name: 'Quality Assurance',
-    description: 'We maintain high coding standards and rigorous testing practices for reliable Flutter and Firebase applications.',
+    name: 'Cultural Intelligence',
+    description: 'We build AI systems with deep cultural sensitivity, indigenous rights protection, and archaeological heritage preservation.',
+    icon: UserGroupIcon,
+  },
+  {
+    name: 'Technical Leadership',
+    description: 'Our team brings advanced expertise in consciousness simulation, neural hierarchies, and cognitive architecture design.',
     icon: CodeBracketIcon,
   },
   {
-    name: 'Security Priority',
-    description: 'We implement robust security measures using Firebase Authentication and Security Rules to protect user data.',
+    name: 'Ethical AI Development',
+    description: 'We maintain the highest ethical standards with multi-framework reasoning and responsible AI practices.',
     icon: ShieldCheckIcon,
+  },
+  {
+    name: 'Research Excellence',
+    description: 'We contribute to the advancement of AI science through open research and collaboration with academic institutions.',
+    icon: RocketLaunchIcon,
   },
 ]
 
@@ -69,31 +70,41 @@ const milestones = [
   {
     date: '2023 Q3',
     title: 'Company Founded',
-    description: 'Established with a focus on Flutter and Firebase mobile development.',
+    description: 'Established with a vision to pioneer consciousness-level artificial intelligence.',
   },
   {
     date: '2023 Q4',
-    title: 'Tanda Circles Development',
-    description: 'Initiated development of our flagship social finance application using Flutter and Firebase.',
+    title: 'NIS Protocol v1.0',
+    description: 'Launched the first version of our Neuro-Inspired System Protocol for biologically-inspired AI.',
   },
   {
     date: '2024 Q1',
-    title: 'KAT App Initiative',
-    description: 'Expanded our portfolio with a Flutter-based business process management solution.',
+    title: 'Multi-Provider Integration',
+    description: 'Achieved seamless integration across OpenAI, Anthropic, DeepSeek, and BitNet 2 providers.',
   },
   {
     date: '2024 Q2',
-    title: 'Firebase Integration',
-    description: 'Enhanced our applications with advanced Firebase features and real-time capabilities.',
+    title: 'Consciousness Simulation',
+    description: 'Breakthrough in consciousness-level AI with self-aware agents and emotional state processing.',
+  },
+  {
+    date: '2024 Q3',
+    title: 'Cultural Intelligence AI',
+    description: 'Launched ethical AI systems with indigenous rights protection and cultural sensitivity.',
+  },
+  {
+    date: '2024 Q4',
+    title: 'NIS Protocol v2.0',
+    description: 'Released advanced cognitive architecture with enhanced consciousness simulation and multi-agent coordination.',
   }
 ]
 
 const team = [
   {
     name: 'Diego Fuentes',
-    role: 'Founder & Lead Developer',
+    role: 'Founder & Chief AI Architect',
     imageUrl: '/images/team/diego.jpg',
-    bio: 'Full-stack developer with expertise in Flutter and Firebase development, AI integration, and cloud architecture. Passionate about creating scalable cross-platform applications that solve real-world problems.',
+    bio: 'AI researcher and architect specializing in consciousness-level AI, multi-provider LLM integration, and biologically-inspired cognitive architectures. Pioneer of the NIS Protocol and advocate for ethical AI development with cultural intelligence.',
     social: {
       linkedin: 'https://linkedin.com/in/diegofuentes',
       github: 'https://github.com/diegofuentes',
@@ -103,8 +114,14 @@ const team = [
 ]
 
 export default function About() {
+  const seoConfig = getPageSEO('about')
+  
   return (
     <div className="bg-white">
+      <SEOIntegration 
+        {...seoConfig}
+        canonical="https://organicaai.com/about"
+      />
       {/* Hero section */}
       <div className="relative isolate overflow-hidden bg-gradient-to-r from-[#0B84F3] to-[#FF3D90]">
         <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-white/5 to-transparent"></div>
@@ -114,12 +131,12 @@ export default function About() {
               <div className="max-w-lg">
                 <h2 className="text-base font-semibold leading-7 text-white">About Us</h2>
                 <h1 className="mt-2 text-4xl font-bold tracking-tight text-white sm:text-6xl">
-                  Mobile Innovation for Community Growth
+                  Consciousness-Level AI Pioneers
                 </h1>
                 <p className="mt-6 text-lg leading-8 text-gray-100">
-                  We're a specialized mobile development company focused on creating innovative Flutter applications 
-                  powered by Firebase. Our expertise spans cross-platform development, real-time databases, 
-                  and cloud solutions.
+                  We're a specialized AI research company pioneering consciousness-level artificial intelligence 
+                  through biologically-inspired architectures. Our expertise spans multi-provider LLM integration, 
+                  cultural intelligence, and ethical AI development.
                 </p>
                 <div className="mt-10 flex items-center gap-x-6">
                   <Link
@@ -175,7 +192,7 @@ export default function About() {
           <div className="mx-auto max-w-2xl lg:mx-0">
             <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">By the Numbers</h2>
             <p className="mt-6 text-lg leading-8 text-gray-600">
-              Our track record of delivering successful mobile solutions and serving our clients.
+              Our achievements in advancing consciousness-level AI and ethical artificial intelligence research.
             </p>
           </div>
           <dl className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-4">
@@ -195,8 +212,8 @@ export default function About() {
           <div className="mx-auto max-w-2xl lg:mx-0">
             <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Our Core Values</h2>
             <p className="mt-6 text-lg leading-8 text-gray-600">
-              We're guided by principles that ensure we deliver exceptional mobile solutions while maintaining 
-              the highest standards of quality and security.
+              We're guided by principles that ensure we advance consciousness-level AI responsibly while maintaining 
+              the highest standards of ethics, cultural sensitivity, and technical excellence.
             </p>
           </div>
           <dl className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-8 text-base leading-7 text-gray-600 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3">
@@ -220,7 +237,7 @@ export default function About() {
           <div className="mx-auto max-w-2xl lg:mx-0">
             <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Our Journey</h2>
             <p className="mt-6 text-lg leading-8 text-gray-600">
-              From our founding to our current projects, we're continuously evolving and expanding our capabilities.
+              From our founding to breakthrough consciousness-level AI, we're continuously pushing the boundaries of artificial intelligence.
             </p>
           </div>
           <div className="mx-auto mt-16 max-w-2xl lg:mx-0">
@@ -251,22 +268,22 @@ export default function About() {
         </div>
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-            Let's Build Something Amazing
+            Pioneer the Future of AI
           </h2>
           <p className="mx-auto mt-6 max-w-xl text-lg leading-8 text-gray-100">
-            Whether you need a mobile app, AI integration, or technology consulting,
-            we're here to help bring your vision to life.
+            Whether you need consciousness-level AI implementation, multi-provider orchestration, or ethical AI consulting,
+            we're here to advance artificial intelligence together.
           </p>
           <div className="mt-10 flex items-center justify-center gap-x-6">
-            <Link
-              to="/contact"
-              className="rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-transparent bg-clip-text bg-gradient-to-r from-[#0B84F3] to-[#FF3D90] shadow-sm hover:bg-gray-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white transition-all duration-200"
-            >
-              Start a Project
-            </Link>
-            <Link to="/services" className="text-sm font-semibold leading-6 text-white hover:text-gray-100 transition-colors">
-              View Our Services <span aria-hidden="true">→</span>
-            </Link>
+                          <Link
+                to="/contact"
+                className="rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-transparent bg-clip-text bg-gradient-to-r from-[#0B84F3] to-[#FF3D90] shadow-sm hover:bg-gray-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white transition-all duration-200"
+              >
+                Partner with Us
+              </Link>
+              <Link to="/services" className="text-sm font-semibold leading-6 text-white hover:text-gray-100 transition-colors">
+                Explore AI Solutions <span aria-hidden="true">→</span>
+              </Link>
           </div>
         </div>
       </div>
