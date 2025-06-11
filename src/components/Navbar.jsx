@@ -41,7 +41,7 @@ export default function Navbar() {
             <Bars3Icon className="h-6 w-6" aria-hidden="true" />
           </button>
         </div>
-        <div className="hidden lg:flex lg:gap-x-8">
+        <div className="hidden lg:flex lg:gap-x-8 items-center">
           {navigation.map((item) => (
             <Link
               key={item.name}
@@ -51,6 +51,16 @@ export default function Navbar() {
               {item.name}
             </Link>
           ))}
+          <a
+            href="https://organica-ai-solutions.github.io/DesignHistory/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center px-3 py-1.5 bg-gradient-to-r from-indigo-500 to-purple-500 text-white text-xs font-semibold rounded-full hover:shadow-lg transition-all duration-300 group"
+          >
+            <span className="mr-1">📚</span>
+            Design Book
+            <span className="ml-1 px-1.5 py-0.5 bg-green-400 text-green-900 text-xs rounded-full">NEW</span>
+          </a>
         </div>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:gap-x-6">
           {user ? (
@@ -134,6 +144,15 @@ export default function Navbar() {
                     {item.name}
                   </Link>
                 ))}
+                <a
+                  href="https://organica-ai-solutions.github.io/DesignHistory/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white bg-gradient-to-r from-indigo-500 to-purple-500 hover:shadow-lg transition-all duration-300"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  📚 Design Book <span className="text-xs bg-green-400 text-green-900 px-1.5 py-0.5 rounded-full ml-2">NEW</span>
+                </a>
               </div>
               <div className="py-6">
                 {user ? (

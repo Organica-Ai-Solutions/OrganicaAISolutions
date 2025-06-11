@@ -7,10 +7,17 @@ import {
   ChartBarIcon,
   DevicePhoneMobileIcon,
   BeakerIcon,
+  ArrowTopRightOnSquareIcon,
 } from '@heroicons/react/24/outline'
 import SEOIntegration, { getPageSEO } from '../components/shared/SEOIntegration'
+import DesignBookShowcase from '../components/DesignBookShowcase'
 
 const features = [
+  {
+    name: 'AI-Assisted Design Systems',
+    description: 'Interactive design experiences like "The Visual Evolution" - comprehensive design history books with 20+ movements, 106+ years coverage, and professional polish.',
+    icon: BeakerIcon,
+  },
   {
     name: 'FinTech AI Solutions',
     description: 'Advanced AI trading systems like AlphaCortex with LLM-powered decision making, real-time market analysis, and autonomous execution.',
@@ -36,14 +43,18 @@ const features = [
     description: 'Community-focused mobile applications and smart portfolio management systems with integrated AI capabilities.',
     icon: DevicePhoneMobileIcon,
   },
-  {
-    name: 'Research & Innovation',
-    description: 'Cutting-edge research in multi-agent systems, cultural intelligence AI, and next-generation cognitive architectures.',
-    icon: BeakerIcon,
-  },
 ]
 
 const featuredProjects = [
+  {
+    title: 'The Visual Evolution',
+    description: 'Interactive Design History Book',
+    category: 'AI-Assisted Design',
+    color: 'indigo',
+    href: 'https://organica-ai-solutions.github.io/DesignHistory/',
+    isExternal: true,
+    isNew: true
+  },
   {
     title: 'AlphaCortex',
     description: 'Autonomous AI Trading System',
@@ -61,12 +72,6 @@ const featuredProjects = [
     description: 'Coding AI Agent',
     category: 'Developer Tools',
     color: 'purple'
-  },
-  {
-    title: 'Business Analytics',
-    description: 'Data Science Platform',
-    category: 'Business Intelligence',
-    color: 'orange'
   }
 ]
 
@@ -99,8 +104,8 @@ export default function Home() {
                   AI Solutions for Every Industry
                 </h1>
                 <p className="mt-6 text-lg leading-8 text-gray-100">
-                  From AI trading systems and developer tools to consciousness-level frameworks and 
-                  business intelligence. Building intelligent software that transforms industries.
+                  From AI trading systems and developer tools to consciousness-level frameworks, business intelligence, 
+                  and interactive design experiences. Building intelligent software that transforms industries.
                 </p>
                 <div className="mt-10 flex items-center gap-x-6">
                   <Link
@@ -124,17 +129,51 @@ export default function Home() {
           >
             <div className="shadow-lg md:rounded-3xl bg-white/10 backdrop-blur-sm p-8">
               <div className="grid grid-cols-2 gap-6">
-                {featuredProjects.map((project, index) => (
-                  <div key={project.title} className="relative bg-white/20 backdrop-blur-sm rounded-2xl p-6 hover:bg-white/30 transition-all duration-300">
-                    <div className="space-y-3">
-                      <div className={`inline-flex px-3 py-1 rounded-full text-xs font-semibold bg-${project.color}-100 text-${project.color}-800`}>
-                        {project.category}
+                {featuredProjects.map((project, index) => {
+                  const ProjectCard = ({ children }) => {
+                    if (project.isExternal) {
+                      return (
+                        <a 
+                          href={project.href} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="relative bg-white/20 backdrop-blur-sm rounded-2xl p-6 hover:bg-white/30 transition-all duration-300 block group"
+                        >
+                          {children}
+                        </a>
+                      );
+                    }
+                    return (
+                      <div className="relative bg-white/20 backdrop-blur-sm rounded-2xl p-6 hover:bg-white/30 transition-all duration-300">
+                        {children}
                       </div>
-                      <h3 className="text-xl font-bold text-white">{project.title}</h3>
-                      <p className="text-white/80 text-sm">{project.description}</p>
-                    </div>
-                  </div>
-                ))}
+                    );
+                  };
+
+                  return (
+                    <ProjectCard key={project.title}>
+                      <div className="space-y-3">
+                        <div className="flex items-center gap-2">
+                          <div className={`inline-flex px-3 py-1 rounded-full text-xs font-semibold bg-${project.color}-100 text-${project.color}-800`}>
+                            {project.category}
+                          </div>
+                          {project.isNew && (
+                            <div className="inline-flex px-2 py-1 rounded-full text-xs font-semibold bg-green-100 text-green-800">
+                              NEW
+                            </div>
+                          )}
+                          {project.isExternal && (
+                            <div className="inline-flex items-center text-white/60 group-hover:text-white/80 transition-colors">
+                              <ArrowTopRightOnSquareIcon className="h-4 w-4" />
+                            </div>
+                          )}
+                        </div>
+                        <h3 className="text-xl font-bold text-white">{project.title}</h3>
+                        <p className="text-white/80 text-sm">{project.description}</p>
+                      </div>
+                    </ProjectCard>
+                  );
+                })}
               </div>
             </div>
           </motion.div>
@@ -181,6 +220,9 @@ export default function Home() {
           </div>
         </div>
       </div>
+
+      {/* Design Book Showcase */}
+      <DesignBookShowcase />
 
       {/* Stats section */}
       <div className="relative isolate py-24 sm:py-32">

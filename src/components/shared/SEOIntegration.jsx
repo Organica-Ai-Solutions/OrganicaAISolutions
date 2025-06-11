@@ -65,13 +65,48 @@ const getResearchStructuredData = () => ({
   }
 })
 
+// Structured data for The Visual Evolution Design Book
+const getDesignBookStructuredData = () => ({
+  "@context": "https://schema.org",
+  "@type": "Book",
+  "name": "The Visual Evolution: Interactive Design History Book",
+  "description": "Comprehensive interactive design history covering 20 design movements from 1919-2025+ with professional UI/UX and authentic visual reproductions",
+  "author": {
+    "@type": "Organization",
+    "name": "Organica AI Solutions"
+  },
+  "publisher": {
+    "@type": "Organization", 
+    "name": "Organica AI Solutions"
+  },
+  "datePublished": "2024",
+  "genre": "Design History",
+  "inLanguage": "en",
+  "numberOfPages": "47",
+  "url": "https://organica-ai-solutions.github.io/DesignHistory/",
+  "codeRepository": "https://github.com/Organica-Ai-Solutions/DesignHistory",
+  "applicationCategory": "Educational",
+  "operatingSystem": "Web Browser",
+  "programmingLanguage": ["TypeScript", "JavaScript"],
+  "runtimePlatform": "Next.js 15.2.4",
+  "about": [
+    "Design History",
+    "Interactive Learning",
+    "Visual Design",
+    "Educational Technology",
+    "AI-Assisted Design"
+  ],
+  "keywords": "interactive design book, design history, visual evolution, design movements, educational platform, PWA, responsive design"
+})
+
 export default function SEOIntegration({ 
   pageType = 'website',
   title,
   description,
   canonical,
   includeNISProtocol = false,
-  includeResearch = false
+  includeResearch = false,
+  includeDesignBook = false
 }) {
   const baseTitle = "Organica AI Solutions"
   const fullTitle = title ? `${title} | ${baseTitle}` : baseTitle
@@ -92,6 +127,11 @@ export default function SEOIntegration({
   // Conditionally include research data
   if (includeResearch) {
     structuredData.push(getResearchStructuredData())
+  }
+  
+  // Conditionally include design book data
+  if (includeDesignBook) {
+    structuredData.push(getDesignBookStructuredData())
   }
 
   return (
@@ -120,7 +160,7 @@ export default function SEOIntegration({
       {/* Additional SEO tags */}
       <meta name="robots" content="index, follow" />
       <meta name="author" content="Organica AI Solutions" />
-      <meta name="keywords" content="consciousness-level AI, NIS Protocol, multi-provider LLM, cultural intelligence AI, biologically-inspired AI, ethical AI development" />
+      <meta name="keywords" content="consciousness-level AI, NIS Protocol, multi-provider LLM, cultural intelligence AI, biologically-inspired AI, ethical AI development, AI-assisted design, interactive design book, design history, educational platforms" />
       
       {/* Cross-site integration */}
       <link rel="dns-prefetch" href="//github.com" />
@@ -145,14 +185,16 @@ export const getPageSEO = (pageType) => {
   const seoConfigs = {
     home: {
       title: "Consciousness-Level AI Solutions",
-      description: "Pioneering the future of ethical artificial intelligence through biologically-inspired multi-agent systems and advanced cognitive architectures.",
+      description: "Pioneering the future of ethical artificial intelligence through biologically-inspired multi-agent systems, advanced cognitive architectures, and AI-assisted design systems.",
       includeNISProtocol: true,
-      includeResearch: true
+      includeResearch: true,
+      includeDesignBook: true
     },
     services: {
       title: "AI Services - Consciousness-Level AI Development",
-      description: "Advanced consciousness-level AI solutions and biologically-inspired architectures for the future of artificial intelligence.",
-      includeNISProtocol: true
+      description: "Advanced consciousness-level AI solutions, biologically-inspired architectures, and AI-assisted design systems for the future of artificial intelligence.",
+      includeNISProtocol: true,
+      includeDesignBook: true
     },
     about: {
       title: "About - Consciousness-Level AI Pioneers",

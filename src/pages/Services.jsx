@@ -18,6 +18,19 @@ import GitHubIntegration from '../components/GitHubIntegration'
 
 const services = [
   {
+    name: 'AI-Assisted Design Systems',
+    description: 'Interactive design experiences and comprehensive educational content with professional polish and modern UX/UI.',
+    features: [
+      'Interactive design history books',
+      'Professional UI/UX development',
+      'Educational content platforms',
+      'PWA & mobile-optimized experiences'
+    ],
+    icon: BeakerIcon,
+    gradient: 'from-indigo-500 to-purple-500',
+    projects: ['The Visual Evolution', 'Design Systems', 'Educational Platforms']
+  },
+  {
     name: 'FinTech AI Solutions',
     description: 'Advanced AI trading systems and financial intelligence platforms with real-time decision making and risk management.',
     features: [
@@ -131,6 +144,12 @@ const capabilities = [
 ]
 
 const industries = [
+  {
+    name: 'Design & Education',
+    description: 'Interactive design books, educational platforms, professional UX/UI',
+    icon: BeakerIcon,
+    color: 'indigo'
+  },
   {
     name: 'Financial Services',
     description: 'Trading algorithms, risk management, portfolio optimization',

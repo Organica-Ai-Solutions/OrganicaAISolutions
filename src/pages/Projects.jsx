@@ -31,6 +31,20 @@ const Projects = () => {
 
   const featuredProjects = [
     {
+      title: 'The Visual Evolution',
+      subtitle: 'Interactive Design History Book',
+      description: 'Comprehensive interactive design history covering 20 design movements from 1919-2025+. Features 47 interactive pages with authentic visual reproductions, professional UI/UX, dark/light modes, and PWA-ready architecture. Built with Next.js 15.2.4, TypeScript, and Tailwind CSS.',
+      category: 'AI-Assisted Design',
+      status: 'active',
+      tech: ['Next.js 15.2.4', 'TypeScript', 'Tailwind CSS', 'PWA', 'GitHub Pages'],
+      icon: BookOpenIcon,
+      color: 'indigo',
+      href: 'https://organica-ai-solutions.github.io/DesignHistory/',
+      external: true,
+      private: false,
+      isNew: true
+    },
+    {
       title: 'AlphaCortex',
       subtitle: 'Autonomous AI Trading System',
       description: 'Advanced AI trading system powered by LLMs with custom MCP for memory, strategy adaptation, and real-time execution. Bridges traditional quant analysis with advanced reasoning.',
@@ -136,11 +150,11 @@ const Projects = () => {
   ];
 
   const projectCategories = [
+    { name: 'AI-Assisted Design', count: 1, color: 'indigo' },
     { name: 'FinTech AI', count: 4, color: 'emerald' },
     { name: 'AI Research', count: 3, color: 'blue' },
     { name: 'Developer Tools', count: 2, color: 'purple' },
-    { name: 'Business Intelligence', count: 2, color: 'orange' },
-    { name: 'Mobile Apps', count: 3, color: 'pink' }
+    { name: 'Business Intelligence', count: 2, color: 'orange' }
   ];
 
   return (
@@ -216,6 +230,11 @@ const Projects = () => {
                           <span className={`px-2 py-1 bg-${project.color}-100 text-${project.color}-700 text-xs font-semibold rounded-full`}>
                             {project.category}
                           </span>
+                          {project.isNew && (
+                            <span className="px-2 py-1 bg-yellow-100 text-yellow-700 text-xs font-semibold rounded-full animate-pulse">
+                              NEW
+                            </span>
+                          )}
                         </div>
                         <h3 className="text-xl font-bold text-gray-900">{project.title}</h3>
                         <p className="text-sm text-gray-600">{project.subtitle}</p>
