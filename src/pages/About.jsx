@@ -3,99 +3,99 @@ import {
   CodeBracketIcon,
   DevicePhoneMobileIcon,
   UserGroupIcon,
-  RocketLaunchIcon,
   ShieldCheckIcon,
   CpuChipIcon,
 } from '@heroicons/react/24/outline'
+import { RocketLaunchIcon } from '@heroicons/react/24/solid'
 import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa'
 import AboutTeam from '../components/AboutTeam'
 import SEOIntegration, { getPageSEO } from '../components/shared/SEOIntegration'
 
 const stats = [
-  { name: 'Years AI Research', value: '5+' },
-  { name: 'Consciousness-Level Agents', value: '12+' },
-  { name: 'LLM Providers Integrated', value: '4' },
-  { name: 'AI Research Papers', value: '8' },
+  { name: 'Research Areas', value: '7' },
+  { name: 'Industry Implementations', value: '5' },
+  { name: 'Working API Endpoints', value: '32' },
+  { name: 'GitHub Repositories', value: '33' },
 ]
 
 const projects = [
   {
-    name: 'NIS Protocol v2.0',
-    description: 'Revolutionary biologically-inspired framework for consciousness-level AI with multi-provider LLM integration and cultural intelligence.',
-    status: 'Active',
-    tech: ['Python', 'LangGraph', 'Redis', 'OpenAI', 'Anthropic', 'DeepSeek']
+    name: 'NIS Protocol v3.2',
+    description: 'Our flagship AI operating system for next-generation autonomous systems with production-ready security, reliability, and enterprise features.',
+    status: 'Production Ready',
+    tech: ['Python', 'Docker', 'Redis', 'Kafka', 'AWS', 'NVIDIA']
   },
   {
-    name: 'Cultural Intelligence AI',
-    description: 'Ethical AI systems with indigenous rights protection and archaeological heritage preservation capabilities.',
-    status: 'Research Active',
-    tech: ['NIS Protocol', 'Multi-Framework Ethics', 'Cultural Sensitivity']
+    name: 'The Visual Evolution',
+    description: 'Interactive design history book covering 20 design movements from 1919-2025+ with professional UI/UX and authentic visual reproductions.',
+    status: 'Live Demo',
+    tech: ['Next.js', 'TypeScript', 'Tailwind CSS', 'PWA', 'GitHub Pages']
   }
 ]
 
 const values = [
   {
-    name: 'Consciousness-Level Innovation',
-    description: 'We pioneer self-aware AI systems that push the boundaries of artificial intelligence through biologically-inspired architectures.',
-    icon: RocketLaunchIcon,
-  },
-  {
-    name: 'Multi-Provider Excellence',
-    description: 'We excel at seamless integration across OpenAI, Anthropic, DeepSeek, and BitNet 2 with intelligent routing and optimization.',
+    name: 'Research Excellence',
+    description: 'We pioneer cutting-edge AI research in neuro-inspired systems, physics-informed neural networks, and multi-agent coordination.',
     icon: CpuChipIcon,
   },
   {
-    name: 'Cultural Intelligence',
-    description: 'We build AI systems with deep cultural sensitivity, indigenous rights protection, and archaeological heritage preservation.',
-    icon: UserGroupIcon,
+    name: 'Real-World Impact',
+    description: 'Our research directly translates to practical applications across automotive, smart cities, aerospace, space exploration, and finance.',
+    icon: RocketLaunchIcon,
   },
   {
-    name: 'Technical Leadership',
-    description: 'Our team brings advanced expertise in consciousness simulation, neural hierarchies, and cognitive architecture design.',
-    icon: CodeBracketIcon,
-  },
-  {
-    name: 'Ethical AI Development',
-    description: 'We maintain the highest ethical standards with multi-framework reasoning and responsible AI practices.',
+    name: 'Academic Contribution',
+    description: 'We actively participate in elite AI research competitions like the NeurIPS Ariel Data Challenge 2025 to advance AI science.',
     icon: ShieldCheckIcon,
   },
   {
-    name: 'Research Excellence',
-    description: 'We contribute to the advancement of AI science through open research and collaboration with academic institutions.',
-    icon: RocketLaunchIcon,
+    name: 'Enterprise Partnerships',
+    description: 'We collaborate with major technology providers like AWS and NVIDIA to scale our research for enterprise applications.',
+    icon: UserGroupIcon,
+  },
+  {
+    name: 'Open Source Innovation',
+    description: 'We contribute to the AI community through open source projects, research publications, and educational content.',
+    icon: CodeBracketIcon,
+  },
+  {
+    name: 'Interdisciplinary Approach',
+    description: 'We combine expertise in AI, physics, neuroscience, and engineering to create more robust and effective AI systems.',
+    icon: DevicePhoneMobileIcon,
   },
 ]
 
 const milestones = [
   {
-    date: '2023 Q3',
-    title: 'Company Founded',
-    description: 'Established with a vision to pioneer consciousness-level artificial intelligence.',
+    date: '2022-2023',
+    title: 'Mobile App Development',
+    description: 'Started as a solutions company focused on mobile applications like Tanda Circles, Smart Portfolio, and KATAPP.',
   },
   {
-    date: '2023 Q4',
-    title: 'NIS Protocol v1.0',
-    description: 'Launched the first version of our Neuro-Inspired System Protocol for biologically-inspired AI.',
+    date: '2023 Q1-Q2',
+    title: 'AI Tools & Business Intelligence',
+    description: 'Expanded into AI tools and business intelligence solutions including Orion Coding Agent and Business Analytics with Python.',
   },
   {
-    date: '2024 Q1',
-    title: 'Multi-Provider Integration',
-    description: 'Achieved seamless integration across OpenAI, Anthropic, DeepSeek, and BitNet 2 providers.',
+    date: '2023 Q3-Q4',
+    title: 'NIS Protocol Development',
+    description: 'Created our flagship NIS Protocol - a neuro-inspired multi-agent AI framework for real-world automation.',
   },
   {
-    date: '2024 Q2',
-    title: 'Consciousness Simulation',
-    description: 'Breakthrough in consciousness-level AI with self-aware agents and emotional state processing.',
+    date: '2024 Q1-Q2',
+    title: 'Industry Applications',
+    description: 'Implemented NIS Protocol across industries with specialized versions: NIS-AUTO, NIS-CITY, NIS-DRONE, and NIS-X.',
   },
   {
     date: '2024 Q3',
-    title: 'Cultural Intelligence AI',
-    description: 'Launched ethical AI systems with indigenous rights protection and cultural sensitivity.',
+    title: 'Enterprise Partnerships',
+    description: 'Established partnerships with AWS for cloud infrastructure and NVIDIA for GPU acceleration.',
   },
   {
     date: '2024 Q4',
-    title: 'NIS Protocol v2.0',
-    description: 'Released advanced cognitive architecture with enhanced consciousness simulation and multi-agent coordination.',
+    title: 'NIS Protocol v3.2',
+    description: 'Released production-ready version with enhanced security, reliability, and enterprise features.',
   }
 ]
 
@@ -131,12 +131,13 @@ export default function About() {
               <div className="max-w-lg">
                 <h2 className="text-base font-semibold leading-7 text-white">About Us</h2>
                 <h1 className="mt-2 text-4xl font-bold tracking-tight text-white sm:text-6xl">
-                  Consciousness-Level AI Pioneers
+                  Our Research Journey
                 </h1>
                 <p className="mt-6 text-lg leading-8 text-gray-100">
-                  We're a specialized AI research company pioneering consciousness-level artificial intelligence 
-                  through biologically-inspired architectures. Our expertise spans multi-provider LLM integration, 
-                  cultural intelligence, and ethical AI development.
+                  Organica AI Solutions began as a mobile app development company and evolved into a pioneering AI research organization. 
+                  Our flagship creation, the NIS Protocol, is a production-ready neuro-inspired multi-agent AI framework 
+                  now being implemented across industries from automotive to space exploration, with active participation in elite 
+                  AI research competitions like the NeurIPS Ariel Data Challenge 2025.
                 </p>
                 <div className="mt-10 flex items-center gap-x-6">
                   <Link
@@ -146,7 +147,7 @@ export default function About() {
                     Contact us
                   </Link>
                   <Link to="/services" className="text-sm font-semibold leading-6 text-white hover:text-gray-100 transition-colors">
-                    View our services <span aria-hidden="true">→</span>
+                    View our research <span aria-hidden="true">→</span>
                   </Link>
                 </div>
               </div>
@@ -268,21 +269,21 @@ export default function About() {
         </div>
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-            Pioneer the Future of AI
+            Join Our Research Community
           </h2>
           <p className="mx-auto mt-6 max-w-xl text-lg leading-8 text-gray-100">
-            Whether you need consciousness-level AI implementation, multi-provider orchestration, or ethical AI consulting,
-            we're here to advance artificial intelligence together.
+            Whether you're interested in collaborating on neuro-inspired AI systems, physics-informed neural networks, 
+            or multi-agent coordination research, we invite you to join our mission to advance AI science.
           </p>
           <div className="mt-10 flex items-center justify-center gap-x-6">
-                          <Link
+              <Link
                 to="/contact"
                 className="rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-transparent bg-clip-text bg-gradient-to-r from-[#0B84F3] to-[#FF3D90] shadow-sm hover:bg-gray-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white transition-all duration-200"
               >
-                Partner with Us
+                Discuss Research Collaboration
               </Link>
               <Link to="/services" className="text-sm font-semibold leading-6 text-white hover:text-gray-100 transition-colors">
-                Explore AI Solutions <span aria-hidden="true">→</span>
+                Explore Research & Applications <span aria-hidden="true">→</span>
               </Link>
           </div>
         </div>

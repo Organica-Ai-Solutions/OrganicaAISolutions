@@ -23,7 +23,8 @@ const Privacy = () => {
             <li>Name</li>
             <li>Email address</li>
             <li>Phone number</li>
-            <li>Company information</li>
+            <li>Company or academic affiliation</li>
+            <li>Research interests and areas of expertise</li>
             <li>IP address and browser information</li>
           </ul>
           
@@ -38,6 +39,17 @@ const Privacy = () => {
             <li>Referring websites</li>
           </ul>
           
+          <h3 className="text-xl font-medium text-gray-800 mt-6 mb-3">Research Collaboration Data</h3>
+          <p>
+            If you engage with us for research purposes, we may collect additional information related to:
+          </p>
+          <ul className="list-disc pl-6 mb-4">
+            <li>Specific research interests and project details</li>
+            <li>Academic or professional credentials</li>
+            <li>Research collaboration proposals and communications</li>
+            <li>Technical requirements and specifications for research projects</li>
+          </ul>
+          
           <h2 className="text-2xl font-semibold text-gray-800 mt-8 mb-4">How We Use Your Information</h2>
           <p>
             We use the information we collect for various purposes, including:
@@ -47,7 +59,21 @@ const Privacy = () => {
             <li>Improving our website and user experience</li>
             <li>Communicating with you about updates or inquiries</li>
             <li>Analyzing usage patterns to enhance functionality</li>
+            <li>Evaluating potential research collaborations</li>
+            <li>Sharing relevant research publications and findings</li>
             <li>Complying with legal obligations</li>
+          </ul>
+          
+          <h3 className="text-xl font-medium text-gray-800 mt-6 mb-3">Research Data Usage</h3>
+          <p>
+            If you engage with us for research collaboration purposes, we may use your information to:
+          </p>
+          <ul className="list-disc pl-6 mb-4">
+            <li>Evaluate the feasibility and alignment of potential research collaborations</li>
+            <li>Connect you with appropriate research teams within our organization</li>
+            <li>Share relevant research papers, documentation, or technical specifications</li>
+            <li>Invite you to research-focused events, webinars, or discussions</li>
+            <li>Include you in communications about research advancements in your areas of interest</li>
           </ul>
           
           <h2 className="text-2xl font-semibold text-gray-800 mt-8 mb-4">Cookies and Tracking Technologies</h2>

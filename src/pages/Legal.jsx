@@ -20,11 +20,24 @@ const Legal = () => {
           
           <h2 className="text-2xl font-semibold text-gray-800 mt-8 mb-4">Trademark Notice</h2>
           <p>
-            Organica AI Solutions, the Organica AI Solutions logo, and all related names, logos, product 
+            Organica AI Solutions, the Organica AI Solutions logo, NIS Protocol, and all related names, logos, product 
             and service names, designs, and slogans are trademarks of Organica AI Solutions or its 
             affiliates or licensors. You must not use such marks without the prior written permission of 
             Organica AI Solutions. All other names, logos, product and service names, designs, and slogans 
             on this website are the trademarks of their respective owners.
+          </p>
+          
+          <h2 className="text-2xl font-semibold text-gray-800 mt-8 mb-4">Research Intellectual Property</h2>
+          <p>
+            All research, methodologies, algorithms, and technologies described on this website, including but not 
+            limited to the NIS Protocol, Physics-Informed Neural Networks implementations, Multi-Agent Systems, 
+            and other AI technologies developed by Organica AI Solutions, are protected by intellectual property laws.
+          </p>
+          <p>
+            Our research publications, code repositories, and technical documentation may be subject to specific 
+            licensing terms. Unless explicitly stated otherwise, our research intellectual property is not available 
+            for commercial use without proper licensing agreements. Academic and research use may be permitted under 
+            specific conditions as outlined in the relevant documentation.
           </p>
           
           <h2 className="text-2xl font-semibold text-gray-800 mt-8 mb-4">Legal Disclaimer</h2>
@@ -48,16 +61,21 @@ const Legal = () => {
             external websites.
           </p>
           
-          <h2 className="text-2xl font-semibold text-gray-800 mt-8 mb-4">Professional Disclaimer</h2>
+          <h2 className="text-2xl font-semibold text-gray-800 mt-8 mb-4">Research Disclaimer</h2>
           <p>
-            This website is not intended to be a substitute for professional advice, diagnosis, medical 
-            treatment, or therapy. Always seek the advice of your physician or qualified health provider 
-            with any questions you may have regarding any medical condition.
+            The research information provided on this website is for informational and educational purposes only. 
+            Our research in neuro-inspired AI systems, physics-informed neural networks, multi-agent systems, 
+            and other AI technologies represents ongoing work that may be subject to change as our understanding evolves.
+          </p>
+          <p>
+            While we strive for accuracy in describing our research achievements and capabilities, some technologies 
+            discussed may be in various stages of development, from conceptual to production-ready. Research results 
+            and performance metrics provided are based on our internal testing and may not be reproducible in all environments.
           </p>
           <p>
             Organica AI Solutions hereby disclaims any and all liability to any party for any direct, indirect, 
             implied, punitive, special, incidental, or other consequential damages arising directly or indirectly 
-            from any use of the content, which is provided as is, and without warranties.
+            from any use of our research information or technologies, which are provided as is, and without warranties.
           </p>
           
           <h2 className="text-2xl font-semibold text-gray-800 mt-8 mb-4">Fair Use Notice</h2>

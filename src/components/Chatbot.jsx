@@ -58,7 +58,7 @@ export default function Chatbot() {
   const [isOpen, setIsOpen] = useState(false)
   const [messages, setMessages] = useState([
     {
-      content: "Hello! I'm your Organica AI assistant. How can I help you with our technology solutions?",
+      content: "Hello! I'm your Organica AI research assistant. How can I help you learn about our research in neuro-inspired AI systems, physics-informed neural networks, or the NIS Protocol?",
       isUser: false,
     },
   ])
@@ -133,17 +133,19 @@ export default function Chatbot() {
       const lowercaseInput = inputMessage.toLowerCase();
       
       if (lowercaseInput.includes('hello') || lowercaseInput.includes('hi')) {
-        mockResponse = "Hello! I'm currently running in offline mode as we're experiencing connection issues with our backend service. How can I assist you with basic information today?";
-      } else if (lowercaseInput.includes('ai solutions') || lowercaseInput.includes('solutions')) {
-        mockResponse = "Organica AI offers solutions in mobile app development, AI integration, and blockchain technology. For more detailed information, please try again later when our backend services are fully operational.";
-      } else if (lowercaseInput.includes('mobile') || lowercaseInput.includes('app')) {
-        mockResponse = "Our mobile development team creates intuitive applications with optimized user experiences. We specialize in community-focused and business solutions. Please contact us directly for a more detailed conversation about your specific needs.";
-      } else if (lowercaseInput.includes('blockchain') || lowercaseInput.includes('crypto')) {
-        mockResponse = "Our blockchain services include secure payment processing, financial management solutions, and implementing blockchain security for various applications. For specific project inquiries, please email us at contact@organicaai.com.";
+        mockResponse = "Hello! I'm currently running in offline mode as we're experiencing connection issues with our backend service. How can I assist you with basic information about our research today?";
+      } else if (lowercaseInput.includes('nis protocol') || lowercaseInput.includes('nis')) {
+        mockResponse = "The NIS Protocol is our flagship research project - a neuro-inspired multi-agent AI framework for real-world automation. It features modular agent architecture with physics validation, 32 working API endpoints, and enterprise-grade reliability. It powers applications across automotive, aerospace, smart cities, and space exploration. For more detailed information, please visit our Research & Applications page.";
+      } else if (lowercaseInput.includes('physics') || lowercaseInput.includes('neural networks') || lowercaseInput.includes('pinn')) {
+        mockResponse = "Our Physics-Informed Neural Networks (PINNs) research integrates physics principles directly into neural networks, ensuring scientifically accurate predictions and behaviors. This approach is particularly valuable for fluid dynamics, structural engineering, and aerospace applications. For more information, please contact our research team.";
+      } else if (lowercaseInput.includes('multi-agent') || lowercaseInput.includes('agent')) {
+        mockResponse = "Our multi-agent systems research focuses on agent-to-agent communication protocols, emergent intelligence patterns, distributed cognition frameworks, and memory-enhanced collaborative agents. This work is foundational to the NIS Protocol and has applications across various domains including smart cities and autonomous systems.";
+      } else if (lowercaseInput.includes('neurips') || lowercaseInput.includes('ariel') || lowercaseInput.includes('space')) {
+        mockResponse = "Our NIS-X project is an entry for the NeurIPS Ariel Data Challenge 2025, focusing on exoplanet atmospheric analysis and discovery. It represents our elite AI research in space science applications, using consciousness-engineered AGI for complex scientific analysis.";
       } else if (lowercaseInput.includes('backend') || lowercaseInput.includes('error') || lowercaseInput.includes('not working')) {
         mockResponse = "Our backend service is temporarily unavailable. The connection issue has been automatically reported to our development team, and they are working to resolve it as quickly as possible. Please try again later.";
-      } else if (lowercaseInput.includes('contact') || lowercaseInput.includes('help')) {
-        mockResponse = "You can contact our team at contact@organicaai.com or visit our Contact page for more information. We apologize for the limited functionality right now and appreciate your patience.";
+      } else if (lowercaseInput.includes('contact') || lowercaseInput.includes('help') || lowercaseInput.includes('collaborate')) {
+        mockResponse = "For research collaboration inquiries, please contact our team at contact@organicaai.com or visit our Research Collaboration page. We're actively seeking partnerships in neuro-inspired AI systems, physics-informed neural networks, and multi-agent coordination.";
       }
       
       const errorMessage = {
@@ -157,16 +159,17 @@ export default function Chatbot() {
   }
 
   const suggestions = [
-    'Tell me about your AI solutions',
-    'How can you help with mobile development?',
-    'What blockchain services do you offer?',
-    'Explain your cybersecurity solutions',
+    'Tell me about the NIS Protocol',
+    'What are physics-informed neural networks?',
+    'Explain your multi-agent systems research',
+    'What is your NeurIPS Ariel Data Challenge project?',
+    'How do you apply AI in space science?',
   ]
 
   const clearChat = () => {
     setMessages([
       {
-        content: "Hello! I'm your Organica AI assistant. How can I help you with our technology solutions?",
+        content: "Hello! I'm your Organica AI research assistant. How can I help you learn about our research in neuro-inspired AI systems, physics-informed neural networks, or the NIS Protocol?",
         isUser: false,
       },
     ])
@@ -187,7 +190,7 @@ export default function Chatbot() {
         <div className="fixed bottom-20 right-4 w-96 bg-white rounded-xl shadow-2xl border border-gray-200 transform transition-all duration-300 animate-slide-up">
           {/* Header */}
           <div className="flex items-center justify-between p-4 border-b border-gray-200 bg-gradient-to-r from-primary-600 to-accent rounded-t-xl">
-            <h3 className="text-lg font-semibold text-white">AI Assistant</h3>
+            <h3 className="text-lg font-semibold text-white">Research Assistant</h3>
             <div className="flex items-center space-x-2">
               <button
                 onClick={clearChat}

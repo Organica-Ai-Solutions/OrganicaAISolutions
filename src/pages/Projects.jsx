@@ -18,6 +18,7 @@ import {
   Cog6ToothIcon
 } from '@heroicons/react/24/outline';
 import { useAnalytics } from '../components/shared/Analytics';
+import NISProtocolProjectShowcase from '../components/NISProtocolProjectShowcase';
 
 const Projects = () => {
   const { trackExternalLink, trackNISProtocolInteraction } = useAnalytics();
@@ -58,15 +59,15 @@ const Projects = () => {
       private: true
     },
     {
-      title: 'NIS Protocol v2.0',
-      subtitle: 'Consciousness-Level AI Framework',
-      description: 'Biologically-inspired framework for multi-agent systems with consciousness simulation, multi-provider LLM integration, and advanced emotional cognition.',
-      category: 'AI Research',
+      title: 'NIS Protocol v3.2.1',
+      subtitle: 'AI Operating System for Autonomous Systems',
+      description: 'Production-ready AI operating system with physics-informed neural networks, 32 working API endpoints, complete security hardening, and enterprise-grade reliability. Powers real-world applications in automotive, smart cities, aerospace, and space exploration.',
+      category: 'Core AI Research',
       status: 'active',
-      tech: ['Python', 'Multi-LLM', 'Consciousness AI'],
-      icon: LightBulbIcon,
+      tech: ['Python', 'Docker', 'PINNs', 'Multi-Agent', 'PyPI'],
+      icon: CpuChipIcon,
       color: 'blue',
-      href: 'https://nisprotocol.organicaai.com/',
+      href: 'https://github.com/Organica-Ai-Solutions/NIS_Protocol',
       external: true,
       private: false
     },
@@ -150,11 +151,11 @@ const Projects = () => {
   ];
 
   const projectCategories = [
-    { name: 'AI-Assisted Design', count: 1, color: 'indigo' },
-    { name: 'FinTech AI', count: 4, color: 'emerald' },
-    { name: 'AI Research', count: 3, color: 'blue' },
-    { name: 'Developer Tools', count: 2, color: 'purple' },
-    { name: 'Business Intelligence', count: 2, color: 'orange' }
+    { name: 'Core AI Research', count: 5, color: 'blue' },
+    { name: 'Industry Applications', count: 4, color: 'emerald' },
+    { name: 'Multi-Agent Systems', count: 3, color: 'purple' },
+    { name: 'Educational AI', count: 1, color: 'indigo' },
+    { name: 'Financial Intelligence', count: 2, color: 'orange' }
   ];
 
   return (
@@ -168,14 +169,17 @@ const Projects = () => {
           className="text-center mb-16"
         >
           <h1 className="text-5xl font-bold bg-gradient-to-r from-[#0B84F3] to-[#FF3D90] bg-clip-text text-transparent mb-6">
-            Our Project Portfolio
+            Research Projects & Implementations
           </h1>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto">
-            Comprehensive AI solutions spanning financial technology, consciousness-level AI research, 
-            developer tools, business intelligence, and mobile applications. Building the future of 
-            intelligent software across industries.
+            Our research portfolio showcases cutting-edge AI innovations and their real-world applications. 
+            From the NIS Protocol's neuro-inspired architecture to physics-informed neural networks and 
+            specialized industry implementations, we're advancing the frontiers of AI science.
           </p>
         </motion.div>
+        
+        {/* NIS Protocol Showcase */}
+        <NISProtocolProjectShowcase handleExternalLink={handleExternalLink} />
 
         {/* Project Categories */}
         <motion.div
@@ -203,7 +207,7 @@ const Projects = () => {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="mb-20"
         >
-          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Featured Projects</h2>
+          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">NIS Protocol: Our Flagship Research</h2>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {featuredProjects.map((project, index) => (
               <motion.div
@@ -291,7 +295,7 @@ const Projects = () => {
           transition={{ duration: 0.6, delay: 0.8 }}
           className="mb-16"
         >
-          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Additional Projects</h2>
+          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Supporting Research & Tools</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {additionalProjects.map((project, index) => (
               <motion.div
@@ -382,8 +386,8 @@ const Projects = () => {
               Ready to Collaborate?
             </h3>
             <p className="text-lg text-gray-600 mb-6 max-w-2xl mx-auto">
-              From AI trading systems to consciousness-level frameworks, we're building the next 
-              generation of intelligent software. Join us in shaping the future of AI.
+              From neuro-inspired AI systems to physics-informed neural networks, we're advancing
+              the frontiers of AI research. Join us in shaping the future of artificial intelligence.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link

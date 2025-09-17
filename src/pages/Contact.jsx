@@ -20,16 +20,19 @@ export default function Contact() {
     phone: '',
     company: '',
     message: '',
-    service: 'AI Solutions'
+    researchArea: 'NIS Protocol Core Research',
+    researchInterest: ''
   })
 
-  const services = [
-    'AI Solutions',
-    'Mobile Development',
-    'Blockchain',
-    'Analytics',
-    'Tech Consulting',
-    'Cybersecurity'
+  const researchAreas = [
+    'NIS Protocol Core Research',
+    'Multi-Agent Systems',
+    'Physics-Informed Neural Networks',
+    'Space Science Applications',
+    'Financial Intelligence Systems',
+    'AI-Enhanced Developer Tools',
+    'Interactive Educational AI',
+    'Other Research Interest'
   ]
 
   const handleSubmit = async (e) => {
@@ -59,10 +62,10 @@ export default function Contact() {
             <div className="absolute inset-y-0 left-0 -z-10 w-full overflow-hidden lg:w-1/2">
               <div className="absolute inset-0 bg-gradient-to-r from-[#0B84F3] to-[#FF3D90] opacity-20" />
             </div>
-            <h2 className="text-4xl font-bold tracking-tight bg-gradient-to-r from-[#0B84F3] to-[#FF3D90] bg-clip-text text-transparent sm:text-5xl">Contact Us</h2>
+            <h2 className="text-4xl font-bold tracking-tight bg-gradient-to-r from-[#0B84F3] to-[#FF3D90] bg-clip-text text-transparent sm:text-5xl">Research Collaboration</h2>
             <p className="mt-6 text-lg leading-8 text-gray-600">
-              We're here to help you transform your business with innovative technology solutions.
-              Contact us and discover how we can drive your digital success.
+              We're actively seeking research collaborations in neuro-inspired AI systems, physics-informed neural networks, 
+              and multi-agent coordination. Contact us to explore how we can advance AI science together.
             </p>
             <dl className="mt-10 space-y-4 text-base leading-7 text-gray-600">
               <div className="flex gap-x-4">
@@ -181,22 +184,37 @@ export default function Contact() {
                 </div>
               </div>
               <div className="sm:col-span-2">
-                <label htmlFor="service" className="block text-sm font-semibold leading-6 text-gray-900">
-                  Service of Interest
+                <label htmlFor="researchArea" className="block text-sm font-semibold leading-6 text-gray-900">
+                  Research Area of Interest
                 </label>
                 <div className="mt-2.5">
                   <select
-                    id="service"
-                    value={formData.service}
+                    id="researchArea"
+                    value={formData.researchArea}
                     onChange={handleChange}
                     className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 bg-white/50 backdrop-blur-sm focus:ring-2 focus:ring-inset focus:ring-[#0B84F3] hover:ring-gray-400 transition-all duration-200 sm:text-sm sm:leading-6"
                   >
-                    {services.map((service) => (
-                      <option key={service} value={service}>
-                        {service}
+                    {researchAreas.map((area) => (
+                      <option key={area} value={area}>
+                        {area}
                       </option>
                     ))}
                   </select>
+                </div>
+              </div>
+              <div className="sm:col-span-2">
+                <label htmlFor="researchInterest" className="block text-sm font-semibold leading-6 text-gray-900">
+                  Specific Research Interest
+                </label>
+                <div className="mt-2.5">
+                  <input
+                    type="text"
+                    id="researchInterest"
+                    value={formData.researchInterest}
+                    onChange={handleChange}
+                    placeholder="e.g., Physics-Informed Neural Networks for fluid dynamics"
+                    className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 bg-white/50 backdrop-blur-sm placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#0B84F3] hover:ring-gray-400 transition-all duration-200 sm:text-sm sm:leading-6"
+                  />
                 </div>
               </div>
               <div className="sm:col-span-2">
@@ -219,7 +237,7 @@ export default function Contact() {
                 type="submit"
                 className="rounded-md bg-gradient-to-r from-[#0B84F3] to-[#FF3D90] px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0B84F3] transition-all duration-200"
               >
-                Send Message
+                Submit Research Inquiry
               </button>
             </div>
           </div>

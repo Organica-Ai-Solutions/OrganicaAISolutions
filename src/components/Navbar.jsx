@@ -5,8 +5,8 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 
 const navigation = [
   { name: 'Home', href: '/' },
-  { name: 'About', href: '/about' },
-  { name: 'Services', href: '/services' },
+  { name: 'Our Company', href: '/about', highlight: true },
+  { name: 'Research & Applications', href: '/services' },
   { name: 'Projects', href: '/projects' },
   { name: 'Contact', href: '/contact' },
 ]
@@ -46,7 +46,7 @@ export default function Navbar() {
             <Link
               key={item.name}
               to={item.href}
-              className="text-sm font-semibold leading-6 text-gray-900 hover:text-primary-600 relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-primary-600 after:transition-all"
+              className={`text-sm font-semibold leading-6 ${item.highlight ? 'text-primary-600 border border-primary-600 px-3 py-1 rounded-md' : 'text-gray-900'} hover:text-primary-600 relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-primary-600 after:transition-all`}
             >
               {item.name}
             </Link>
@@ -138,7 +138,7 @@ export default function Navbar() {
                   <Link
                     key={item.name}
                     to={item.href}
-                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 hover:text-primary-600 transition-colors"
+                    className={`-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 ${item.highlight ? 'text-primary-600 bg-primary-50' : 'text-gray-900'} hover:bg-gray-50 hover:text-primary-600 transition-colors`}
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     {item.name}

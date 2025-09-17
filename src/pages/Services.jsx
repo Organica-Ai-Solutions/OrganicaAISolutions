@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { 
+import {
   CpuChipIcon,
   CurrencyDollarIcon,
   CommandLineIcon,
@@ -12,57 +12,85 @@ import {
   LightBulbIcon,
   CubeTransparentIcon,
   ShieldCheckIcon,
+  ServerIcon,
+  BookOpenIcon,
 } from '@heroicons/react/24/outline'
 import SEOIntegration, { getPageSEO } from '../components/shared/SEOIntegration'
 import GitHubIntegration from '../components/GitHubIntegration'
 
-const services = [
+const researchAreas = [
   {
-    name: 'AI-Assisted Design Systems',
-    description: 'Interactive design experiences and comprehensive educational content with professional polish and modern UX/UI.',
+    name: 'NIS Protocol Core Research',
+    description: 'Our flagship neuro-inspired multi-agent AI framework for real-world automation, with production-ready security, reliability, and enterprise features.',
     features: [
-      'Interactive design history books',
-      'Professional UI/UX development',
-      'Educational content platforms',
-      'PWA & mobile-optimized experiences'
+      'Modular agent architecture with physics validation',
+      'Biologically-inspired consciousness simulation',
+      'Multi-provider LLM integration',
+      'Advanced emotional cognition systems'
+    ],
+    icon: CpuChipIcon,
+    gradient: 'from-blue-500 to-cyan-500',
+    projects: ['NIS Protocol v3.2', 'NIS-X', 'NIS-AUTO', 'NIS-CITY']
+  },
+  {
+    name: 'Multi-Agent Systems Research',
+    description: 'Pioneering research in multi-agent orchestration, communication protocols, and emergent behaviors for complex problem-solving.',
+    features: [
+      'Agent-to-agent communication protocols',
+      'Emergent intelligence patterns',
+      'Distributed cognition frameworks',
+      'Memory-enhanced collaborative agents'
+    ],
+    icon: UserGroupIcon,
+    gradient: 'from-indigo-500 to-purple-500',
+    projects: ['Multi-Agent AI Systems Guide', 'MCP Protocol', 'ACP Framework']
+  },
+  {
+    name: 'Physics-Informed Neural Networks',
+    description: 'Advanced research integrating physics principles into neural networks for more accurate real-world modeling and prediction.',
+    features: [
+      'Physics-constrained model training',
+      'Differential equation embeddings',
+      'Hardware-validated simulations',
+      'Real-world deployment optimization'
+    ],
+    icon: LightBulbIcon,
+    gradient: 'from-green-500 to-emerald-500',
+    projects: ['NIS-DRONE', 'NIS-AUTO', 'Physics-ML Integration']
+  },
+  {
+    name: 'Space Science Applications',
+    description: 'Elite AI research for space exploration, including our NeurIPS Ariel Data Challenge 2025 entry for exoplanet atmospheric analysis.',
+    features: [
+      'Exoplanet atmospheric analysis',
+      'NeurIPS competition participation',
+      'Astronomical data processing',
+      'Consciousness-engineered AGI for space'
     ],
     icon: BeakerIcon,
     gradient: 'from-indigo-500 to-purple-500',
-    projects: ['The Visual Evolution', 'Design Systems', 'Educational Platforms']
+    projects: ['NIS-X', 'SparkNova', 'Ariel Data Challenge']
   },
   {
-    name: 'FinTech AI Solutions',
-    description: 'Advanced AI trading systems and financial intelligence platforms with real-time decision making and risk management.',
+    name: 'Financial Intelligence Systems',
+    description: 'Research in advanced AI trading systems like AlphaCortex with LLM-powered decision making and autonomous execution.',
     features: [
-      'AI trading algorithm development',
       'LLM-powered market analysis',
-      'Automated portfolio management',
-      'Risk assessment & optimization'
+      'Behavioral economics modeling',
+      'Risk assessment algorithms',
+      'Autonomous trading frameworks'
     ],
     icon: CurrencyDollarIcon,
     gradient: 'from-emerald-500 to-teal-500',
     projects: ['AlphaCortex', 'Smart Portfolio', 'Crypto Trading Bot']
   },
   {
-    name: 'Consciousness-Level AI',
-    description: 'Pioneering self-aware AI frameworks with meta-cognitive processing and biological inspiration.',
+    name: 'AI-Enhanced Developer Tools',
+    description: 'Research in intelligent coding assistants like Orion with MCP integration and enhanced development workflows.',
     features: [
-      'NIS Protocol v2.0 implementation',
-      'Multi-provider LLM integration',
-      'Consciousness simulation',
-      'Meta-cognitive architectures'
-    ],
-    icon: CpuChipIcon,
-    gradient: 'from-blue-500 to-cyan-500',
-    projects: ['NIS Protocol', 'Cultural AI', 'Multi-Agent Systems']
-  },
-  {
-    name: 'Developer AI Tools',
-    description: 'Intelligent coding assistants and development automation platforms for enhanced productivity.',
-    features: [
-      'AI-powered code generation',
-      'MCP server integration',
-      'Automated testing & debugging',
+      'AI-powered code generation research',
+      'MCP server integration frameworks',
+      'Automated testing methodologies',
       'Development workflow optimization'
     ],
     icon: CommandLineIcon,
@@ -70,119 +98,93 @@ const services = [
     projects: ['Orion', 'Codex Reader', 'Development Tools']
   },
   {
-    name: 'Business Intelligence',
-    description: 'Comprehensive data analytics and business intelligence solutions for data-driven decision making.',
+    name: 'Interactive Educational AI',
+    description: 'Research in AI-assisted educational platforms with professional UX/UI and comprehensive content delivery systems.',
     features: [
-      'Advanced data analytics platforms',
-      'Retail sales analysis',
-      'Predictive modeling',
-      'Custom BI dashboards'
+      'Interactive learning frameworks',
+      'Knowledge retention optimization',
+      'Personalized educational pathways',
+      'Multi-modal content delivery'
     ],
-    icon: ChartBarIcon,
-    gradient: 'from-orange-500 to-red-500',
-    projects: ['Business Analytics', 'Data Science Tools', 'Analytics Platform']
-  },
-  {
-    name: 'Mobile AI Applications',
-    description: 'Community-focused mobile applications with integrated AI capabilities and smart features.',
-    features: [
-      'Flutter/React Native development',
-      'AI-powered user experiences',
-      'Community engagement platforms',
-      'Cross-platform solutions'
-    ],
-    icon: DevicePhoneMobileIcon,
-    gradient: 'from-pink-500 to-rose-500',
-    projects: ['Tanda Circles', 'Mobile Apps', 'Community Platforms']
-  },
-  {
-    name: 'Research & Innovation',
-    description: 'Cutting-edge AI research and development in multi-agent systems and emerging technologies.',
-    features: [
-      'Multi-agent system research',
-      'AI architecture consulting',
-      'Prototype development',
-      'Academic collaboration'
-    ],
-    icon: BeakerIcon,
+    icon: BookOpenIcon,
     gradient: 'from-indigo-500 to-purple-500',
-    projects: ['SparkNova', 'Research Projects', 'Innovation Labs']
+    projects: ['The Visual Evolution', 'Design Systems', 'Educational Platforms']
   }
 ]
 
-const capabilities = [
+const researchMethodologies = [
   {
-    name: 'End-to-End AI Development',
-    description: 'Complete AI solution development from concept to deployment across all industries and use cases.',
-    icon: CodeBracketIcon,
-  },
-  {
-    name: 'Multi-Provider Integration',
-    description: 'Seamless integration across OpenAI, Anthropic, DeepSeek, and other leading AI providers.',
-    icon: CloudArrowUpIcon,
-  },
-  {
-    name: 'Custom AI Architecture',
-    description: 'Tailored AI architectures designed for specific business needs and performance requirements.',
+    name: 'Physics-Informed Validation',
+    description: 'Integrating physical laws and constraints directly into neural networks to ensure scientifically accurate predictions and behaviors.',
     icon: CubeTransparentIcon,
   },
   {
-    name: 'Ethical AI Implementation',
-    description: 'Responsible AI development with bias mitigation, transparency, and cultural sensitivity.',
+    name: 'Multi-Modal Integration',
+    description: 'Combining diverse data types (text, vision, audio) with multiple AI providers to create more comprehensive and robust AI systems.',
+    icon: CloudArrowUpIcon,
+  },
+  {
+    name: 'Neuromorphic Architecture',
+    description: 'Designing AI systems inspired by the structure and function of biological neural systems for more efficient and adaptive intelligence.',
+    icon: CpuChipIcon,
+  },
+  {
+    name: 'Ethical AI Research',
+    description: 'Pioneering approaches to responsible AI with built-in bias mitigation, transparency, explainability, and cultural sensitivity.',
     icon: ShieldCheckIcon,
   },
   {
-    name: 'Strategic AI Consulting',
-    description: 'Expert guidance on AI strategy, technology selection, and implementation roadmaps.',
+    name: 'Academic Collaboration',
+    description: 'Partnering with leading research institutions and participating in competitions like NeurIPS to advance the state of AI science.',
     icon: LightBulbIcon,
   },
   {
-    name: 'Collaborative Development',
-    description: 'Close partnership with your team throughout the development lifecycle and beyond.',
-    icon: UserGroupIcon,
+    name: 'Open Source Contribution',
+    description: 'Sharing research findings and tools with the broader AI community to accelerate collective progress in artificial intelligence.',
+    icon: CodeBracketIcon,
   }
 ]
 
 const industries = [
   {
-    name: 'Design & Education',
-    description: 'Interactive design books, educational platforms, professional UX/UI',
-    icon: BeakerIcon,
-    color: 'indigo'
+    name: 'Automotive',
+    description: 'NIS-AUTO: Production system for gas engine vehicles with real hardware deployment',
+    icon: CurrencyDollarIcon,
+    color: 'blue'
   },
   {
-    name: 'Financial Services',
-    description: 'Trading algorithms, risk management, portfolio optimization',
+    name: 'Smart Cities',
+    description: 'NIS-CITY: Complete smart city infrastructure with distributed agent coordination',
+    icon: ChartBarIcon,
+    color: 'green'
+  },
+  {
+    name: 'Aerospace',
+    description: 'NIS-DRONE: Hardware-validated autonomous flight systems for surveillance and delivery',
+    icon: DevicePhoneMobileIcon,
+    color: 'orange'
+  },
+  {
+    name: 'Space Exploration',
+    description: 'NIS-X: Elite AI research for exoplanet atmospheric analysis and discovery',
+    icon: BeakerIcon,
+    color: 'purple'
+  },
+  {
+    name: 'Financial Markets',
+    description: 'AlphaCortex: AI-powered financial automation with real-time strategy adaptation',
     icon: CurrencyDollarIcon,
     color: 'emerald'
   },
   {
-    name: 'Technology',
-    description: 'Developer tools, AI frameworks, automation platforms',
+    name: 'Design & Education',
+    description: 'The Visual Evolution: Interactive design history book with 20+ movements and 106+ years coverage',
     icon: CommandLineIcon,
-    color: 'purple'
-  },
-  {
-    name: 'Retail & E-commerce',
-    description: 'Business analytics, customer insights, predictive modeling',
-    icon: ChartBarIcon,
-    color: 'orange'
-  },
-  {
-    name: 'Mobile & Apps',
-    description: 'Community platforms, AI-powered experiences, cross-platform solutions',
-    icon: DevicePhoneMobileIcon,
-    color: 'pink'
-  },
-  {
-    name: 'Research & Academia',
-    description: 'AI research, consciousness studies, multi-agent systems',
-    icon: BeakerIcon,
     color: 'indigo'
   }
 ]
 
-export default function Services() {
+export default function ResearchApplications() {
   const seoConfig = getPageSEO('services')
   
   return (
@@ -194,31 +196,31 @@ export default function Services() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         {/* Header Section */}
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-base font-semibold leading-7 text-transparent bg-clip-text bg-gradient-to-r from-[#0B84F3] to-[#FF3D90]">Our Services</h2>
+          <h2 className="text-base font-semibold leading-7 text-transparent bg-clip-text bg-gradient-to-r from-[#0B84F3] to-[#FF3D90]">Our Research</h2>
           <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-            Comprehensive AI Solutions
+            Advancing AI Through Innovative Research
           </p>
           <p className="mt-6 text-lg leading-8 text-gray-600">
-            From AI trading systems and developer tools to consciousness-level frameworks and business intelligence. 
-            We deliver intelligent software solutions across every industry.
+            Organica AI Solutions pioneers cutting-edge research in neuro-inspired AI, multi-agent systems, and physics-informed neural networks.
+            Our research drives real-world applications across industries from automotive to space exploration.
           </p>
         </div>
 
-        {/* Services Grid */}
+        {/* Research Areas Grid */}
         <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
           <div className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 md:grid-cols-2 lg:max-w-none lg:grid-cols-3">
-            {services.map((service) => (
-              <div key={service.name} className="flex flex-col">
+            {researchAreas.map((area) => (
+              <div key={area.name} className="flex flex-col">
                 <div className="h-full rounded-2xl bg-white p-8 shadow-lg ring-1 ring-gray-200 hover:shadow-xl transition-all duration-300 group">
-                  <div className={`inline-flex rounded-lg p-3 bg-gradient-to-r ${service.gradient} group-hover:scale-110 transition-transform`}>
-                    <service.icon className="h-6 w-6 text-white" aria-hidden="true" />
+                  <div className={`inline-flex rounded-lg p-3 bg-gradient-to-r ${area.gradient} group-hover:scale-110 transition-transform`}>
+                    <area.icon className="h-6 w-6 text-white" aria-hidden="true" />
                   </div>
-                  <h3 className="mt-4 text-lg font-semibold leading-8 text-gray-900">{service.name}</h3>
-                  <p className="mt-2 text-base leading-7 text-gray-600">{service.description}</p>
+                  <h3 className="mt-4 text-lg font-semibold leading-8 text-gray-900">{area.name}</h3>
+                  <p className="mt-2 text-base leading-7 text-gray-600">{area.description}</p>
                   
-                  {/* Features */}
+                  {/* Research Focus */}
                   <ul role="list" className="mt-6 space-y-3 text-sm leading-6 text-gray-600">
-                    {service.features.map((feature) => (
+                    {area.features.map((feature) => (
                       <li key={feature} className="flex gap-x-3">
                         <svg className="h-6 w-5 flex-none text-blue-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                           <path fillRule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clipRule="evenodd" />
@@ -228,11 +230,11 @@ export default function Services() {
                     ))}
                   </ul>
 
-                  {/* Example Projects */}
+                  {/* Related Projects */}
                   <div className="mt-6 pt-4 border-t border-gray-100">
-                    <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-2">Featured Projects</p>
+                    <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-2">Related Projects</p>
                     <div className="flex flex-wrap gap-1">
-                      {service.projects.map((project) => (
+                      {area.projects.map((project) => (
                         <span key={project} className="inline-flex px-2 py-1 text-xs font-medium bg-gray-100 text-gray-700 rounded">
                           {project}
                         </span>
@@ -245,14 +247,14 @@ export default function Services() {
           </div>
         </div>
 
-        {/* Industries We Serve */}
+        {/* Research Applications */}
         <div className="mx-auto mt-32 max-w-2xl lg:text-center">
-          <h2 className="text-base font-semibold leading-7 text-transparent bg-clip-text bg-gradient-to-r from-[#0B84F3] to-[#FF3D90]">Industries We Serve</h2>
+          <h2 className="text-base font-semibold leading-7 text-transparent bg-clip-text bg-gradient-to-r from-[#0B84F3] to-[#FF3D90]">Research Applications</h2>
           <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-            Cross-Industry Expertise
+            From Research to Real-World Impact
           </p>
           <p className="mt-6 text-lg leading-8 text-gray-600">
-            Our diverse portfolio spans multiple industries, bringing AI innovation to every sector.
+            Our research directly translates into practical applications across diverse industries, demonstrating the real-world impact of our innovations.
           </p>
         </div>
         <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
@@ -269,57 +271,57 @@ export default function Services() {
           </div>
         </div>
 
-        {/* Additional Capabilities */}
+        {/* Research Methodologies */}
         <div className="mx-auto mt-32 max-w-2xl lg:text-center">
-          <h2 className="text-base font-semibold leading-7 text-transparent bg-clip-text bg-gradient-to-r from-[#0B84F3] to-[#FF3D90]">Our Approach</h2>
+          <h2 className="text-base font-semibold leading-7 text-transparent bg-clip-text bg-gradient-to-r from-[#0B84F3] to-[#FF3D90]">Our Methodologies</h2>
           <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-            How We Deliver Excellence
+            Research Excellence Framework
           </p>
           <p className="mt-6 text-lg leading-8 text-gray-600">
-            Our proven methodology ensures successful AI implementation across all projects and industries.
+            Our rigorous research methodologies combine academic rigor with practical implementation, ensuring both theoretical advancement and real-world impact.
           </p>
         </div>
         <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
           <dl className="grid max-w-xl grid-cols-1 gap-8 lg:max-w-none lg:grid-cols-3">
-            {capabilities.map((capability) => (
-              <div key={capability.name} className="relative pl-16 group">
+            {researchMethodologies.map((methodology) => (
+              <div key={methodology.name} className="relative pl-16 group">
                 <div className="absolute left-0 top-0 flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-br from-[#0B84F3] to-[#FF3D90] group-hover:scale-110 transition-transform">
-                  <capability.icon className="h-6 w-6 text-white" aria-hidden="true" />
+                  <methodology.icon className="h-6 w-6 text-white" aria-hidden="true" />
                 </div>
                 <dt className="text-lg font-semibold leading-7 text-gray-900">
-                  {capability.name}
+                  {methodology.name}
                 </dt>
                 <dd className="mt-2 text-base leading-7 text-gray-600">
-                  {capability.description}
+                  {methodology.description}
                 </dd>
               </div>
             ))}
           </dl>
         </div>
 
-        {/* Portfolio Stats */}
+        {/* Research Metrics */}
         <div className="mx-auto mt-32 max-w-4xl">
           <div className="bg-gray-50 rounded-2xl p-8">
             <div className="text-center mb-8">
-              <h3 className="text-2xl font-bold text-gray-900">Our Track Record</h3>
-              <p className="mt-2 text-gray-600">Delivering AI solutions across industries</p>
+              <h3 className="text-2xl font-bold text-gray-900">Research Impact</h3>
+              <p className="mt-2 text-gray-600">Advancing AI science and real-world applications</p>
             </div>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
               <div>
-                <div className="text-3xl font-bold text-gray-900 mb-2">22+</div>
-                <div className="text-sm text-gray-600">Active Projects</div>
+                <div className="text-3xl font-bold text-gray-900 mb-2">7</div>
+                <div className="text-sm text-gray-600">Research Areas</div>
               </div>
               <div>
                 <div className="text-3xl font-bold text-gray-900 mb-2">5</div>
-                <div className="text-sm text-gray-600">Industry Sectors</div>
+                <div className="text-sm text-gray-600">Industry Applications</div>
               </div>
               <div>
-                <div className="text-3xl font-bold text-gray-900 mb-2">8+</div>
-                <div className="text-sm text-gray-600">Technologies</div>
+                <div className="text-3xl font-bold text-gray-900 mb-2">1</div>
+                <div className="text-sm text-gray-600">NeurIPS Challenge</div>
               </div>
               <div>
-                <div className="text-3xl font-bold text-gray-900 mb-2">100%</div>
-                <div className="text-sm text-gray-600">AI-Powered</div>
+                <div className="text-3xl font-bold text-gray-900 mb-2">33+</div>
+                <div className="text-sm text-gray-600">GitHub Repositories</div>
               </div>
             </div>
           </div>
@@ -329,10 +331,10 @@ export default function Services() {
         <div className="mx-auto mt-16 max-w-4xl">
           <div className="text-center mb-8">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">
-              Open Source Innovation
+              Open Source Research
             </h2>
             <p className="text-gray-600">
-              Explore our public repositories and contribute to the future of AI development.
+              Explore our public repositories and contribute to advancing AI research and applications.
             </p>
           </div>
           <GitHubIntegration />
@@ -346,24 +348,24 @@ export default function Services() {
         </div>
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-            Ready to Transform Your Business with AI?
+            Collaborate on Cutting-Edge AI Research
           </h2>
           <p className="mx-auto mt-6 max-w-xl text-lg leading-8 text-gray-600">
-            Whether you need financial AI, developer tools, consciousness frameworks, or business intelligence,
-            we're here to build the future with you.
+            Whether you're interested in consciousness-level AI, physics-informed neural networks, or multi-agent systems,
+            we invite you to explore collaboration opportunities with our research team.
           </p>
           <div className="mt-10 flex items-center justify-center gap-x-6">
             <Link
               to="/contact"
               className="rounded-md bg-gradient-to-r from-[#0B84F3] to-[#FF3D90] px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:shadow-lg transition-all duration-300"
             >
-              Start Your Project
+              Discuss Research Collaboration
             </Link>
             <Link
               to="/projects"
               className="text-sm font-semibold leading-6 text-gray-900 hover:text-gray-700 transition-colors"
             >
-              View Our Portfolio <span aria-hidden="true">→</span>
+              View Research Portfolio <span aria-hidden="true">→</span>
             </Link>
           </div>
         </div>

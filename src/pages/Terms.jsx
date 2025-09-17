@@ -49,6 +49,20 @@ const Terms = () => {
             the prior written consent of Organica AI Solutions.
           </p>
           
+          <h2 className="text-2xl font-semibold text-gray-800 mt-8 mb-4">2.1 Research Intellectual Property</h2>
+          <p>
+            All research content, methodologies, algorithms, code, and technologies presented on this website, 
+            including but not limited to the NIS Protocol, Physics-Informed Neural Networks implementations, 
+            and Multi-Agent Systems, are protected by intellectual property laws and are the exclusive property 
+            of Organica AI Solutions unless explicitly stated otherwise.
+          </p>
+          <p>
+            Research materials may be subject to specific licensing terms as outlined in their respective 
+            repositories or documentation. Academic and non-commercial research use may be permitted under 
+            specific conditions, but commercial use requires explicit written permission or appropriate licensing 
+            agreements with Organica AI Solutions.
+          </p>
+          
           <h2 className="text-2xl font-semibold text-gray-800 mt-8 mb-4">3. User Content</h2>
           <p>
             Our Service may allow you to post, link, store, share and otherwise make available certain 
@@ -62,6 +76,30 @@ const Terms = () => {
             any and all of your rights to any content you submit, post, or display on or through the Service 
             and you are responsible for protecting those rights.
           </p>
+          
+          <h2 className="text-2xl font-semibold text-gray-800 mt-8 mb-4">3.1 Research Collaboration</h2>
+          <p>
+            If you submit research collaboration proposals, ideas, or other materials through our Service, 
+            you acknowledge that:
+          </p>
+          <ul className="list-disc pl-6 mb-4">
+            <li>
+              Such submissions are non-confidential unless explicitly agreed upon in a separate written agreement
+            </li>
+            <li>
+              Organica AI Solutions may already be working on similar research areas independently
+            </li>
+            <li>
+              Similar ideas may be submitted by other researchers or collaborators
+            </li>
+            <li>
+              Submission does not establish any obligation for Organica AI Solutions to pursue collaboration
+            </li>
+            <li>
+              Any formal research collaboration will require a separate written agreement defining intellectual 
+              property rights, confidentiality terms, and other relevant conditions
+            </li>
+          </ul>
           
           <h2 className="text-2xl font-semibold text-gray-800 mt-8 mb-4">4. Links To Other Websites</h2>
           <p>
