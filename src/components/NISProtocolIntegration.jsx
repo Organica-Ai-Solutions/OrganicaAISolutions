@@ -36,14 +36,14 @@ const protocolFeatures = [
 const integrationLinks = [
   {
     title: 'Live Documentation',
-    description: 'Complete NIS Protocol v2.0 technical docs',
+    description: 'NIS Protocol v4.0.2 technical docs (experimental)',
     href: '/docs/nis-protocol',
     external: true,
     icon: CodeBracketSquareIcon
   },
   {
     title: 'GitHub Repository',
-    description: '25+ commits, continuous development',
+    description: 'Open source - active R&D development',
     href: 'https://github.com/Organica-Ai-Solutions/NIS_Protocol',
     external: true,
     icon: ArrowTopRightOnSquareIcon
@@ -76,11 +76,11 @@ export default function NISProtocolIntegration() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl font-bold text-gray-900 mb-4">
-            NIS Protocol v2.0 Integration
+            NIS Protocol v4.0.2 Integration
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Seamlessly integrated consciousness-level AI architecture powering our 
-            advanced cognitive systems and multi-provider orchestration.
+            Experimental AI operating system with NVIDIA Isaac robotics, modular architecture, 
+            and enterprise infrastructure. <span className="text-yellow-600 font-medium">R&D Startup - Ongoing Research</span>
           </p>
         </motion.div>
 

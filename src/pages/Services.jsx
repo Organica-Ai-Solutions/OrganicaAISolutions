@@ -21,16 +21,16 @@ import GitHubIntegration from '../components/GitHubIntegration'
 const researchAreas = [
   {
     name: 'NIS Protocol Core Research',
-    description: 'Our flagship neuro-inspired multi-agent AI framework for real-world automation, with production-ready security, reliability, and enterprise features.',
+    description: 'Our flagship experimental neuro-inspired multi-agent AI framework. As an R&D startup, this represents ongoing research with evolving capabilities.',
     features: [
-      'Modular agent architecture with physics validation',
-      'Biologically-inspired consciousness simulation',
-      'Multi-provider LLM integration',
-      'Advanced emotional cognition systems'
+      'NVIDIA Isaac robotics integration',
+      '23+ modular API routes',
+      'Kafka/Redis enterprise infrastructure',
+      'CAN/OBD-II automotive protocols'
     ],
     icon: CpuChipIcon,
     gradient: 'from-blue-500 to-cyan-500',
-    projects: ['NIS Protocol v3.2', 'NIS-X', 'NIS-AUTO', 'NIS-CITY']
+    projects: ['NIS Protocol v4.0.2', 'NeuroLinux', 'NIS Hub', 'NIS-X']
   },
   {
     name: 'Multi-Agent Systems Research',
@@ -196,14 +196,18 @@ export default function ResearchApplications() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         {/* Header Section */}
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-base font-semibold leading-7 text-transparent bg-clip-text bg-gradient-to-r from-[#0B84F3] to-[#FF3D90]">Our Research</h2>
+          <h2 className="text-base font-semibold leading-7 text-transparent bg-clip-text bg-gradient-to-r from-[#0B84F3] to-[#FF3D90]">R&D Startup</h2>
           <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-            Advancing AI Through Innovative Research
+            Experimental AI Research & Development
           </p>
           <p className="mt-6 text-lg leading-8 text-gray-600">
-            Organica AI Solutions pioneers cutting-edge research in neuro-inspired AI, multi-agent systems, and physics-informed neural networks.
-            Our research drives real-world applications across industries from automotive to space exploration.
+            Organica AI Solutions is an early-stage R&D startup pioneering experimental research in neuro-inspired AI, 
+            multi-agent systems, and physics-informed neural networks. Our work is evolving and experimental — 
+            we're advancing AI science while building practical applications.
           </p>
+          <div className="mt-4 inline-flex items-center px-4 py-2 bg-yellow-100 text-yellow-800 rounded-full text-sm font-medium">
+            ⚠️ All technologies are experimental and under active development
+          </div>
         </div>
 
         {/* Research Areas Grid */}
