@@ -36,7 +36,7 @@ const NISProtocol = () => {
           </p>
           <div className="bg-blue-50 border-l-4 border-blue-500 p-4">
             <p className="text-sm text-blue-800">
-              <strong>Research Notice:</strong> NIS Protocol v3.2.1 is production-ready but represents ongoing research. 
+              <strong>⚠️ R&D Notice:</strong> NIS Protocol v4.0.2 is experimental technology from an early-stage startup. Features may change. 
               Some components may continue to evolve as our understanding advances.
             </p>
           </div>

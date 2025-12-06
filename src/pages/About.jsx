@@ -13,17 +13,17 @@ import SEOIntegration, { getPageSEO } from '../components/shared/SEOIntegration'
 
 const stats = [
   { name: 'Research Areas', value: '7' },
-  { name: 'Industry Implementations', value: '5' },
-  { name: 'Working API Endpoints', value: '32' },
+  { name: 'Industry Implementations', value: '6' },
+  { name: 'Modular API Routes', value: '23+' },
   { name: 'GitHub Repositories', value: '33' },
 ]
 
 const projects = [
   {
-    name: 'NIS Protocol v3.2',
-    description: 'Our flagship AI operating system for next-generation autonomous systems with production-ready security, reliability, and enterprise features.',
-    status: 'Production Ready',
-    tech: ['Python', 'Docker', 'Redis', 'Kafka', 'AWS', 'NVIDIA']
+    name: 'NIS Protocol v4.0.2',
+    description: 'Our flagship experimental AI operating system with NVIDIA Isaac robotics, modular architecture, and enterprise infrastructure. R&D in progress.',
+    status: 'R&D Active',
+    tech: ['Python', 'Docker', 'Redis', 'Kafka', 'Isaac', 'NVIDIA']
   },
   {
     name: 'The Visual Evolution',
@@ -94,8 +94,13 @@ const milestones = [
   },
   {
     date: '2024 Q4',
-    title: 'NIS Protocol v3.2',
-    description: 'Released production-ready version with enhanced security, reliability, and enterprise features.',
+    title: 'NIS Protocol v4.0',
+    description: 'Major release with NVIDIA Isaac robotics, modular architecture, and Kafka/Redis infrastructure.',
+  },
+  {
+    date: '2025',
+    title: 'NeuroLinux & NIS Hub',
+    description: 'Launched AI-powered Linux distribution and central management platform for distributed NIS deployments.',
   }
 ]
 
@@ -134,10 +139,10 @@ export default function About() {
                   Our Research Journey
                 </h1>
                 <p className="mt-6 text-lg leading-8 text-gray-100">
-                  Organica AI Solutions began as a mobile app development company and evolved into a pioneering AI research organization. 
-                  Our flagship creation, the NIS Protocol, is a production-ready neuro-inspired multi-agent AI framework 
-                  now being implemented across industries from automotive to space exploration, with active participation in elite 
-                  AI research competitions like the NeurIPS Ariel Data Challenge 2025.
+                  Organica AI Solutions is an early-stage R&D startup that evolved from mobile app development into pioneering AI research. 
+                  Our flagship creation, the NIS Protocol, is an experimental neuro-inspired multi-agent AI framework 
+                  being developed for applications across automotive to space exploration. Our work is evolving and experimental — 
+                  we're advancing AI science while building practical applications.
                 </p>
                 <div className="mt-10 flex items-center gap-x-6">
                   <Link
