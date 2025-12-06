@@ -31,7 +31,7 @@ const CompanyEvolution = () => {
       year: "2024-2025",
       title: "NIS Protocol Development",
       description: "Created our flagship NIS Protocol - a neuro-inspired multi-agent AI framework",
-      projects: ["NIS Protocol v3.2", "NIS-TOOLKIT-SUIT", "NIS-HUB", "Multi-agent AI Systems"],
+      projects: ["NIS Protocol v4.0.2", "NeuroLinux", "NIS-Hub", "Multi-agent AI Systems"],
       icon: CpuChipIcon,
       color: "indigo"
     },
@@ -63,7 +63,7 @@ const CompanyEvolution = () => {
     {
       name: "Core AI Technology",
       count: 3,
-      examples: ["NIS Protocol v3.2", "NIS-HUB", "Organica Agent Framework"],
+      examples: ["NIS Protocol v4.0.2", "NeuroLinux", "NIS-Hub"],
       icon: CpuChipIcon,
       color: "indigo"
     },
@@ -189,17 +189,18 @@ const CompanyEvolution = () => {
           <div className="text-center mb-8">
             <h3 className="text-2xl font-bold text-gray-900">Our Current Focus</h3>
             <p className="text-gray-600 mt-2">
-              While we maintain our full portfolio, our primary focus is now on scaling the NIS Protocol
+              As an R&D startup, our work is experimental and evolving. We're focused on advancing AI research while scaling production-ready solutions.
             </p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="bg-white rounded-xl p-6 shadow-md">
-              <h4 className="text-lg font-semibold text-gray-900 mb-3">NIS Protocol v3.2</h4>
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">NIS Protocol v4.0.2</h4>
               <p className="text-gray-600 text-sm">
-                Our flagship AI operating system with 32 working API endpoints, comprehensive security hardening,
-                and production-ready deployment capabilities.
+                Our flagship AI operating system with NVIDIA Isaac robotics, 23+ modular API routes, 
+                Kafka/Redis infrastructure, and full observability stack.
               </p>
+              <span className="inline-block mt-2 px-2 py-1 text-xs bg-yellow-100 text-yellow-800 rounded-full">Experimental R&D</span>
             </div>
             
             <div className="bg-white rounded-xl p-6 shadow-md">

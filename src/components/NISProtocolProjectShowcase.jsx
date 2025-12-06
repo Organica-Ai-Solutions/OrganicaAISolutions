@@ -12,20 +12,22 @@ import {
 
 const NISProtocolProjectShowcase = ({ handleExternalLink }) => {
   const achievements = [
-    "32/32 working API endpoints with 100% reliability",
-    "Complete security hardening (45/45 vulnerabilities fixed)",
-    "Production-ready with PyPI publishing",
+    "23+ modular API routes with production-tested architecture",
+    "NVIDIA Isaac robotics integration (Bridge, Sim, Perception)",
+    "Kafka + Redis enterprise infrastructure",
     "Physics-informed neural networks (PINNs)",
-    "Multi-agent coordination system",
-    "Docker containerization for enterprise deployment",
-    "NVIDIA NeMo enterprise integration"
+    "CAN/OBD-II automotive & robotics protocols",
+    "Full observability (metrics, tracing, logging)",
+    "Security with RBAC and secrets management"
   ];
 
   const implementations = [
     { name: "NIS-AUTO", description: "Production system for gas engine vehicles" },
     { name: "NIS-CITY", description: "Smart city infrastructure with distributed agents" },
     { name: "NIS-DRONE", description: "Hardware-validated autonomous flight systems" },
-    { name: "NIS-X", description: "NeurIPS Ariel Data Challenge 2025 entry" }
+    { name: "NIS-X", description: "NeurIPS Ariel Data Challenge 2025 entry" },
+    { name: "NeuroLinux", description: "AI-powered Linux distribution" },
+    { name: "NIS Hub", description: "Central management platform for distributed deployments" }
   ];
 
   return (
@@ -44,24 +46,24 @@ const NISProtocolProjectShowcase = ({ handleExternalLink }) => {
                 <CpuChipIcon className="h-8 w-8 text-blue-200" />
               </div>
               <div>
-                <h1 className="text-3xl font-bold text-white">NIS Protocol v3.2.1</h1>
-                <p className="text-blue-200">Foundational AI Operating System for Next-Generation Autonomous Systems</p>
+                <h1 className="text-3xl font-bold text-white">NIS Protocol v4.0.2</h1>
+                <p className="text-blue-200">Experimental AI Operating System for Next-Generation Autonomous Systems</p>
               </div>
             </div>
             <div className="flex space-x-2">
-              <span className="px-3 py-1 bg-green-500 text-green-900 text-xs font-bold rounded-full">
-                PRODUCTION READY
+              <span className="px-3 py-1 bg-yellow-500 text-yellow-900 text-xs font-bold rounded-full">
+                R&D STARTUP
               </span>
               <span className="px-3 py-1 bg-blue-500 text-white text-xs font-bold rounded-full">
-                v3.2.1
+                v4.0.2
               </span>
             </div>
           </div>
           
           <p className="text-gray-100 text-lg mb-8">
-            NIS Protocol is our flagship research project - a neuro-inspired multi-agent AI framework for real-world automation.
-            With physics-informed validation and enterprise-grade reliability, it powers applications across automotive,
-            aerospace, smart cities, and space exploration.
+            NIS Protocol is our flagship <strong>experimental research project</strong> - a neuro-inspired multi-agent AI framework 
+            for real-world automation. As an R&D startup, our work is evolving and experimental. We're advancing AI science 
+            while building practical applications across automotive, aerospace, smart cities, and space exploration.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4">
@@ -94,8 +96,9 @@ const NISProtocolProjectShowcase = ({ handleExternalLink }) => {
             </div>
             <div className="ml-3">
               <p className="text-sm text-yellow-700">
-                <strong>Research Notice:</strong> NIS Protocol is an ongoing research project. While we have production-ready components, 
-                we're continuously advancing the state of AI science. Academic and research use is encouraged.
+                <strong>⚠️ Experimental Technology:</strong> Organica AI Solutions is an early-stage R&D startup. NIS Protocol and related 
+                technologies are experimental and under active development. Features may change, and results may vary. 
+                Not recommended for production use without thorough evaluation.
               </p>
             </div>
           </div>

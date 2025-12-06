@@ -5,7 +5,23 @@ const Legal = () => {
     <div className="bg-white py-16">
       <div className="container mx-auto px-4 max-w-4xl">
         <h1 className="text-4xl font-bold text-gray-900 mb-8">Legal Information</h1>
-        <p className="text-gray-600 mb-8">Last updated: May 2024</p>
+        <p className="text-gray-600 mb-8">Last updated: December 2025</p>
+        
+        {/* R&D Startup Notice */}
+        <div className="bg-yellow-50 border-l-4 border-yellow-500 p-6 mb-8 rounded-r-lg">
+          <h2 className="text-xl font-bold text-yellow-800 mb-3">⚠️ Research & Development Startup Notice</h2>
+          <p className="text-yellow-900 mb-3">
+            <strong>Organica AI Solutions is an early-stage R&D startup.</strong> Our technologies, including the NIS Protocol, 
+            NeuroLinux, NIS Hub, and related projects, are <strong>experimental and under active development</strong>.
+          </p>
+          <ul className="list-disc pl-6 text-yellow-900 space-y-2">
+            <li>All software and technologies are provided "as-is" without warranties of any kind</li>
+            <li>Features, capabilities, and performance metrics may change without notice</li>
+            <li>Our research represents ongoing work that may not be production-ready for all use cases</li>
+            <li>Results demonstrated in testing environments may not be reproducible in all scenarios</li>
+            <li>We make no guarantees regarding commercial viability or fitness for specific purposes</li>
+          </ul>
+        </div>
         
         <div className="prose prose-lg max-w-none">
           <h2 className="text-2xl font-semibold text-gray-800 mt-8 mb-4">Copyright Notice</h2>
@@ -61,21 +77,37 @@ const Legal = () => {
             external websites.
           </p>
           
-          <h2 className="text-2xl font-semibold text-gray-800 mt-8 mb-4">Research Disclaimer</h2>
+          <h2 className="text-2xl font-semibold text-gray-800 mt-8 mb-4">Research & Experimental Technology Disclaimer</h2>
           <p>
-            The research information provided on this website is for informational and educational purposes only. 
-            Our research in neuro-inspired AI systems, physics-informed neural networks, multi-agent systems, 
-            and other AI technologies represents ongoing work that may be subject to change as our understanding evolves.
+            <strong>Organica AI Solutions is a research and development startup.</strong> The technologies, software, 
+            and research information provided on this website are for informational and educational purposes only.
           </p>
           <p>
-            While we strive for accuracy in describing our research achievements and capabilities, some technologies 
-            discussed may be in various stages of development, from conceptual to production-ready. Research results 
-            and performance metrics provided are based on our internal testing and may not be reproducible in all environments.
+            Our work in neuro-inspired AI systems (NIS Protocol), physics-informed neural networks, NVIDIA Isaac 
+            robotics integration, multi-agent systems, NeuroLinux, NIS Hub, and other AI technologies represents 
+            <strong> ongoing experimental research</strong> that is subject to change as our understanding evolves.
           </p>
+          <p>
+            <strong>Important considerations:</strong>
+          </p>
+          <ul className="list-disc pl-6 mb-4">
+            <li>Technologies described may be in various stages of development (conceptual, prototype, beta, or production)</li>
+            <li>Performance metrics and capabilities are based on internal testing and may vary in different environments</li>
+            <li>Features and APIs may change, be deprecated, or be discontinued without prior notice</li>
+            <li>Integration with third-party systems (NVIDIA Isaac, Kafka, Redis, etc.) depends on external factors beyond our control</li>
+            <li>Our research does not constitute professional advice for any specific application or industry</li>
+          </ul>
           <p>
             Organica AI Solutions hereby disclaims any and all liability to any party for any direct, indirect, 
             implied, punitive, special, incidental, or other consequential damages arising directly or indirectly 
-            from any use of our research information or technologies, which are provided as is, and without warranties.
+            from any use of our research information or technologies, which are provided "as is" without warranties 
+            of any kind, express or implied.
+          </p>
+          <p>
+            <strong>No Investment or Business Advice:</strong> Nothing on this website constitutes investment advice, 
+            business advice, or a recommendation to use our technologies for any specific purpose. Users should conduct 
+            their own due diligence and consult with appropriate professionals before making any decisions based on 
+            information provided here.
           </p>
           
           <h2 className="text-2xl font-semibold text-gray-800 mt-8 mb-4">Fair Use Notice</h2>
