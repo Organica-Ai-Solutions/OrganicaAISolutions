@@ -116,10 +116,10 @@ function Footer() {
               </li>
               <li>
                 <a 
-                  href="mailto:contact@organicaai.com" 
+                  href="mailto:diego.torres@organicaai.com" 
                   className="hover:text-[#0B84F3] transition-colors"
                 >
-                  contact@organicaai.com
+                  diego.torres@organicaai.com
                 </a>
               </li>
             </ul>

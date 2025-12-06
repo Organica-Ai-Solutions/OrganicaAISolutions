@@ -14,7 +14,7 @@ describe('Contact', () => {
     expect(screen.getByText(/Philadelphia PA0, 19122/)).toBeInTheDocument();
     expect(screen.getByText('USA')).toBeInTheDocument();
     expect(screen.getByText('+1-215-888-8748')).toBeInTheDocument();
-    expect(screen.getByText('contact@organicaai.com')).toBeInTheDocument();
+    expect(screen.getByText('diego.torres@organicaai.com')).toBeInTheDocument();
   });
 
   test('renders contact form fields', () => {

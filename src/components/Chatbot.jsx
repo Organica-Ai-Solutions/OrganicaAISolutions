@@ -145,7 +145,7 @@ export default function Chatbot() {
       } else if (lowercaseInput.includes('backend') || lowercaseInput.includes('error') || lowercaseInput.includes('not working')) {
         mockResponse = "Our backend service is temporarily unavailable. The connection issue has been automatically reported to our development team, and they are working to resolve it as quickly as possible. Please try again later.";
       } else if (lowercaseInput.includes('contact') || lowercaseInput.includes('help') || lowercaseInput.includes('collaborate')) {
-        mockResponse = "For research collaboration inquiries, please contact our team at contact@organicaai.com or visit our Research Collaboration page. We're actively seeking partnerships in neuro-inspired AI systems, physics-informed neural networks, and multi-agent coordination.";
+        mockResponse = "For research collaboration inquiries, please contact our team at diego.torres@organicaai.com or visit our Research Collaboration page. We're actively seeking partnerships in neuro-inspired AI systems, physics-informed neural networks, and multi-agent coordination.";
       }
       
       const errorMessage = {

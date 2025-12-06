@@ -160,7 +160,7 @@ const Legal = () => {
             If you have any questions about our legal information, please contact us:
           </p>
           <ul className="list-none pl-0 mb-4">
-            <li>By email: legal@organicaai.com</li>
+            <li>By email: diego.torres@organicaai.com</li>
             <li>By phone: +1-215-888-8748</li>
             <li>By mail: 1438 N7th st., Philadelphia PA0, 19122, USA</li>
           </ul>

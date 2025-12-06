@@ -98,8 +98,8 @@ export default function Contact() {
                   <EnvelopeIcon className="h-7 w-6 text-[#0B84F3]" aria-hidden="true" />
                 </dt>
                 <dd>
-                  <a className="hover:text-[#FF3D90] transition-colors" href="mailto:contact@organicaai.com">
-                    contact@organicaai.com
+                  <a className="hover:text-[#FF3D90] transition-colors" href="mailto:diego.torres@organicaai.com">
+                    diego.torres@organicaai.com
                   </a>
                 </dd>
               </div>

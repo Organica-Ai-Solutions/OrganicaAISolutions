@@ -15,7 +15,7 @@ const getOrganizationStructuredData = () => ({
   "contactPoint": {
     "@type": "ContactPoint",
     "contactType": "Business",
-    "email": "contact@organicaai.com"
+    "email": "diego.torres@organicaai.com"
   },
   "areaOfService": {
     "@type": "Service",
