@@ -59,12 +59,12 @@ const Projects = () => {
       private: true
     },
     {
-      title: 'NIS Protocol v3.2.1',
-      subtitle: 'AI Operating System for Autonomous Systems',
-      description: 'Production-ready AI operating system with physics-informed neural networks, 32 working API endpoints, complete security hardening, and enterprise-grade reliability. Powers real-world applications in automotive, smart cities, aerospace, and space exploration.',
+      title: 'NIS Protocol v4.0.2',
+      subtitle: 'AI Operating System + NVIDIA Isaac Robotics',
+      description: 'Production-ready AI operating system with modular architecture, NVIDIA Isaac robotics integration, 23+ API routes, Kafka/Redis infrastructure, CAN/OBD-II protocols, and full observability. Powers NeuroLinux, NIS Hub, and real-world deployments.',
       category: 'Core AI Research',
       status: 'active',
-      tech: ['Python', 'Docker', 'PINNs', 'Multi-Agent', 'PyPI'],
+      tech: ['Python', 'Docker', 'Isaac', 'Kafka', 'Redis', 'PINNs'],
       icon: CpuChipIcon,
       color: 'blue',
       href: 'https://github.com/Organica-Ai-Solutions/NIS_Protocol',
@@ -96,6 +96,34 @@ const Projects = () => {
       href: 'https://github.com/Organica-Ai-Solutions/BusinessAnalyticswithPython',
       external: true,
       private: false
+    },
+    {
+      title: 'NeuroLinux',
+      subtitle: 'AI-Powered Linux Distribution',
+      description: 'Custom Linux distribution with NIS Protocol deeply integrated for AI-first computing. Features intelligent system management, voice control, and autonomous optimization.',
+      category: 'Operating Systems',
+      status: 'active',
+      tech: ['Linux', 'NIS Protocol', 'Python', 'SystemD'],
+      icon: CpuChipIcon,
+      color: 'green',
+      href: '#',
+      external: false,
+      private: true,
+      isNew: true
+    },
+    {
+      title: 'NIS Hub',
+      subtitle: 'Central AI Management Platform',
+      description: 'Unified dashboard for managing distributed NIS Protocol deployments. Monitor agents, configure infrastructure, and orchestrate multi-node AI systems.',
+      category: 'Infrastructure',
+      status: 'active',
+      tech: ['React', 'NIS Protocol', 'WebSocket', 'Docker'],
+      icon: ServerIcon,
+      color: 'indigo',
+      href: '#',
+      external: false,
+      private: true,
+      isNew: true
     }
   ];
 

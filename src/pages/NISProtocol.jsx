@@ -5,12 +5,12 @@ const NISProtocol = () => {
   return (
     <div className="bg-gradient-to-b from-blue-50 to-blue-100 min-h-screen">
       <div className="container mx-auto px-4 py-12">
-        <h1 className="text-4xl font-bold text-blue-800 mb-6">NIS Protocol v3.2.1</h1>
+        <h1 className="text-4xl font-bold text-blue-800 mb-6">NIS Protocol v4.0.2</h1>
         <p className="text-lg text-gray-700 mb-4">
           AI Operating System for Edge Devices, Autonomous Systems, and Smart Infrastructure
         </p>
         <p className="text-sm text-gray-600 mb-8">
-          Version: 3.2.1 | Updated: 2025-01-19 | Status: Production Ready with PyPI Publishing & GitHub Pages
+          Version: 4.0.2 | Updated: 2025-12-06 | Status: Production Ready with Isaac Robotics & Modular Architecture
         </p>
         
         <div className="flex justify-center mb-10">
@@ -46,22 +46,22 @@ const NISProtocol = () => {
           <div className="bg-white p-6 rounded-lg shadow-md">
             <h2 className="text-2xl font-semibold text-blue-700 mb-4">Core Capabilities</h2>
             <ul className="list-disc list-inside text-gray-700 space-y-2">
-              <li><span className="font-medium">32 Working API Endpoints</span> - 100% reliability</li>
+              <li><span className="font-medium">23+ Modular API Routes</span> - Production-tested architecture</li>
+              <li><span className="font-medium">NVIDIA Isaac Integration</span> - Robotics perception, simulation & control</li>
               <li><span className="font-medium">Physics Validation</span> - PINNs for constraint checking</li>
-              <li><span className="font-medium">Multi-Agent Coordination</span> - Distributed intelligence</li>
-              <li><span className="font-medium">Edge Deployment</span> - Optimized for resource constraints</li>
-              <li><span className="font-medium">Protocol Integration</span> - MCP, ACP, A2A support</li>
+              <li><span className="font-medium">CAN/OBD-II Protocols</span> - Automotive & robotics communication</li>
+              <li><span className="font-medium">Full Observability</span> - Metrics, tracing, structured logging</li>
             </ul>
           </div>
           
           <div className="bg-white p-6 rounded-lg shadow-md">
-            <h2 className="text-2xl font-semibold text-blue-700 mb-4">New in v3.2.1</h2>
+            <h2 className="text-2xl font-semibold text-blue-700 mb-4">New in v4.0.2</h2>
             <ul className="list-disc list-inside text-gray-700 space-y-2">
-              <li><span className="font-medium">Security Hardening</span> - 45/45 vulnerabilities fixed</li>
-              <li><span className="font-medium">NVIDIA NeMo Ready</span> - Enterprise integration framework</li>
-              <li><span className="font-medium">Docker Containerization</span> - Enterprise-grade reliability</li>
-              <li><span className="font-medium">PyPI Publishing</span> - Simple installation and distribution</li>
-              <li><span className="font-medium">Complete Documentation</span> - API reference with examples</li>
+              <li><span className="font-medium">NVIDIA Isaac Robotics</span> - Bridge, Sim, Perception agents</li>
+              <li><span className="font-medium">Kafka + Redis Infrastructure</span> - Enterprise messaging & caching</li>
+              <li><span className="font-medium">Security (RBAC)</span> - Role-based access control & secrets management</li>
+              <li><span className="font-medium">Modular Architecture</span> - Clean separation of concerns</li>
+              <li><span className="font-medium">NeuroLinux Ready</span> - Optimized for AI-powered Linux distribution</li>
             </ul>
           </div>
         </div>
@@ -88,6 +88,14 @@ const NISProtocol = () => {
             <div className="bg-blue-50 p-4 rounded-lg">
               <h3 className="font-bold text-blue-800 mb-2">AlphaCortex</h3>
               <p className="text-sm text-gray-700">LLM-driven autonomous trading system for financial markets</p>
+            </div>
+            <div className="bg-green-50 p-4 rounded-lg">
+              <h3 className="font-bold text-green-800 mb-2">NeuroLinux</h3>
+              <p className="text-sm text-gray-700">AI-powered Linux distribution with NIS Protocol integration</p>
+            </div>
+            <div className="bg-orange-50 p-4 rounded-lg">
+              <h3 className="font-bold text-orange-800 mb-2">NIS Hub</h3>
+              <p className="text-sm text-gray-700">Central management platform for distributed NIS deployments</p>
             </div>
           </div>
         </div>

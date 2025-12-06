@@ -12,34 +12,40 @@ import {
 const NISProtocolShowcase = () => {
   const features = [
     {
-      name: "Security Hardening",
-      description: "100% vulnerability resolution, eliminated all 45 GitHub security alerts",
-      icon: ShieldCheckIcon,
+      name: "NVIDIA Isaac Robotics",
+      description: "Full robotics integration with Bridge, Sim, and Perception agents for autonomous systems",
+      icon: CpuChipIcon,
       color: "blue"
     },
     {
-      name: "API Reliability",
-      description: "All 32 endpoints tested and working with comprehensive fallbacks",
+      name: "Modular Architecture",
+      description: "23+ API routes with clean separation of concerns and production-tested reliability",
       icon: CheckCircleIcon,
       color: "green"
     },
     {
-      name: "NVIDIA NeMo Ready",
-      description: "Enterprise integration framework prepared and documented",
+      name: "Kafka + Redis Infrastructure",
+      description: "Enterprise messaging and caching for distributed multi-agent coordination",
       icon: ServerIcon,
       color: "indigo"
     },
     {
-      name: "Complete Documentation",
-      description: "Comprehensive API reference with working examples and visual diagrams",
+      name: "CAN/OBD-II Protocols",
+      description: "Automotive and robotics communication protocols for real hardware integration",
       icon: DocumentTextIcon,
       color: "purple"
     },
     {
-      name: "Production Deployment",
-      description: "Docker containerization with enterprise-grade reliability",
+      name: "Full Observability",
+      description: "Metrics, distributed tracing, and structured logging for production monitoring",
       icon: CodeBracketIcon,
       color: "pink"
+    },
+    {
+      name: "Security (RBAC)",
+      description: "Role-based access control and secrets management for enterprise deployments",
+      icon: ShieldCheckIcon,
+      color: "orange"
     }
   ];
 
@@ -56,10 +62,10 @@ const NISProtocolShowcase = () => {
             <CpuChipIcon className="h-6 w-6 text-blue-600" />
           </div>
           <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl mb-6">
-            NIS Protocol v3.2.1 - Production Ready
+            NIS Protocol v4.0.2 - Production Ready
           </h2>
           <p className="mt-2 text-lg text-gray-600 max-w-3xl mx-auto">
-            Our foundational AI operating system for next-generation autonomous systems is now production-ready with enhanced security, reliability, and enterprise features.
+            Our foundational AI operating system now features NVIDIA Isaac robotics integration, modular architecture, Kafka/Redis infrastructure, and powers NeuroLinux and NIS Hub.
           </p>
         </motion.div>
 
@@ -111,6 +117,22 @@ const NISProtocolShowcase = () => {
                 <li>• Official NeurIPS Ariel Data Challenge entry</li>
                 <li>• Exoplanet atmospheric analysis</li>
                 <li>• Consciousness-engineered AGI for space</li>
+              </ul>
+            </div>
+            <div className="bg-emerald-50 rounded-lg p-4">
+              <h4 className="font-semibold text-emerald-800 mb-2">🐧 NeuroLinux</h4>
+              <ul className="space-y-1 text-sm text-gray-700">
+                <li>• AI-powered Linux distribution</li>
+                <li>• NIS Protocol deeply integrated</li>
+                <li>• Intelligent system management</li>
+              </ul>
+            </div>
+            <div className="bg-orange-50 rounded-lg p-4">
+              <h4 className="font-semibold text-orange-800 mb-2">🎛️ NIS Hub</h4>
+              <ul className="space-y-1 text-sm text-gray-700">
+                <li>• Central management platform</li>
+                <li>• Distributed deployment orchestration</li>
+                <li>• Real-time agent monitoring</li>
               </ul>
             </div>
           </div>
