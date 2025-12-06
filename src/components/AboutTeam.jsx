@@ -7,7 +7,8 @@ export default function AboutTeam() {
       name: "Diego Torres",
       role: "CEO & Co-Founder",
       image: "/images/team/DiegoTorres.jpeg",
-      description: "Full Stack Developer with expertise in blockchain, Python machine learning, data analytics, Flutter, and React/Vue. Passionate about creating innovative fintech solutions and leveraging cutting-edge technologies to solve real-world problems.",
+      description: "Creator of NIS Protocol v4.0.2. Full-stack developer specializing in Python ML, NVIDIA Isaac robotics, and multi-agent AI systems. Built 39+ repositories including NeuroLinux and NIS-Hub.",
+      achievements: ["NIS Protocol Creator", "39+ GitHub Repos", "NVIDIA Isaac Integration"],
       linkedin: "https://www.linkedin.com/in/diego-torres--/",
       github: "https://github.com/pentius00"
     },
@@ -16,7 +17,8 @@ export default function AboutTeam() {
       name: "Henok Worede",
       role: "CTO & Co-Founder",
       image: "/images/team/HenokWorede.jpeg",
-      description: "Expert Flutter developer with multiple deployed applications. Specializes in mobile development and cross-platform solutions. Strong background in building secure, scalable applications with a focus on exceptional user experience.",
+      description: "Mobile architecture lead. Built Tanda Circles, KATAPP, and CarFlipPlus. Expert in Flutter/Dart with multiple deployed apps on iOS and Android. Drives cross-platform strategy.",
+      achievements: ["5+ Deployed Apps", "Flutter Expert", "Mobile Architecture"],
       linkedin: "https://www.linkedin.com/in/henok-worede/",
       github: "https://github.com/henokwon"
     },
@@ -25,7 +27,8 @@ export default function AboutTeam() {
       name: "Blake Salzman",
       role: "MCO & Co-Founder",
       image: "/images/team/BlakeSalzman.jpeg",
-      description: "Experienced entrepreneur and business leader with a strong background in finance and technology. Graduate of Temple University with expertise in business development and strategic partnerships.",
+      description: "Business development and partnerships. Temple University graduate. Leads enterprise strategy, investor relations, and go-to-market for NIS Protocol commercialization.",
+      achievements: ["Temple University", "Enterprise Strategy", "Partnerships"],
       linkedin: "https://www.linkedin.com/in/blake-salzman-268a45260/",
       github: "https://github.com/blakesalzman"
     }
@@ -38,7 +41,7 @@ export default function AboutTeam() {
           Meet Our Team
         </h2>
         <p className="text-lg text-gray-600 text-center max-w-3xl mx-auto mb-12">
-          Our diverse team of experts combines technology and agricultural knowledge to create innovative solutions for sustainable farming.
+          A small team of builders shipping real AI products. We're an R&D startup — experimental, fast-moving, and focused on results.
         </p>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {team.map((member) => (
@@ -55,7 +58,16 @@ export default function AboutTeam() {
               />
               <h3 className="text-xl font-semibold text-gray-900 text-center">{member.name}</h3>
               <p className="text-primary-600 font-medium text-center mb-4">{member.role}</p>
-              <p className="text-gray-600 text-center mb-4 text-sm">{member.description}</p>
+              <p className="text-gray-600 text-center mb-3 text-sm">{member.description}</p>
+              {member.achievements && (
+                <div className="flex flex-wrap justify-center gap-1 mb-4">
+                  {member.achievements.map((achievement) => (
+                    <span key={achievement} className="px-2 py-1 bg-blue-50 text-blue-700 text-xs rounded-full font-medium">
+                      {achievement}
+                    </span>
+                  ))}
+                </div>
+              )}
               <div className="flex justify-center space-x-4">
                 <a
                   href={member.linkedin}
