@@ -23,6 +23,8 @@ import NISProtocolRedirect from './components/NISProtocolRedirect'
 import Privacy from './pages/Privacy'
 import Terms from './pages/Terms'
 import Legal from './pages/Legal'
+import Books from './pages/Books'
+import BookSeries from './pages/BookSeries'
 
 function App() {
   return (
@@ -81,6 +83,8 @@ function App() {
               <Route path="/privacy" element={<Privacy />} />
               <Route path="/terms" element={<Terms />} />
               <Route path="/legal" element={<Legal />} />
+              <Route path="/books" element={<Books />} />
+              <Route path="/books/series/:slug" element={<BookSeries />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </main>

@@ -38,7 +38,6 @@ export default function Contact() {
   const handleSubmit = async (e) => {
     e.preventDefault()
     // TODO: Implement form submission
-    console.log('Form submitted:', formData)
   }
 
   const handleChange = (e) => {

@@ -85,9 +85,6 @@ export default function Chatbot() {
     setIsLoading(true)
 
     try {
-      // Add debugging message to help diagnose connection issues
-      console.log('Attempting to connect to backend at:', 'https://organicaai-backend.onrender.com/api/chat/public-message');
-      
       // Try to use the real API with the hardcoded Render URL and public endpoint
       const response = await fetch('https://organicaai-backend.onrender.com/api/chat/public-message', {
         method: 'POST',
@@ -99,8 +96,7 @@ export default function Chatbot() {
       // Check if the response is valid
       if (response.ok) {
         const data = await response.json();
-        console.log('Backend response:', data);
-        
+
         const botMessage = {
           content: data.response || "I received your message but couldn't generate a proper response.",
           isUser: false,
@@ -116,11 +112,9 @@ export default function Chatbot() {
       
       // First try the public health endpoint to confirm basic connectivity
       try {
-        console.log("Testing basic backend connectivity with health endpoint");
         const healthCheck = await fetch('https://organicaai-backend.onrender.com/health');
-        if (healthCheck.ok) {
-          console.log("Health endpoint connected successfully, but chat API failed");
-          console.log("Health response:", await healthCheck.json());
+        if (!healthCheck.ok) {
+          console.error("Health endpoint also failed");
         }
       } catch (healthError) {
         console.error("Health endpoint also failed:", healthError);

@@ -86,7 +86,6 @@ export const chatService = {
       // Try to use the custom API first with Render URL
       try {
         const response = await customApi.post('/chat/message', { message });
-        console.log('Successfully connected to Render backend');
         return response.data;
       } catch (renderError) {
         console.error("Error connecting to Render backend:", renderError);
