@@ -19,7 +19,7 @@ import CompanyEvolution from '../components/CompanyEvolution'
 const features = [
   {
     name: 'Neuro-Inspired Multi-Agent Framework',
-    description: 'The NIS Protocol v4.0.2 provides a modular agent architecture with physics-informed validation, NVIDIA Isaac robotics integration, and 23+ API routes for autonomous systems.',
+    description: 'The NIS Protocol v4.0.5 provides a modular agent architecture with physics-informed validation, NVIDIA Isaac robotics integration, and 23+ API routes for autonomous systems.',
     icon: CpuChipIcon,
   },
   {
@@ -66,7 +66,7 @@ const featuredProjects = [
     color: 'emerald'
   },
   {
-    title: 'NIS Protocol v4.0.2',
+    title: 'NIS Protocol v4.0.5',
     description: 'AI Operating System + Isaac Robotics',
     category: 'AI Research',
     color: 'blue'
@@ -364,7 +364,7 @@ export default function Home() {
               <span className="px-4 py-1 text-sm font-semibold text-white">Ready to get started?</span>
             </div>
             <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-              Transform Your Business with NIS Protocol v4.0.2
+              Transform Your Business with NIS Protocol v4.0.5
             </h2>
             <p className="mx-auto mt-6 max-w-xl text-lg leading-8 text-gray-100">
               From AWS cloud infrastructure to NVIDIA GPU acceleration, we're building the future of AI with our neuro-inspired multi-agent framework.

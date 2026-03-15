@@ -14,13 +14,13 @@ import SEOIntegration, { getPageSEO } from '../components/shared/SEOIntegration'
 const stats = [
   { name: 'Research Areas', value: '7' },
   { name: 'Industry Implementations', value: '6' },
-  { name: 'Modular API Routes', value: '23+' },
-  { name: 'GitHub Repositories', value: '33' },
+  { name: 'Modular API Routes', value: '30+' },
+  { name: 'GitHub Repositories', value: '41' },
 ]
 
 const projects = [
   {
-    name: 'NIS Protocol v4.0.2',
+    name: 'NIS Protocol v4.0.5',
     description: 'Our flagship experimental AI operating system with NVIDIA Isaac robotics, modular architecture, and enterprise infrastructure. R&D in progress.',
     status: 'R&D Active',
     tech: ['Python', 'Docker', 'Redis', 'Kafka', 'Isaac', 'NVIDIA']
