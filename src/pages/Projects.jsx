@@ -34,21 +34,36 @@ const Projects = () => {
   // FLAGSHIP PROJECTS - Projects with live demos or public repos
   const flagshipProjects = [
     {
-      title: 'NIS Protocol v4.0.2',
-      subtitle: 'Experimental AI Operating System',
-      description: 'Our core R&D project: neuro-inspired multi-agent framework with NVIDIA Isaac robotics, 23+ modular API routes, Kafka/Redis infrastructure, and physics-informed validation.',
+      title: 'NIS Protocol v4.0.5',
+      subtitle: 'AI Operating System — 290+ API Routes',
+      description: 'Our core R&D project: neuro-inspired multi-agent framework running on Raspberry Pi with NVIDIA Cosmos Reason2 vision, 290+ API routes, YOLO color classification, and a full pick-and-place robotics pipeline.',
       category: 'Core R&D',
       status: 'open-source',
-      tech: ['Python', 'Docker', 'Isaac', 'Kafka', 'Redis'],
+      tech: ['Python', 'FastAPI', 'Cosmos R2', 'YOLO', 'Docker'],
       icon: CpuChipIcon,
       color: 'blue',
       href: 'https://github.com/Organica-Ai-Solutions/NIS_Protocol',
       githubHref: 'https://github.com/Organica-Ai-Solutions/NIS_Protocol',
       external: true,
       private: false,
-      stars: 1,
       hasDemo: false,
       hasQuickstart: true
+    },
+    {
+      title: 'NeuroLinux',
+      subtitle: 'Raspberry Pi Robot + NVIDIA H100',
+      description: 'A Raspberry Pi agent controlling a physical Hiwonder xArm robot via USB HID, powered by 7 NVIDIA H100 GPU services: Cosmos Reason2 (VLM), VLA xArm, Grounding DINO, Qwen3.5-LoRA, Speech2Action, and more.',
+      category: 'Robotics AI',
+      status: 'open-source',
+      tech: ['Python', 'FastAPI', 'H100', 'xArm', 'Next.js'],
+      icon: CpuChipIcon,
+      color: 'green',
+      href: 'https://github.com/Organica-Ai-Solutions/NeuroLinux',
+      githubHref: 'https://github.com/Organica-Ai-Solutions/NeuroLinux',
+      external: true,
+      private: false,
+      hasDemo: false,
+      isNew: true
     },
     {
       title: 'The Visual Evolution',
@@ -78,22 +93,6 @@ const Projects = () => {
       href: 'https://github.com/Organica-Ai-Solutions/NIS-TOOLKIT-SUIT',
       githubHref: 'https://github.com/Organica-Ai-Solutions/NIS-TOOLKIT-SUIT',
       external: true,
-      private: false,
-      stars: 1,
-      commits: 15
-    },
-    {
-      title: 'NIS-HUB',
-      subtitle: 'Enterprise Coordination Hub',
-      description: 'Core system that unifies all distributed NIS Protocol deployments. Neuro-inspired architecture for cognitive AI agent orchestration.',
-      category: 'Open Source',
-      status: 'open-source',
-      tech: ['Python', 'WebSocket', 'Docker'],
-      icon: ServerIcon,
-      color: 'green',
-      href: 'https://github.com/Organica-Ai-Solutions/NIS-HUB',
-      githubHref: 'https://github.com/Organica-Ai-Solutions/NIS-HUB',
-      external: true,
       private: false
     }
   ];
@@ -101,25 +100,48 @@ const Projects = () => {
   // IN DEVELOPMENT - Private repos, actively being built
   const inDevelopment = [
     {
-      title: 'NeuroLinux',
-      subtitle: 'AI-Powered Linux Distribution',
-      description: 'Custom Linux distribution with NIS Protocol deeply integrated. Intelligent system management and autonomous optimization.',
-      category: 'In Development',
-      tech: ['Linux', 'Python', 'SystemD'],
-      icon: CpuChipIcon,
+      title: 'ArbitrageMachine',
+      subtitle: 'Live Crypto Arbitrage AI',
+      description: 'Cross-exchange crypto arbitrage across Binance US, Coinbase, and Kraken. LangGraph AI agent detects spread opportunities and executes trades with a React dashboard showing live wallet balances and P&L.',
+      category: 'FinTech AI',
+      tech: ['Python', 'FastAPI', 'LangGraph', 'CCXT', 'React'],
+      icon: CurrencyDollarIcon,
       color: 'emerald',
       private: true,
       isNew: true
     },
     {
       title: 'AlphaCortex',
-      subtitle: 'Autonomous AI Trading',
-      description: 'LLM-powered trading system with MCP for memory and strategy adaptation. Privacy-respecting financial automation.',
-      category: 'In Development',
-      tech: ['Python', 'LLMs', 'MCP'],
-      icon: CurrencyDollarIcon,
+      subtitle: 'Autonomous US Equity Trading',
+      description: 'Live AI-powered trading system connected to Alpaca Markets. Confidence-threshold trade execution (≥60%), 5-minute scan cycle across a curated US equity watchlist, and risk management with trailing stops.',
+      category: 'FinTech AI',
+      tech: ['Python', 'FastAPI', 'Claude AI', 'Alpaca', 'SQLite'],
+      icon: ChartBarIcon,
       color: 'yellow',
       private: true
+    },
+    {
+      title: 'SmartPortfolioWeb',
+      subtitle: 'AI Portfolio Optimization',
+      description: 'Claude-powered portfolio advisor with mean-variance optimization, Sharpe ratio analysis, market regime classification (XGBoost), and efficient frontier generation. Integrates with Alpaca for live account data.',
+      category: 'FinTech AI',
+      tech: ['Python', 'Claude AI', 'XGBoost', 'PyPortfolioOpt', 'React'],
+      icon: CurrencyDollarIcon,
+      color: 'teal',
+      private: true,
+      isNew: true
+    },
+    {
+      title: 'Orion',
+      subtitle: 'AI-Powered Developer Tools',
+      description: 'Full-stack AI coding assistant with code analysis, test generation, formatting, web research, and browser automation. React dashboard + FastAPI backend powered by Claude. Cursor IDE extension included.',
+      category: 'Developer Tools',
+      tech: ['Python', 'FastAPI', 'React', 'Claude AI', 'TypeScript'],
+      icon: CommandLineIcon,
+      color: 'purple',
+      href: 'https://github.com/Organica-Ai-Solutions/Orion',
+      private: false,
+      isNew: true
     },
     {
       title: 'NIS-X',
@@ -128,7 +150,7 @@ const Projects = () => {
       category: 'Research',
       tech: ['Python', 'KAN', 'PINNs'],
       icon: BeakerIcon,
-      color: 'purple',
+      color: 'violet',
       href: 'https://github.com/Organica-Ai-Solutions/NIS-X',
       private: false
     }
@@ -211,7 +233,7 @@ const Projects = () => {
             rel="noopener noreferrer"
             className="inline-flex items-center px-6 py-3 bg-white text-gray-900 font-semibold rounded-lg border border-gray-300 hover:bg-gray-50 transition-all"
           >
-            View All 39 Repos →
+            View All 41 Repos →
           </a>
         </motion.div>
         
@@ -410,20 +432,20 @@ const Projects = () => {
         >
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div>
-              <div className="text-4xl font-bold mb-1">39</div>
+              <div className="text-4xl font-bold mb-1">41</div>
               <div className="text-gray-400 text-sm">GitHub Repos</div>
             </div>
             <div>
-              <div className="text-4xl font-bold mb-1">4</div>
-              <div className="text-gray-400 text-sm">Open Source</div>
-            </div>
-            <div>
-              <div className="text-4xl font-bold mb-1">1</div>
-              <div className="text-gray-400 text-sm">Live Demo</div>
-            </div>
-            <div>
               <div className="text-4xl font-bold mb-1">3</div>
-              <div className="text-gray-400 text-sm">In Active R&D</div>
+              <div className="text-gray-400 text-sm">Live Trading Systems</div>
+            </div>
+            <div>
+              <div className="text-4xl font-bold mb-1">7</div>
+              <div className="text-gray-400 text-sm">H100 GPU Services</div>
+            </div>
+            <div>
+              <div className="text-4xl font-bold mb-1">290+</div>
+              <div className="text-gray-400 text-sm">NIS API Routes</div>
             </div>
           </div>
         </motion.div>

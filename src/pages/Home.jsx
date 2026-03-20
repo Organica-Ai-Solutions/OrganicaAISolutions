@@ -38,8 +38,8 @@ const features = [
     icon: BeakerIcon,
   },
   {
-    name: 'Real-World Deployments',
-    description: 'Proven implementations across automotive (NIS-AUTO), smart cities (NIS-CITY), aerospace (NIS-DRONE), space exploration (NIS-X), and financial markets (AlphaCortex).',
+    name: 'Live Trading Systems',
+    description: 'ArbitrageMachine runs cross-exchange crypto arbitrage across Binance US, Coinbase, and Kraken with a LangGraph AI agent. AlphaCortex trades US equities via Alpaca. SmartPortfolioWeb optimizes portfolios with Claude + ML.',
     icon: ChartBarIcon,
   },
   {
@@ -51,44 +51,42 @@ const features = [
 
 const featuredProjects = [
   {
-    title: 'The Visual Evolution',
-    description: 'Interactive Design History Book',
-    category: 'AI-Assisted Design',
-    color: 'indigo',
-    href: 'https://organica-ai-solutions.github.io/DesignHistory/',
-    isExternal: true,
-    isNew: true
-  },
-  {
-    title: 'AlphaCortex',
-    description: 'Autonomous AI Trading System',
-    category: 'FinTech AI',
-    color: 'emerald'
-  },
-  {
     title: 'NIS Protocol v4.0.5',
-    description: 'AI Operating System + Isaac Robotics',
+    description: 'AI Operating System + Isaac Robotics + Cosmos Reason2',
     category: 'AI Research',
     color: 'blue'
   },
   {
-    title: 'Orion',
-    description: 'Coding AI Agent',
-    category: 'Developer Tools',
-    color: 'purple'
-  },
-  {
     title: 'NeuroLinux',
-    description: 'AI-Powered Linux Distribution',
-    category: 'Operating Systems',
+    description: 'Raspberry Pi agent controlling a real xArm robot via NVIDIA H100',
+    category: 'Robotics AI',
     color: 'green',
     isNew: true
   },
   {
-    title: 'NIS Hub',
-    description: 'Central AI Management Platform',
-    category: 'Infrastructure',
-    color: 'orange',
+    title: 'ArbitrageMachine',
+    description: 'Live crypto arbitrage across Binance, Coinbase & Kraken',
+    category: 'FinTech AI',
+    color: 'emerald',
+    isNew: true
+  },
+  {
+    title: 'AlphaCortex',
+    description: 'Autonomous US equity trading with Alpaca Markets',
+    category: 'FinTech AI',
+    color: 'yellow'
+  },
+  {
+    title: 'Orion',
+    description: 'AI-powered developer tools — code analysis, test gen & research',
+    category: 'Developer Tools',
+    color: 'purple'
+  },
+  {
+    title: 'SmartPortfolioWeb',
+    description: 'AI portfolio optimization with Claude + Alpaca + ML models',
+    category: 'FinTech AI',
+    color: 'teal',
     isNew: true
   }
 ]
@@ -276,20 +274,20 @@ export default function Home() {
             {/* Key metrics */}
             <dl className="mt-16 grid grid-cols-1 gap-0.5 overflow-hidden rounded-2xl text-center sm:grid-cols-2 lg:grid-cols-4">
               <div className="flex flex-col bg-gray-400/5 p-8">
-                <dt className="text-sm font-semibold leading-6 text-gray-600">Working API Endpoints</dt>
-                <dd className="order-first text-3xl font-semibold tracking-tight text-gray-900">32/32</dd>
+                <dt className="text-sm font-semibold leading-6 text-gray-600">GitHub Repositories</dt>
+                <dd className="order-first text-3xl font-semibold tracking-tight text-gray-900">41</dd>
               </div>
               <div className="flex flex-col bg-gray-400/5 p-8">
-                <dt className="text-sm font-semibold leading-6 text-gray-600">Security Vulnerabilities Fixed</dt>
-                <dd className="order-first text-3xl font-semibold tracking-tight text-gray-900">45/45</dd>
+                <dt className="text-sm font-semibold leading-6 text-gray-600">Live Trading Systems</dt>
+                <dd className="order-first text-3xl font-semibold tracking-tight text-gray-900">3</dd>
               </div>
               <div className="flex flex-col bg-gray-400/5 p-8">
-                <dt className="text-sm font-semibold leading-6 text-gray-600">Real-World Deployments</dt>
-                <dd className="order-first text-3xl font-semibold tracking-tight text-gray-900">5+</dd>
+                <dt className="text-sm font-semibold leading-6 text-gray-600">NIS Protocol API Routes</dt>
+                <dd className="order-first text-3xl font-semibold tracking-tight text-gray-900">290+</dd>
               </div>
               <div className="flex flex-col bg-gray-400/5 p-8">
-                <dt className="text-sm font-semibold leading-6 text-gray-600">Years Covered in Design Book</dt>
-                <dd className="order-first text-3xl font-semibold tracking-tight text-gray-900">106+</dd>
+                <dt className="text-sm font-semibold leading-6 text-gray-600">H100 GPU Services Running</dt>
+                <dd className="order-first text-3xl font-semibold tracking-tight text-gray-900">7</dd>
               </div>
             </dl>
             
@@ -323,12 +321,12 @@ export default function Home() {
                   <div className="p-2 bg-green-100 rounded-lg mr-4">
                     <ServerIcon className="h-6 w-6 text-green-600" />
                   </div>
-                  <h3 className="text-lg font-semibold text-gray-900">NVIDIA Connect Partnership</h3>
+                  <h3 className="text-lg font-semibold text-gray-900">NVIDIA H100 Cluster</h3>
                 </div>
-                <p className="text-gray-600 mb-4">Recognized as an NVIDIA Connect startup partner with early access to GPU resources, developer tooling, and technical collaboration.</p>
-                <div className="text-sm text-green-600 font-medium">Enterprise Validation</div>
+                <p className="text-gray-600 mb-4">7 AI services running in parallel on an 8×H100 GPU cluster: Cosmos Reason2, VLA xArm, Qwen3.5-LoRA, Speech2Action, Grounding DINO, and more.</p>
+                <div className="text-sm text-green-600 font-medium">Enterprise GPU Infrastructure</div>
               </motion.div>
-              
+
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -340,10 +338,10 @@ export default function Home() {
                   <div className="p-2 bg-indigo-100 rounded-lg mr-4">
                     <BeakerIcon className="h-6 w-6 text-indigo-600" />
                   </div>
-                  <h3 className="text-lg font-semibold text-gray-900">Hardware-Validated Systems</h3>
+                  <h3 className="text-lg font-semibold text-gray-900">Real Robotics + Live Trading</h3>
                 </div>
-                <p className="text-gray-600 mb-4">NIS Protocol has been successfully deployed and tested on real automotive and drone hardware systems, proving its reliability in the field.</p>
-                <div className="text-sm text-indigo-600 font-medium">Physical Deployment</div>
+                <p className="text-gray-600 mb-4">NeuroLinux runs on a physical Raspberry Pi controlling a Hiwonder xArm robot. ArbitrageMachine and AlphaCortex execute real trades on live exchange accounts.</p>
+                <div className="text-sm text-indigo-600 font-medium">Hardware + Financial Deployments</div>
               </motion.div>
             </div>
           </motion.div>
